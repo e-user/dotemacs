@@ -141,6 +141,14 @@ Standard modular features to load")
 
 ;;;***
 
+;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (21840 28986
+;;;;;;  575388 797000))
+;;; Generated autoloads from modular-mu4e.el
+
+(add-to-list 'modular-features 'modular-mu4e)
+
+;;;***
+
 ;;;### (autoloads nil "modular-offlineimap" "modular-offlineimap.el"
 ;;;;;;  (21831 12001 619567 320000))
 ;;; Generated autoloads from modular-offlineimap.el
