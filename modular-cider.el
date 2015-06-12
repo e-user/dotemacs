@@ -28,7 +28,5 @@
 (setq cider-repl-tab-command 'indent-for-tab-command)
 (setq cider-repl-history-file (expand-file-name "~/.cider-history"))
 
-;(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
-
 (provide 'modular-cider)
 ;;; modular-cider.el ends here
