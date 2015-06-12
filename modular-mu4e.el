@@ -59,7 +59,8 @@
               message-signature-file "~/.signature.lshift"
               message-sendmail-extra-arguments '("-a" "lshift")
               mu4e-bookmarks '(("NOT flag:trashed AND maildir:/work/INBOX AND NOT list:" "Inbox: Non-List" 97)
-                               ("flag:unread AND maildir:/work/INBOX" "Inbox: Unread" 117)))
+                               ("flag:unread AND maildir:/work/INBOX" "Inbox: Unread" 117)
+                               ("NOT flag:trashed AND maildir:/work/INBOX AND list:team.lshift.de" "Inbox: Team List" 116)))
       (setq mu4e-sent-folder "/private/INBOX.Sent"
             mu4e-drafts-folder "/private/INBOX.Drafts"
             mu4e-trash-folder "/private/INBOX.Trash"
