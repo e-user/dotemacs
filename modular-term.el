@@ -43,13 +43,17 @@
 
   (when (and term-ansi-at-host term-ansi-at-dir term-ansi-at-user)
     (setq buffer-file-name term-ansi-at-dir)
-    (set-buffer-modified-p nil)
     ;; (setq default-directory (if (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
     ;;                             (concatenate 'string term-ansi-at-dir "/")
     ;;                           (format "/%s@%s:%s/" term-ansi-at-user term-ansi-at-host term-ansi-at-dir)))
     (when (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
       (setq default-directory (concatenate 'string term-ansi-at-dir "/"))))
   message)
+
+(defun term-clear-modified ()
+  (set-buffer-modified-p nil))
+
+(advice-add #'term-emulate-terminal :after #'(lambda (&rest args) (term-clear-modified)))
 
 (setq term-bind-key-alist
       (list (cons "C-c C-c" 'term-interrupt-subjob)
@@ -69,7 +73,7 @@
             (cons "C-y" 'term-send-raw)
             (cons "C-y" 'term-send-raw)
             (cons "<C-escape>" 'term-send-esc)))
-
+ 
 (global-set-key (kbd "<f5>") 'multi-term)
 (global-set-key (kbd "<C-next>") 'multi-term-next)
 (global-set-key (kbd "<C-prior>") 'multi-term-prev)
