@@ -12,8 +12,8 @@
 (require 'modular-elpa)
 (require 'modular-company)
 
-(install 'haskell-mode 'hindent 'ghc 'company-ghc)
-(add-hook 'haskell-mode-hook #'turn-on-haskell-indentation)
+(install 'haskell-mode 'hindent 'ghc 'company-ghc 'shm)
+(add-hook 'haskell-mode-hook #'structured-haskell-mode)
 (add-hook 'haskell-mode-hook #'hindent-mode)
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
