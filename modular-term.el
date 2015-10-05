@@ -42,13 +42,13 @@
                (find-file argument))))))
 
   (when (and term-ansi-at-host term-ansi-at-dir term-ansi-at-user)
-    ;; (setq buffer-file-name
-    ;;       (format "%s@%s:%s" term-ansi-at-user term-ansi-at-host term-ansi-at-dir))
     (setq buffer-file-name term-ansi-at-dir)
     (set-buffer-modified-p nil)
-    (setq default-directory (if (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
-                                (concatenate 'string term-ansi-at-dir "/")
-                              (format "/%s@%s:%s/" term-ansi-at-user term-ansi-at-host term-ansi-at-dir))))
+    ;; (setq default-directory (if (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
+    ;;                             (concatenate 'string term-ansi-at-dir "/")
+    ;;                           (format "/%s@%s:%s/" term-ansi-at-user term-ansi-at-host term-ansi-at-dir)))
+    (when (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
+      (setq default-directory (concatenate 'string term-ansi-at-dir "/"))))
   message)
 
 (setq term-bind-key-alist
