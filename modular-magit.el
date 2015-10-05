@@ -10,6 +10,8 @@
 (add-to-list 'modular-features 'modular-magit)
 
 (require 'modular-elpa)
+(pin "melpa-stable" 'magit)
+
 (install 'magit)
 (require 'magit)
 
