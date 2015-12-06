@@ -11,16 +11,13 @@
 
 (require 'modular-elpa)
 
-(when (file-accessible-directory-p (expand-file-name ".nix-profile/share/emacs/site-lisp/mu4e"))
-  (add-to-list 'load-path (expand-file-name ".nix-profile/share/emacs/site-lisp/mu4e"))
-  (require 'mu4e)
+(when (require 'mu4e nil t)
   (require 'org-mu4e)
   (global-set-key (kbd "<f6>") #'(lambda ()
                                    (interactive)
                                    (mu4e)))
 
-  (setq mu4e-mu-binary (expand-file-name "~/.nix-profile/bin/mu")
-        mu4e-update-interval 600
+  (setq mu4e-update-interval 600
         mu4e-show-images t
         mu4e-use-fancy-chars t
         mu4e-confirm-quit nil
