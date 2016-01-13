@@ -41,6 +41,7 @@
     (when (not (package-installed-p package))
       (package-install package))))
 
+;;;###autoload
 (defun pin (repository &rest packages)
   (when (boundp 'package-pinned-packages)
     (setq package-pinned-packages

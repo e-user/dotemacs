@@ -11,10 +11,11 @@
 
 (require 'modular-elpa)
 (require 'modular-clojure)
+(require 'modular-company)
 
-(pin "melpa-stable" 'cider)
+(pin "melpa-stable" 'cider 'ac-cider)
 
-(install 'cider)
+(install 'cider 'ac-cider)
 
 (require 'cider)
 (add-hook 'cider-interaction-mode-hook
@@ -25,8 +26,9 @@
 (define-key cider-mode-map (kbd "<C-j>") 'nrepl-newline-and-indent)
 (define-key cider-repl-mode-map (kbd "<C-j>") 'nrepl-newline-and-indent)
 (define-key cider-repl-mode-map (kbd "C-c M-n") 'cider-repl-set-ns)
-(setq cider-repl-tab-command 'indent-for-tab-command)
-(setq cider-repl-history-file (expand-file-name "~/.cider-history"))
+(setq cider-repl-tab-command 'indent-for-tab-command
+      cider-repl-history-file (expand-file-name "~/.cider-history")
+      cider-prompt-for-symbol nil)
 
 (provide 'modular-cider)
 ;;; modular-cider.el ends here

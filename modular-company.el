@@ -10,7 +10,7 @@
 (add-to-list 'modular-features 'modular-company)
 
 (require 'modular-elpa)
-(install 'company 'ac-nrepl)
+(install 'company)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (global-set-key (kbd "C-.") 'company-complete)
