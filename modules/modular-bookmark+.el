@@ -1,6 +1,6 @@
 ;;; modular-bookmark+.el --- Initialize bookmark+
 
-;; Copyright (C) 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: emacs, bookmarks, bookmark+
@@ -9,7 +9,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-bookmark+)
 
-(require 'modular-elpa)
 (install 'bookmark+)
 (require 'bookmark+-lit)
 (require 'bookmark+)

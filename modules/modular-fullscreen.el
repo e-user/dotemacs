@@ -1,6 +1,6 @@
 ;;; modular-fullscreen.el --- Fullscreen support
 
-;; Copyright (C) 2014  Alexander Kahl
+;; Copyright © 2014  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: fullscreen

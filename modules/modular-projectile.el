@@ -1,15 +1,14 @@
 ;;; modular-projectile.el --- Projectile init
 
-;; Copyright (C) 2014  Alexander Kahl
+;; Copyright © 2014  Alexander Kahl
 
-;; Author: Alexander Kahl <alexander.kahl@hereo.com>
+;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: projectile
 
 ;;; Code:
 ;;;###autoload
 (add-to-list 'modular-features 'modular-projectile)
 
-(require 'modular-elpa)
 (install 'projectile)
 (require 'projectile)
 

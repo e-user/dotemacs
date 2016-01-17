@@ -1,6 +1,6 @@
 ;;; modular-offlineimap.el --- Offlineimap init
 
-;; Copyright (C) 2014, 2015  Alexander Kahl
+;; Copyright © 2014, 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: offlineimap
@@ -9,7 +9,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-offlineimap)
 
-(require 'modular-elpa)
 (install 'offlineimap)
 (require 'offlineimap)
 

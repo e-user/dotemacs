@@ -1,6 +1,6 @@
 ;;; modular-company.el --- Initialize company-mode
 
-;; Copyright (C) 2014  Alexander Kahl
+;; Copyright © 2014-2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: emacs, auto-complete, ac, company
@@ -9,11 +9,12 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-company)
 
-(require 'modular-elpa)
 (install 'company)
 
-(add-hook 'after-init-hook 'global-company-mode)
+(global-company-mode)
 (global-set-key (kbd "C-.") 'company-complete)
+(setq company-tooltip-flip-when-above t
+      company-idle-delay nil)
 
 (provide 'modular-company)
 ;;; modular-company.el ends here

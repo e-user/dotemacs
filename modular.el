@@ -1,17 +1,21 @@
 ;;; modular.el --- Meta-snippet to load .emacs configuration snippets
 
-;; Copyright (C) 2012, 2014  Alexander Kahl
+;; Copyright © 2012-2016  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
-;; Keywords: emacs, modular
+;; Keywords: convenience
 
 ;;; Code:
-;;;###autoload
+
 (defvar modular-features nil)
 
-;;;###autoload
 (defcustom load-modular-features nil "Standard modular features to load")
 
+(defvar modular-dir (file-name-directory load-file-name))
+
+(add-to-list 'load-path (expand-file-name "modules" modular-dir))
+
+(require 'modular-defaults)
 (require 'modular-elpa)
 (require 'cl)
 
@@ -25,12 +29,16 @@
 
 (defun modular-update-autoloads ()
   (interactive)
-  (let ((generated-autoload-file (concat default-directory "/modular-autoloads.el")))
-    (update-directory-autoloads default-directory)))
+  (mapc #'(lambda (s)
+	    (let* ((dir (expand-file-name (concat "modules/" s) modular-dir))
+		   (generated-autoload-file (expand-file-name "modular-autoloads.el" dir)))
+	      (update-directory-autoloads dir)))
+	'("" "modules")))
 
 ;;;###autoload
 (defun modular ()
   (interactive)
+  (load (expand-file-name "modules/modular-autoloads.el" modular-dir))
   (modular-load load-modular-features))
 
 (provide 'modular)

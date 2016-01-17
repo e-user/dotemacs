@@ -1,6 +1,6 @@
 ;;; modular-magit.el --- Initialize magit
 
-;; Copyright (C) 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: emacs, magit
@@ -9,7 +9,7 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-magit)
 
-(require 'modular-elpa)
+;;;###autoload
 (pin "melpa-stable" 'magit)
 
 (install 'magit)

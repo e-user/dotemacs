@@ -1,6 +1,6 @@
 ;;; modular-mu4e.el --- Initialize mu4e
 
-;; Copyright (C) 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: mu4e, mail
@@ -8,8 +8,6 @@
 ;;; Code:
 ;;;###autoload
 (add-to-list 'modular-features 'modular-mu4e)
-
-(require 'modular-elpa)
 
 (when (require 'mu4e nil t)
   (require 'org-mu4e)

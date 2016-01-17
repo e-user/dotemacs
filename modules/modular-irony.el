@@ -1,6 +1,6 @@
 ;;; modular-irony.el --- Initialize irony            -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: emacs, autocompletion
@@ -9,7 +9,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-irony)
 
-(require 'modular-elpa)
 (require 'modular-company)
 (install 'irony 'company-irony)
 

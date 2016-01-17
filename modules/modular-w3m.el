@@ -1,6 +1,6 @@
 ;;; modular-w3m.el --- Initialize w3m
 
-;; Copyright (C) 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: w3m, www, browsing, web
@@ -9,7 +9,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-w3m)
 
-(require 'modular-elpa)
 (install 'w3m)
 
 (when (and (executable-find "w3m")

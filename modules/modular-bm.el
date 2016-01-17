@@ -1,6 +1,6 @@
 ;;; modular-bm.el --- Initialize bm
 
-;; Copyright (C) 2014  Alexander Kahl
+;; Copyright © 2014  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: emacs, bm, bookmarks
@@ -9,7 +9,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-bm)
 
-(require 'modular-elpa)
 (install 'bm)
 (require 'bm)
 

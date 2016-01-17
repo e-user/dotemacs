@@ -1,13 +1,11 @@
 ;;; modular-elpa.el --- Load and/or install ELPA
 
-;; Copyright (C) 2012, 2014  Alexander Kahl
+;; Copyright © 2012-2016  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
-;; Keywords: emacs, modular, elpa
+;; Keywords: convenience
 
 ;;; Code:
-;;;###autoload
-(add-to-list 'modular-features 'modular-elpa)
 
 (unless (require 'package nil t)
   (let ((buffer (url-retrieve-synchronously "http://bit.ly/pkg-el23")))

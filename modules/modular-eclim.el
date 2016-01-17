@@ -1,6 +1,6 @@
 ;;; modular-eclim.el --- theme init
 
-;; Copyright (C) 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: emacs, java, eclipse, eclim
@@ -9,7 +9,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-eclim)
 
-(require 'modular-elpa)
 (require 'modular-company)
 
 (install 'emacs-eclim)

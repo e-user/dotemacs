@@ -1,6 +1,6 @@
 ;;; modular-ensime.el --- ENSIME Scala support       -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: languages
@@ -9,7 +9,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-ensime)
 
-(require 'modular-elpa)
 (install 'ensime)
 (require 'ensime)
 

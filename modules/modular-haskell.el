@@ -1,6 +1,6 @@
 ;;; modular-haskell.el --- Haskell init
 
-;; Copyright (C) 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: haskell
@@ -9,7 +9,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-haskell)
 
-(require 'modular-elpa)
 (require 'modular-company)
 
 (install 'haskell-mode 'hindent 'ghc 'company-ghc 'shm)
