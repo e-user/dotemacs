@@ -59,5 +59,8 @@
      (define-key cider-repl-mode-map (kbd "M-(") (wrap-with "("))
      (define-key cider-repl-mode-map (kbd "M-\"") (wrap-with "\""))))
 
+(eval-after-load 'clojure-mode
+  '(add-hook 'clojure-mode-hook #'smartparens-strict-mode))
+
 (provide 'modular-smartparens)
 ;;; modular-smartparens.el ends here
