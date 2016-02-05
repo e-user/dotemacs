@@ -34,6 +34,7 @@
 (size-indication-mode)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
+(column-number-mode)
 
 (set-frame-font "Inconsolata-9")
 (setq default-frame-alist '((font . "Inconsolata-9")))
@@ -43,6 +44,20 @@
 
 (setq revert-without-query '(".*"))
 (global-set-key "\C-cr" 'revert-buffer)
+
+(setq-default indent-tabs-mode nil)
+
+(defun open-as-root ()
+  "Open the current buffer as root"
+  (interactive)
+  (let ((file (buffer-file-name))
+        (buffer (current-buffer))
+        (line (count-lines 1 (point)))
+        (column (current-column)))
+    (kill-buffer buffer)
+    (find-file (concat "/sudo:root@localhost:" file))
+    (goto-line line)
+    (move-to-column column)))
 
 (provide 'modular-emacs)
 ;;; modular-emacs.el ends here
