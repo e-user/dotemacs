@@ -12,9 +12,8 @@
 (install 'offlineimap)
 (require 'offlineimap)
 
-(setq offlineimap-enable-mode-line-p t
-      offlineimap-command "journalctl -o cat -f --user-unit=offlineimap"
-      offlineimap-mode-line-symbol "✉")
+(setq offlineimap-enable-mode-line-p nil
+      offlineimap-command "journalctl -o cat -f --user-unit=offlineimap")
 
 (offlineimap)
 
