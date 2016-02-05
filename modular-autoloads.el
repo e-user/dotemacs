@@ -3,8 +3,7 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "modular" "modular.el" (22168 60333 303091
-;;;;;;  996000))
+;;;### (autoloads nil "modular" "modular.el" (22178 9267 629205 116000))
 ;;; Generated autoloads from modular.el
 
 (autoload 'modular "modular" "\
@@ -25,8 +24,8 @@
 
 ;;;***
 
-;;;### (autoloads nil nil ("modular-defaults.el") (22168 64478 752875
-;;;;;;  17000))
+;;;### (autoloads nil nil ("modular-defaults.el") (22191 21621 775900
+;;;;;;  379000))
 
 ;;;***
 
