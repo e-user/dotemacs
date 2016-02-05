@@ -53,6 +53,7 @@
 (global-set-key (kbd "C-h r") 'helm-info-emacs)
 (global-set-key (kbd "C-h C-l") 'helm-locate-library)
 (define-key helm-map (kbd "C-.") 'helm-execute-persistent-action)
+(define-key helm-read-file-map (kbd "C-.") 'helm-execute-persistent-action)
 
 (provide 'modular-helm)
 ;;; modular-helm.el ends here
