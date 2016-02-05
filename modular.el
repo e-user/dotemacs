@@ -7,17 +7,21 @@
 
 ;;; Code:
 
+(defgroup modular nil
+  "Modular module loader"
+  :group 'convenience)
+
+(defcustom load-modular-features nil
+  "Standard modular features to load"
+  :group 'modular)
+
 (defvar modular-features nil)
-
-(defcustom load-modular-features nil "Standard modular features to load")
-
 (defvar modular-dir (file-name-directory load-file-name))
 
 (add-to-list 'load-path (expand-file-name "modules" modular-dir))
 
 (require 'modular-defaults)
 (require 'modular-elpa)
-(require 'cl)
 
 (defun modular-load (filter)
   (let ((fs (if filter
@@ -25,12 +29,12 @@
               modular-features)))
     (dolist (f (sort fs #'(lambda (f1 f2) (string< (symbol-name f1) (symbol-name f2)))))
       (message "Loading feature %s..." f)
-      (require f))))
+      (ignore-errors (require f)))))
 
 (defun modular-update-autoloads ()
   (interactive)
   (mapc #'(lambda (s)
-	    (let* ((dir (expand-file-name (concat "modules/" s) modular-dir))
+	    (let* ((dir (expand-file-name s modular-dir))
 		   (generated-autoload-file (expand-file-name "modular-autoloads.el" dir)))
 	      (update-directory-autoloads dir)))
 	'("" "modules")))
