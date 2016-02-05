@@ -80,7 +80,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-edit-server" "modular-edit-server.el"
-;;;;;;  (22191 21615 789942 283000))
+;;;;;;  (22191 21665 808812 928000))
 ;;; Generated autoloads from modular-edit-server.el
 
 (add-to-list 'modular-features 'modular-edit-server)
@@ -95,8 +95,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (22173 9607
-;;;;;;  640931 27000))
+;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (22191 24953
+;;;;;;  154593 835000))
 ;;; Generated autoloads from modular-emacs.el
 
 (add-to-list 'modular-features 'modular-emacs)
@@ -161,16 +161,16 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-haskell" "modular-haskell.el" (22168
-;;;;;;  64735 699519 627000))
+;;;### (autoloads nil "modular-haskell" "modular-haskell.el" (22196
+;;;;;;  40879 636033 46000))
 ;;; Generated autoloads from modular-haskell.el
 
 (add-to-list 'modular-features 'modular-haskell)
 
 ;;;***
 
-;;;### (autoloads nil "modular-helm" "modular-helm.el" (22168 64657
-;;;;;;  907575 962000))
+;;;### (autoloads nil "modular-helm" "modular-helm.el" (22196 35354
+;;;;;;  230095 480000))
 ;;; Generated autoloads from modular-helm.el
 
 (add-to-list 'modular-features 'modular-helm)
@@ -205,8 +205,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (22189 10023
-;;;;;;  593734 626000))
+;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (22195 11205
+;;;;;;  704841 175000))
 ;;; Generated autoloads from modular-mu4e.el
 
 (add-to-list 'modular-features 'modular-mu4e)
@@ -214,10 +214,18 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-offlineimap" "modular-offlineimap.el"
-;;;;;;  (22168 64822 276456 929000))
+;;;;;;  (22195 11237 4825 559000))
 ;;; Generated autoloads from modular-offlineimap.el
 
 (add-to-list 'modular-features 'modular-offlineimap)
+
+;;;***
+
+;;;### (autoloads nil "modular-org" "modular-org.el" (22196 43005
+;;;;;;  164384 70000))
+;;; Generated autoloads from modular-org.el
+
+(add-to-list 'modular-features 'modular-org)
 
 ;;;***
 
