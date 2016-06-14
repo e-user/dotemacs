@@ -29,16 +29,24 @@
 ;;;###autoload
 (pin "melpa-stable" 'clojure-mode 'typed-clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking)
 
-(install 'clojure-mode 'typed-clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking)
+(install 'clojure-mode 'typed-clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking 'flycheck-clojure)
 
 (require 'clojure-mode)
 (add-hook 'clojure-mode-hook 'typed-clojure-mode)
 
 (require 'clojure-mode-extra-font-locking)
 
-(require 'clj-refactor)
-(add-hook 'clojure-mode-hook 'clj-refactor-mode)
-(add-hook 'clojure-mode-hook #'(lambda () (cljr-add-keybindings-with-prefix "C-c C-m")))
+; (require 'clj-refactor)
+; (add-hook 'clojure-mode-hook 'clj-refactor-mode)
+; (add-hook 'clojure-mode-hook #'(lambda () (cljr-add-keybindings-with-prefix "C-c C-m")))
+
+;; (eval-after-load 'flycheck
+;;   '(progn
+;;      (flycheck-clojure-setup)
+;;      (defun cider-flycheck-eval (input callback)
+;;        "Send the request INPUT and register the CALLBACK as the response handler.
+;; Uses the tooling session, with no specified namespace."
+;;        (nrepl-request:eval input callback (cider-current-connection) (nrepl-current-tooling-session)))))
 
 (provide 'modular-clojure)
 ;;; modular-clojure.el ends here

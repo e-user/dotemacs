@@ -42,7 +42,8 @@
                      ("(flag:unread OR flag:flagged) AND NOT flag:trashed AND maildir:/private/INBOX" "Inbox: New" 119)
                      ("(flag:unread OR flag:flagged) AND NOT flag:trashed" "All: New" 101)
                      ("date:today..now" "Today's mail" 116)
-                     ("flag:flagged" "All: Flagged" 102)))))
+                     ("flag:flagged" "All: Flagged" 102)))
+   (mu4e-get-mail-command "offlineimap -o -c ~/.offlineimaprc -a FSFE")))
 
 (contextual-add-profile "work" ()
   ((user-mail-address "alex@lshift.de")
@@ -54,7 +55,8 @@
    (message-sendmail-extra-arguments '("-a" "lshift"))
    (mu4e-bookmarks '(("NOT flag:trashed AND maildir:/work/INBOX AND NOT list:" "Inbox: Non-List" 97)
                      ("flag:unread AND maildir:/work/INBOX" "Inbox: Unread" 117)
-                     ("NOT flag:trashed AND maildir:/work/INBOX AND list:team.lshift.de" "Inbox: Team List" 116)))))
+                     ("NOT flag:trashed AND maildir:/work/INBOX AND list:team.lshift.de" "Inbox: Team List" 116)))
+   (mu4e-get-mail-command "offlineimap -o -c ~/.offlineimaprc -a LShift")))
 
 (contextual-set-initial-profile
  (if (string= system-name "nietzsche.in.lshift.de") "work" "private"))
@@ -67,6 +69,8 @@
   (set-frame-font "Inconsolata-6"))
 (contextual-add-profile "normal" (font-profiles) ((default-frame-alist '((font . "Inconsolata-9"))))
   (set-frame-font "Inconsolata-9"))
+(contextual-add-profile "large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-12"))))
+  (set-frame-font "Inconsolata-12"))
 
 (contextual-define-context-loader font-profile-loader
   font-profiles (kbd "f"))

@@ -55,5 +55,8 @@
 (define-key helm-map (kbd "C-.") 'helm-execute-persistent-action)
 (define-key helm-read-file-map (kbd "C-.") 'helm-execute-persistent-action)
 
+(eval-after-load 'projectile
+  '(define-key projectile-command-map (kbd "s g") #'helm-projectile-grep))
+
 (provide 'modular-helm)
 ;;; modular-helm.el ends here

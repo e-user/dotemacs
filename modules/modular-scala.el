@@ -1,4 +1,4 @@
-;;; modular-ensime.el --- Modular Ensime module  -*- lexical-binding: t; -*-
+;;; modular-scala.el --- Modular Scala module  -*- lexical-binding: t; -*-
 
 ;; Copyright © 2015-2016  Alexander Kahl
 
@@ -20,14 +20,14 @@
 
 ;;; Commentary:
 
-;; Load Ensime
+;; Load Scala
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-ensime)
+(add-to-list 'modular-features 'modular-scala)
 
-(install 'ensime)
-
+(install 'scala-mode 'ensime)
+(require 'scala-mode)
 (require 'ensime)
 
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
@@ -35,5 +35,5 @@
 (setq ensime-auto-generate-config t
       ensime-sbt-command "sbt")
 
-(provide 'modular-ensime)
-;;; modular-ensime.el ends here
+(provide 'modular-scala)
+;;; modular-scala.el ends here

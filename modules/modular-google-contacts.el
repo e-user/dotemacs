@@ -12,5 +12,17 @@
 (install 'google-contacts)
 (require 'google-contacts)
 
+;; (require 'cl-lib)
+
+;; (defvar foo nil)
+;; (defun google-contacts-query (query-string)
+;;   (google-contacts-async-api query-string #'(lambda (contacts) (setq foo contacts))))
+
+;; (defun company-google-contacts-backend (command &optional arg &rest ignored)
+;;   (interactive (list 'interactive))
+;;   (cl-case command
+;;     (interactive (company-begin-backend 'company-google-contacts-backend))
+;;     (prefix (company-grab-symbol))))
+
 (provide 'modular-google-contacts)
 ;;; modular-google-contacts.el ends here

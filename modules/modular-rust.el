@@ -1,6 +1,6 @@
-;;; modular-ensime.el --- Modular Ensime module  -*- lexical-binding: t; -*-
+;;; modular-rust.el --- Modular Rust module          -*- lexical-binding: t; -*-
 
-;; Copyright © 2015-2016  Alexander Kahl
+;; Copyright (C) 2016  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: convenience
@@ -20,20 +20,19 @@
 
 ;;; Commentary:
 
-;; Load Ensime
+;; Load Rust and Racer
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-ensime)
+(add-to-list 'modular-features 'modular-rust)
 
-(install 'ensime)
+(install 'rust-mode 'racer)
 
-(require 'ensime)
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
 
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(setq racer-cmd "~/.cargo/bin/racer")
+(setq racer-rust-src-path "~/Projects/rust-master/src/")
 
-(setq ensime-auto-generate-config t
-      ensime-sbt-command "sbt")
-
-(provide 'modular-ensime)
-;;; modular-ensime.el ends here
+(provide 'modular-rust)
+;;; modular-rust.el ends here

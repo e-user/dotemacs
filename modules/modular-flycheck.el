@@ -31,10 +31,14 @@
 
 (install 'flycheck 'flycheck-package)
 (require 'flycheck)
+(require 'flycheck-pos-tip)
 
+;(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages)
+(setq flycheck-display-errors-function #'flycheck-display-error-messages-unless-error-list)
 (global-flycheck-mode)
 
-(eval-after-load 'clojure '(flycheck-clojure-setup))
+(global-set-key (kbd "C-S-b") 'flycheck-previous-error)
+(global-set-key (kbd "C-S-f") 'flycheck-next-error)
 
 (provide 'modular-flycheck)
 ;;; modular-flycheck.el ends here

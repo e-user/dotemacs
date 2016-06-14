@@ -1,9 +1,26 @@
-;;; modular-term.el --- Initialize terminal capabilities
+;;; modular-term.el --- Modular multi-term module  -*- lexical-binding: t; -*-
 
-;; Copyright © 2014  Alexander Kahl
+;; Copyright (C) 2014-2016  Alexander Kahl
 
 ;; Author: Alexander Kahl <e-user@fsfe.org>
-;; Keywords: emacs, term, multi-term
+;; Keywords: convenience
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Load multi-term
 
 ;;; Code:
 ;;;###autoload
@@ -12,7 +29,17 @@
 (install 'multi-term)
 (require 'multi-term)
 
-(add-hook 'term-mode-hook #'(lambda () (hl-line-mode)))
+; (add-hook 'term-mode-hook #'(lambda () (hl-line-mode)))
+
+(setq term-index 0)
+
+(defun multi-term+ ()
+  (interactive)
+  (let ((term-buffer (multi-term)))
+    (with-current-buffer term-buffer
+      (setq-local terminal-name (format "term<%d>" (incf term-index)))
+      (rename-buffer (format "*%s*" terminal-name)))
+    term-buffer))
 
 (defun term-handle-ansi-terminal-messages (message)
   (while (string-match "\eAnSiT.+\n" message)
@@ -43,6 +70,8 @@
 
   (when (and term-ansi-at-host term-ansi-at-dir term-ansi-at-user)
     (setq buffer-file-name term-ansi-at-dir)
+    (when (boundp 'terminal-name)
+      (rename-buffer (format "*%s: %s*" terminal-name term-ansi-at-dir)))
     ;; (setq default-directory (if (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
     ;;                             (concatenate 'string term-ansi-at-dir "/")
     ;;                           (format "/%s@%s:%s/" term-ansi-at-user term-ansi-at-host term-ansi-at-dir)))
@@ -63,7 +92,7 @@
             (cons "M-b" 'term-send-backward-word)
             (cons "C-c C-j" 'term-line-mode)
             (cons "C-c C-k" 'term-char-mode)
-            (cons "M-DEL" 'term-send-backward-kill-word)
+            (cons "M-DEL" 'term-send-raw-meta)
             (cons "M-d" 'term-send-forward-kill-word)
             (cons "<C-left>" 'term-send-backward-word)
             (cons "<C-right>" 'term-send-forward-word)
@@ -71,10 +100,9 @@
             (cons "M-p" 'term-send-raw-meta)
             (cons "M-y" 'term-send-raw-meta)
             (cons "C-y" 'term-send-raw)
-            (cons "C-y" 'term-send-raw)
             (cons "<C-escape>" 'term-send-esc)))
  
-(global-set-key (kbd "<f5>") 'multi-term)
+(global-set-key (kbd "<f5>") 'multi-term+)
 (global-set-key (kbd "<C-next>") 'multi-term-next)
 (global-set-key (kbd "<C-prior>") 'multi-term-prev)
 (setq multi-term-buffer-name "term"
