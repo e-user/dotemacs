@@ -62,5 +62,17 @@
 (eval-after-load 'clojure-mode
   '(add-hook 'clojure-mode-hook #'smartparens-strict-mode))
 
+(sp-with-modes '(cider-repl-mode clojure-mode)
+  (sp-local-pair "`" "`"
+                 :when '(sp-in-string-p
+                         sp-in-comment-p)
+                 :unless '(sp-lisp-invalid-hyperlink-p)
+                 :skip-match (lambda (ms mb me)
+                               (cond
+                                ((equal ms "'")
+                                 (or (sp-lisp-invalid-hyperlink-p "`" 'navigate '_)
+                                     (not (sp-point-in-string-or-comment))))
+                                (t (not (sp-point-in-string-or-comment)))))))
+
 (provide 'modular-smartparens)
 ;;; modular-smartparens.el ends here
