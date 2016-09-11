@@ -48,5 +48,7 @@
 ;; Uses the tooling session, with no specified namespace."
 ;;        (nrepl-request:eval input callback (cider-current-connection) (nrepl-current-tooling-session)))))
 
+(setq clojure-indent-style :always-indent)
+
 (provide 'modular-clojure)
 ;;; modular-clojure.el ends here
