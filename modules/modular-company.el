@@ -9,6 +9,9 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-company)
 
+;;;###autoload
+(pin "melpa-stable" 'company)
+
 (install 'company)
 
 (global-company-mode)
