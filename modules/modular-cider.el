@@ -47,5 +47,8 @@
       cider-repl-history-file (expand-file-name "~/.cider-history")
       cider-prompt-for-symbol nil)
 
+(define-key cider-mode-map (kbd "C-.") 'completion-at-point)
+(define-key cider-repl-mode-map (kbd "C-.") 'completion-at-point)
+
 (provide 'modular-cider)
 ;;; modular-cider.el ends here

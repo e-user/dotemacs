@@ -9,6 +9,9 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-mu4e)
 
+(when-let ((dir (first (file-expand-wildcards "/nix/store/*mu*/share/emacs/site-lisp/mu4e"))))
+  (add-to-list 'load-path dir))
+
 (when (require 'mu4e nil t)
   (install 'mu4e-alert)
   (require 'mu4e-alert)
@@ -16,6 +19,8 @@
   (mu4e-alert-enable-notifications)
   (mu4e-alert-enable-mode-line-display)
 
+  (require 'mu4e-contrib)
+  
   (require 'org-mu4e)
   (global-set-key (kbd "<f6>") #'(lambda ()
                                    (interactive)
@@ -28,7 +33,8 @@
         mu4e-update-interval nil
         mu4e-headers-sort-revert t
         ;mu4e-html2text-command "html2text -utf8 -width 80" alternative, fucks up encoding
-        mu4e-html2text-command (format "iconv -c -t utf-8 | pandoc -f html -t plain --columns=%d" fill-column)
+        ;mu4e-html2text-command (format "iconv -c -t utf-8 | pandoc -f html -t plain --columns=%d" fill-column)
+        mu4e-html2text-command 'mu4e-shr2text
         mail-user-agent 'mu4e-user-agent
         sendmail-program (executable-find "msmtp")
         message-send-mail-function 'message-send-mail-with-sendmail
@@ -36,7 +42,15 @@
         smtpmail-debug-verb nil
         mu4e-view-prefer-html t
         mu4e-compose-signature t
-        mu4e-attachment-dir "~/Downloads")
+        mu4e-attachment-dir "~/Downloads"
+        mu4e-change-filenames-when-moving t
+        mml-secure-openpgp-encrypt-to-self t
+        mml-secure-openpgp-sign-with-sender t
+        mu4e-view-fields)
+
+  (setenv "MU_GPG_PATH" (executable-find "gpg2"))
+
+  (add-hook 'mu4e-compose-mode-hook 'mml-secure-message-sign-pgpmime)
 
   (defun mu4e-find-references ()
     (interactive)

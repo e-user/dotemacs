@@ -27,7 +27,7 @@
 (add-to-list 'modular-features 'modular-helm)
 
 ;;;###autoload
-(pin "melpa-stable" 'helm)
+(pin "melpa-stable" 'helm 'helm-core 'helm-projectile)
 
 (install 'helm 'helm-projectile)
 

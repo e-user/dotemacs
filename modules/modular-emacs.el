@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2016  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org
+;; Author: Alexander Kahl <e-user@fsfe.org>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
