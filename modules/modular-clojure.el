@@ -27,12 +27,11 @@
 (add-to-list 'modular-features 'modular-clojure)
 
 ;;;###autoload
-(pin "melpa-stable" 'clojure-mode 'typed-clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking)
+(pin "melpa-stable" 'clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking)
 
-(install 'clojure-mode 'typed-clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking 'flycheck-clojure)
+(install 'clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking 'flycheck-clojure)
 
 (require 'clojure-mode)
-(add-hook 'clojure-mode-hook 'typed-clojure-mode)
 
 (require 'clojure-mode-extra-font-locking)
 

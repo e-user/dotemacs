@@ -43,7 +43,7 @@
 
 (add-to-list 'modular-features 'modular-clojure)
 
-(pin "melpa-stable" 'clojure-mode 'typed-clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking)
+(pin "melpa-stable" 'clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking)
 
 ;;;***
 
