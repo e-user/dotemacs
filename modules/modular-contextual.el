@@ -43,11 +43,11 @@
                      ("(flag:unread OR flag:flagged) AND NOT flag:trashed" "All: New" 101)
                      ("date:today..now" "Today's mail" 116)
                      ("flag:flagged" "All: Flagged" 102)))
-   (mu4e-get-mail-command "mbsync sodosopa.io")))
+   (mu4e-get-mail-command "mbsync -q sodosopa.io")))
 
 (contextual-add-profile "work" ()
   ((user-mail-address "alex@lshift.de")
-   (epg-user-id "00CE441F")
+   ;(epg-user-id "00CE441F")
    (mu4e-sent-folder "/lshift.de/[Gmail].Sent Mail")
    (mu4e-drafts-folder "/lshift.de/[Gmail].Drafts")
    (mu4e-trash-folder "/lshift.de/[Gmail].Trash")
@@ -56,7 +56,7 @@
    (mu4e-bookmarks '(("NOT flag:trashed AND maildir:/lshift.de/Inbox AND NOT list:" "Inbox: Non-List" 97)
                      ("flag:unread AND maildir:/lshift.de/Inbox" "Inbox: Unread" 117)
                      ("NOT flag:trashed AND maildir:/lshift.de/Inbox AND list:team.lshift.de" "Inbox: Team List" 116)))
-   (mu4e-get-mail-command "mbsync lshift.de")))
+   (mu4e-get-mail-command "mbsync -q lshift.de")))
 
 (contextual-set-initial-profile
  (if (member system-name '("nietzsche.in.lshift.de" "adorno.in.lshift.de")) "work" "private"))
