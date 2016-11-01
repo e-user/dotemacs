@@ -43,7 +43,14 @@
         mu4e-view-prefer-html t
         mu4e-compose-signature t
         mu4e-attachment-dir "~/Downloads"
-        mu4e-change-filenames-when-moving t)
+        mu4e-change-filenames-when-moving t
+        mml-secure-openpgp-encrypt-to-self t
+        mml-secure-openpgp-sign-with-sender t
+        mu4e-view-fields)
+
+  (setenv "MU_GPG_PATH" (executable-find "gpg2"))
+
+  (add-hook 'mu4e-compose-mode-hook 'mml-secure-message-sign-pgpmime)
 
   (defun mu4e-find-references ()
     (interactive)
