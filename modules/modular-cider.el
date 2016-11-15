@@ -45,7 +45,8 @@
 ;(define-key cider-repl-mode-map (kbd "C-c M-n") 'cider-repl-set-ns)
 (setq cider-repl-tab-command 'indent-for-tab-command
       cider-repl-history-file (expand-file-name "~/.cider-history")
-      cider-prompt-for-symbol nil)
+      cider-prompt-for-symbol nil
+      cider-auto-test-mode 1)
 
 (define-key cider-mode-map (kbd "C-.") 'completion-at-point)
 (define-key cider-repl-mode-map (kbd "C-.") 'completion-at-point)
