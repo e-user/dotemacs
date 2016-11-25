@@ -3,7 +3,7 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "modular" "modular.el" (22178 9267 629205 116000))
+;;;### (autoloads nil "modular" "modular.el" (22583 2915 684463 34000))
 ;;; Generated autoloads from modular.el
 
 (autoload 'modular "modular" "\
@@ -13,8 +13,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-elpa" "modular-elpa.el" (22168 59747
-;;;;;;  427444 569000))
+;;;### (autoloads nil "modular-elpa" "modular-elpa.el" (22583 2915
+;;;;;;  684463 34000))
 ;;; Generated autoloads from modular-elpa.el
 
 (autoload 'pin "modular-elpa" "\
@@ -24,8 +24,8 @@
 
 ;;;***
 
-;;;### (autoloads nil nil ("modular-defaults.el") (22196 43033 343235
-;;;;;;  66000))
+;;;### (autoloads nil nil ("modular-defaults.el") (22583 2915 684463
+;;;;;;  34000))
 
 ;;;***
 
