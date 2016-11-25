@@ -37,7 +37,7 @@
    (mu4e-trash-folder "/sodosopa.io/Trash")
    (mu4e-refile-folder "/sodosopa.io/Archives")
    (message-signature-file "~/.signature")
-   (message-sendmail-extra-arguments '("-a sodosopa.io"))
+   (message-sendmail-extra-arguments '("-a" "sodosopa.io"))
    (mu4e-bookmarks '(("date:7d..now AND NOT flag:trashed AND maildir:/sodosopa.io" "Inbox: One week" 105)
                      ("(flag:unread OR flag:flagged) AND NOT flag:trashed AND maildir:/sodosopa.io" "Inbox: New" 119)
                      ("(flag:unread OR flag:flagged) AND NOT flag:trashed" "All: New" 101)

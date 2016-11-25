@@ -44,9 +44,12 @@
         mu4e-compose-signature t
         mu4e-attachment-dir "~/Downloads"
         mu4e-change-filenames-when-moving t
+        mu4e-headers-date-format "%F"
+        mu4e-headers-time-format "%R"
+        mu4e-view-date-format "%F %R %Z"
         mml-secure-openpgp-encrypt-to-self t
         mml-secure-openpgp-sign-with-sender t
-        mu4e-view-fields)
+        shr-color-visible-luminance-min 80)
 
   (setenv "MU_GPG_PATH" (executable-find "gpg2"))
 
