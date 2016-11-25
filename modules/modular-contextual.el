@@ -26,7 +26,9 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-contextual)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/contextual"))
+;;;###autoload
+(pin "melpha-stable" 'contextual)
+(install 'contextual)
 (require 'contextual)
 
 (contextual-add-profile "private" ()
