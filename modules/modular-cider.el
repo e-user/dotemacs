@@ -32,10 +32,9 @@
 (require 'modular-clojure)
 (require 'modular-company)
 
-(install 'cider 'ac-cider 'cider-eval-sexp-fu)
+(install 'cider 'ac-cider)
 
 (require 'cider)
-(require 'cider-eval-sexp-fu)
 
 (add-hook 'cider-interaction-mode-hook 'eldoc-mode)
 (add-hook 'cider-mode-hook 'eldoc-mode)
