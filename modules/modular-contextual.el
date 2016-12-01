@@ -73,6 +73,8 @@
   (set-frame-font "Inconsolata-9"))
 (contextual-add-profile "large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-12"))))
   (set-frame-font "Inconsolata-12"))
+(contextual-add-profile "x-large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-14"))))
+  (set-frame-font "Inconsolata-14"))
 
 (contextual-define-context-loader font-profile-loader
   font-profiles (kbd "f"))
