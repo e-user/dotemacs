@@ -33,7 +33,7 @@
 
 (contextual-add-profile "private" ()
   ((user-mail-address "ak@sodosopa.io")
-   ;(epg-user-id "2147C35D")
+   (mu4e-base-folder "/sodosopa.io")
    (mu4e-sent-folder "/sodosopa.io/Sent")
    (mu4e-drafts-folder "/sodosopa.io/Drafts")
    (mu4e-trash-folder "/sodosopa.io/Trash")
@@ -49,7 +49,7 @@
 
 (contextual-add-profile "work" ()
   ((user-mail-address "alex@lshift.de")
-   ;(epg-user-id "00CE441F")
+   (mu4e-base-folder "/lshift.de")
    (mu4e-sent-folder "/lshift.de/[Gmail].Sent Mail")
    (mu4e-drafts-folder "/lshift.de/[Gmail].Drafts")
    (mu4e-trash-folder "/lshift.de/[Gmail].Trash")
