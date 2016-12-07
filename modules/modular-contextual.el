@@ -27,7 +27,7 @@
 (add-to-list 'modular-features 'modular-contextual)
 
 ;;;###autoload
-(pin "melpha-stable" 'contextual)
+(pin "melpa-stable" 'contextual)
 (install 'contextual)
 (require 'contextual)
 
