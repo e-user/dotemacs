@@ -32,10 +32,9 @@
 (require 'modular-clojure)
 (require 'modular-company)
 
-(install 'cider 'ac-cider 'cider-eval-sexp-fu)
+(install 'cider 'ac-cider)
 
 (require 'cider)
-(require 'cider-eval-sexp-fu)
 
 (add-hook 'cider-interaction-mode-hook 'eldoc-mode)
 (add-hook 'cider-mode-hook 'eldoc-mode)
@@ -45,7 +44,9 @@
 ;(define-key cider-repl-mode-map (kbd "C-c M-n") 'cider-repl-set-ns)
 (setq cider-repl-tab-command 'indent-for-tab-command
       cider-repl-history-file (expand-file-name "~/.cider-history")
-      cider-prompt-for-symbol nil)
+      cider-prompt-for-symbol nil
+      cider-auto-test-mode 1
+      cider-test-show-report-on-success t)
 
 (define-key cider-mode-map (kbd "C-.") 'completion-at-point)
 (define-key cider-repl-mode-map (kbd "C-.") 'completion-at-point)

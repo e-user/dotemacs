@@ -44,8 +44,13 @@
         mu4e-compose-signature t
         mu4e-attachment-dir "~/Downloads"
         mu4e-change-filenames-when-moving t
+        mu4e-headers-date-format "%F"
+        mu4e-headers-time-format "%R"
+        mu4e-view-date-format "%F %R %Z"
         mml-secure-openpgp-encrypt-to-self t
-        mml-secure-openpgp-sign-with-sender t)
+        mml-secure-openpgp-sign-with-sender t
+        shr-color-visible-luminance-min 80
+        mu4e-completing-read-function 'completing-read)
 
   (setenv "MU_GPG_PATH" (executable-find "gpg2"))
 
@@ -60,6 +65,22 @@
                                                   (mu4e-field-at-point :references))) 
                                     " OR ")
                          nil nil t))
+
+  (defun mu4e-tags (maildir)
+    (delete-dups (process-lines mu4e-mu-binary "find" (format "m:%s" maildir) "-f" "x")))
+
+  (defvar mu4e-base-folder nil)
+
+  (defun mu4e~headers-jump-to-tag (tag)
+    (interactive
+     (let ((tag (funcall mu4e-completing-read-function "Tag: " (mu4e-tags mu4e-base-folder))))
+       (list tag)))
+    (when tag
+      (mu4e-mark-handle-when-leaving)
+      (mu4e-headers-search (format "maildir:\"%s\" tag:%s" mu4e-base-folder tag))))
+  
+  (define-key mu4e-headers-mode-map "x" 'mu4e~headers-jump-to-tag)
+  (define-key mu4e-main-mode-map "x" 'mu4e~headers-jump-to-tag)
 
   (define-key mu4e-view-mode-map (kbd "^") #'mu4e-find-references)
   (add-hook 'mu4e-view-mode-hook #'(lambda ()

@@ -26,18 +26,20 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-contextual)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/contextual"))
+;;;###autoload
+(pin "melpha-stable" 'contextual)
+(install 'contextual)
 (require 'contextual)
 
 (contextual-add-profile "private" ()
   ((user-mail-address "ak@sodosopa.io")
-   ;(epg-user-id "2147C35D")
+   (mu4e-base-folder "/sodosopa.io")
    (mu4e-sent-folder "/sodosopa.io/Sent")
    (mu4e-drafts-folder "/sodosopa.io/Drafts")
    (mu4e-trash-folder "/sodosopa.io/Trash")
    (mu4e-refile-folder "/sodosopa.io/Archives")
    (message-signature-file "~/.signature")
-   (message-sendmail-extra-arguments '("-a sodosopa.io"))
+   (message-sendmail-extra-arguments '("-a" "sodosopa.io"))
    (mu4e-bookmarks '(("date:7d..now AND NOT flag:trashed AND maildir:/sodosopa.io" "Inbox: One week" 105)
                      ("(flag:unread OR flag:flagged) AND NOT flag:trashed AND maildir:/sodosopa.io" "Inbox: New" 119)
                      ("(flag:unread OR flag:flagged) AND NOT flag:trashed" "All: New" 101)
@@ -47,7 +49,7 @@
 
 (contextual-add-profile "work" ()
   ((user-mail-address "alex@lshift.de")
-   ;(epg-user-id "00CE441F")
+   (mu4e-base-folder "/lshift.de")
    (mu4e-sent-folder "/lshift.de/[Gmail].Sent Mail")
    (mu4e-drafts-folder "/lshift.de/[Gmail].Drafts")
    (mu4e-trash-folder "/lshift.de/[Gmail].Trash")
@@ -71,6 +73,8 @@
   (set-frame-font "Inconsolata-9"))
 (contextual-add-profile "large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-12"))))
   (set-frame-font "Inconsolata-12"))
+(contextual-add-profile "x-large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-14"))))
+  (set-frame-font "Inconsolata-14"))
 
 (contextual-define-context-loader font-profile-loader
   font-profiles (kbd "f"))
