@@ -45,8 +45,7 @@
         mu4e-attachment-dir "~/Downloads"
         mu4e-change-filenames-when-moving t
         mml-secure-openpgp-encrypt-to-self t
-        mml-secure-openpgp-sign-with-sender t
-        mu4e-view-fields)
+        mml-secure-openpgp-sign-with-sender t)
 
   (setenv "MU_GPG_PATH" (executable-find "gpg2"))
 
