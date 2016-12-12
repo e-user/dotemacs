@@ -59,5 +59,7 @@
     (goto-line line)
     (move-to-column column)))
 
+(setq-default fill-column 80)
+
 (provide 'modular-emacs)
 ;;; modular-emacs.el ends here
