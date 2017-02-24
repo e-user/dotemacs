@@ -31,7 +31,6 @@
 
 (install 'flycheck 'flycheck-package)
 (require 'flycheck)
-(require 'flycheck-pos-tip)
 
 ;(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages)
 (setq flycheck-display-errors-function #'flycheck-display-error-messages-unless-error-list)
