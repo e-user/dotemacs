@@ -26,11 +26,14 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-scala)
 
-(install 'scala-mode 'ensime)
+;;;###autoload
+(pin "melpa-stable" 'ensime 'scala-mode 'sbt-mode)
+
+(install 'scala-mode 'ensime 'sbt-mode)
 (require 'scala-mode)
 (require 'ensime)
 
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 (setq ensime-auto-generate-config t
       ensime-sbt-command "sbt")
