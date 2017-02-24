@@ -17,7 +17,8 @@
 (global-company-mode)
 (global-set-key (kbd "C-.") 'company-complete)
 (setq company-tooltip-flip-when-above t
-      company-idle-delay nil)
+      company-idle-delay nil
+      company-tooltip-align-annotations t)
 
 (provide 'modular-company)
 ;;; modular-company.el ends here
