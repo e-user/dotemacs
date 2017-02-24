@@ -46,7 +46,8 @@
       cider-repl-history-file (expand-file-name "~/.cider-history")
       cider-prompt-for-symbol nil
       cider-auto-test-mode 1
-      cider-test-show-report-on-success t)
+      cider-test-show-report-on-success t
+      cider-repl-display-help-banner nil)
 
 (define-key cider-mode-map (kbd "C-.") 'completion-at-point)
 (define-key cider-repl-mode-map (kbd "C-.") 'completion-at-point)
