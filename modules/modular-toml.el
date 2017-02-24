@@ -1,6 +1,6 @@
-;;; modular-rust.el --- Modular Rust module          -*- lexical-binding: t; -*-
+;;; modular-toml.el --- Modular TOML module          -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016-2017  Alexander Kahl
+;; Copyright (C) 2017  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -20,26 +20,17 @@
 
 ;;; Commentary:
 
-;; Load Rust and Racer
+;; Load TOML mode
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-rust)
+(add-to-list 'modular-features 'modular-toml)
 
 ;;;###autoload
-(pin "melpa-stable" 'rust-mode 'racer 'flycheck-rust)
+(pin "melpa-stable" 'toml-mode)
 
-(install 'rust-mode 'racer flycheck-rust)
+(install 'toml-mode)
+(require 'toml-mode)
 
-(require 'modular-company)
-(require 'modular-flycheck)
-
-(add-hook 'rust-mode-hook #'racer-mode)
-(add-hook 'racer-mode-hook #'eldoc-mode)
-(add-hook 'racer-mode-hook #'company-mode)
-(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
-
-(setq racer-rust-src-path "~/Projects/rust/src/")
-
-(provide 'modular-rust)
-;;; modular-rust.el ends here
+(provide 'modular-toml)
+;;; modular-toml.el ends here
