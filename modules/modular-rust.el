@@ -29,7 +29,7 @@
 ;;;###autoload
 (pin "melpa-stable" 'rust-mode 'racer 'flycheck-rust)
 
-(install 'rust-mode 'racer flycheck-rust)
+(install 'rust-mode 'racer 'flycheck-rust)
 
 (require 'modular-company)
 (require 'modular-flycheck)
