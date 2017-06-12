@@ -48,17 +48,8 @@
    (mu4e-get-mail-command "mbsync -q sodosopa.io")))
 
 (contextual-add-profile "work" ()
-  ((user-mail-address "alex@lshift.de")
-   (mu4e-base-folder "/lshift.de")
-   (mu4e-sent-folder "/lshift.de/[Gmail].Sent Mail")
-   (mu4e-drafts-folder "/lshift.de/[Gmail].Drafts")
-   (mu4e-trash-folder "/lshift.de/[Gmail].Trash")
-   (message-signature-file "~/.signature.lshift")
-   (message-sendmail-extra-arguments '("-a" "lshift.de"))
-   (mu4e-bookmarks '(("NOT flag:trashed AND maildir:/lshift.de/Inbox AND NOT list:" "Inbox: Non-List" 97)
-                     ("flag:unread AND maildir:/lshift.de/Inbox" "Inbox: Unread" 117)
-                     ("NOT flag:trashed AND maildir:/lshift.de/Inbox AND list:team.lshift.de" "Inbox: Team List" 116)))
-   (mu4e-get-mail-command "mbsync -q lshift.de")))
+  ((user-mail-address "alexander.kahl@oliverwyman.com")
+   (message-signature-file "~/.signature.ow")))
 
 (setq work-computers '("nietzsche.in.labshift.io" "adorno.labshift.io"))
 
