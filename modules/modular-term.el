@@ -79,10 +79,11 @@
       (setq default-directory (concatenate 'string term-ansi-at-dir "/"))))
   message)
 
-(defun term-clear-modified ()
-  (set-buffer-modified-p nil))
+(defun term-clear-modified (buffer)
+  (with-current-buffer buffer
+    (set-buffer-modified-p nil)))
 
-(advice-add #'term-emulate-terminal :after #'(lambda (&rest args) (term-clear-modified)))
+(advice-add #'term-emulate-terminal :after #'(lambda (proc str) (term-clear-modified (process-buffer proc))))
 
 (setq term-bind-key-alist
       (list (cons "C-c C-c" 'term-interrupt-subjob)
