@@ -51,7 +51,7 @@
   ((user-mail-address "alexander.kahl@oliverwyman.com")
    (message-signature-file "~/.signature.ow")))
 
-(setq work-computers '("nietzsche.in.labshift.io" "adorno.labshift.io"))
+(setq work-computers '("horkheimer.in.labshift.io" "adorno.labshift.io"))
 
 (contextual-set-initial-profile
  (if (member system-name work-computers) "work" "private"))
