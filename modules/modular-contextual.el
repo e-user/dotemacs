@@ -60,7 +60,7 @@
                      ("NOT flag:trashed AND maildir:/lshift.de/Inbox AND list:team.lshift.de" "Inbox: Team List" 116)))
    (mu4e-get-mail-command "mbsync -q lshift.de")))
 
-(setq work-computers '("nietzsche.in.labshift.io" "adorno.labshift.io"))
+(setq work-computers '("horkheimer.in.labshift.io" "adorno.labshift.io"))
 
 (contextual-set-initial-profile
  (if (member system-name work-computers) "work" "private"))
