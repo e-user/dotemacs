@@ -56,6 +56,8 @@
 (global-set-key (kbd "C-h C-l") 'helm-locate-library)
 (define-key helm-map (kbd "C-.") 'helm-execute-persistent-action)
 (define-key helm-read-file-map (kbd "C-.") 'helm-execute-persistent-action)
+(define-key projectile-command-map (kbd "b") #'helm-projectile-switch-to-buffer)
+
 
 (eval-after-load 'projectile
   '(define-key projectile-command-map (kbd "s g") #'helm-projectile-grep))

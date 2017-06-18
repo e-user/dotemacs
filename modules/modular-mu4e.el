@@ -13,11 +13,14 @@
   (add-to-list 'load-path dir))
 
 (when (require 'mu4e nil t)
+  (require 'modular-contextual)
   (install 'mu4e-alert)
   (require 'mu4e-alert)
   (mu4e-alert-set-default-style 'notifications)
   (mu4e-alert-enable-notifications)
   (mu4e-alert-enable-mode-line-display)
+
+  (defvar mu4e-base-folder nil)
 
   (require 'mu4e-contrib)
   
@@ -68,8 +71,6 @@
 
   (defun mu4e-tags (maildir)
     (delete-dups (process-lines mu4e-mu-binary "find" (format "m:%s" maildir) "-f" "x")))
-
-  (defvar mu4e-base-folder nil)
 
   (defun mu4e~headers-jump-to-tag (tag)
     (interactive
