@@ -2,7 +2,7 @@
 
 ;; Copyright © 2014-2016  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org>
+;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -46,7 +46,8 @@
       cider-repl-history-file (expand-file-name "~/.cider-history")
       cider-prompt-for-symbol nil
       cider-auto-test-mode 1
-      cider-test-show-report-on-success t)
+      cider-test-show-report-on-success t
+      cider-repl-display-help-banner nil)
 
 (define-key cider-mode-map (kbd "C-.") 'completion-at-point)
 (define-key cider-repl-mode-map (kbd "C-.") 'completion-at-point)

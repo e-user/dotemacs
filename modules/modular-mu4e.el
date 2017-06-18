@@ -2,7 +2,7 @@
 
 ;; Copyright © 2015, 2016  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org>
+;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: mu4e, mail
 
 ;;; Code:
@@ -29,7 +29,8 @@
                                    (interactive)
                                    (mu4e)))
 
-  (setq mu4e-update-interval 600
+  (setq mu4e-mu-binary (executable-find "mu")
+        mu4e-update-interval 600
         mu4e-show-images t
         mu4e-use-fancy-chars t
         mu4e-confirm-quit nil

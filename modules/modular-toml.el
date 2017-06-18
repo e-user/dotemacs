@@ -1,6 +1,6 @@
-;;; modular-autoinsert.el --- Modular autoinsert module  -*- lexical-binding: t; -*-
+;;; modular-toml.el --- Modular TOML module          -*- lexical-binding: t; -*-
 
-;; Copyright © 2016  Alexander Kahl
+;; Copyright (C) 2017  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -20,14 +20,17 @@
 
 ;;; Commentary:
 
-;; Load autoinsert
+;; Load TOML mode
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-autoinsert)
+(add-to-list 'modular-features 'modular-toml)
 
-(auto-insert-mode)
-(setq auto-insert-query t)
+;;;###autoload
+(pin "melpa-stable" 'toml-mode)
 
-(provide 'modular-autoinsert)
-;;; modular-autoinsert.el ends here
+(install 'toml-mode)
+(require 'toml-mode)
+
+(provide 'modular-toml)
+;;; modular-toml.el ends here

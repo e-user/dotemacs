@@ -1,6 +1,6 @@
-;;; modular-autoinsert.el --- Modular autoinsert module  -*- lexical-binding: t; -*-
+;;; modular-salt.el --- Modular Salt module          -*- lexical-binding: t; -*-
 
-;; Copyright © 2016  Alexander Kahl
+;; Copyright (C) 2017  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -20,14 +20,17 @@
 
 ;;; Commentary:
 
-;; Load autoinsert
+;; Load Salt
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-autoinsert)
+(add-to-list 'modular-features 'modular-clojure)
 
-(auto-insert-mode)
-(setq auto-insert-query t)
+;;;###autoload
+(pin "melpa-stable" 'salt-mode)
 
-(provide 'modular-autoinsert)
-;;; modular-autoinsert.el ends here
+(install 'salt-mode)
+(require 'salt-mode)
+
+(provide 'modular-salt)
+;;; modular-salt.el ends here

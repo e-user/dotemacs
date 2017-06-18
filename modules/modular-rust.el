@@ -1,8 +1,8 @@
 ;;; modular-rust.el --- Modular Rust module          -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016  Alexander Kahl
+;; Copyright (C) 2016-2017  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org>
+;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -26,13 +26,20 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-rust)
 
-(install 'rust-mode 'racer)
+;;;###autoload
+(pin "melpa-stable" 'rust-mode 'racer)
+
+(install 'rust-mode 'racer 'flycheck-rust)
+
+(require 'modular-company)
+(require 'modular-flycheck)
 
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
-(setq racer-cmd "~/.cargo/bin/racer")
-(setq racer-rust-src-path "~/Projects/rust-master/src/")
+(setq racer-rust-src-path "~/Projects/rust/src/")
 
 (provide 'modular-rust)
 ;;; modular-rust.el ends here

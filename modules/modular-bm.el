@@ -2,7 +2,7 @@
 
 ;; Copyright © 2014  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org>
+;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: emacs, bm, bookmarks
 
 ;;; Code:

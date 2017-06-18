@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2016  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org>
+;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -48,20 +48,13 @@
    (mu4e-get-mail-command "mbsync -q sodosopa.io")))
 
 (contextual-add-profile "work" ()
-  ((user-mail-address "alex@lshift.de")
-   (mu4e-base-folder "/lshift.de")
-   (mu4e-sent-folder "/lshift.de/[Gmail].Sent Mail")
-   (mu4e-drafts-folder "/lshift.de/[Gmail].Drafts")
-   (mu4e-trash-folder "/lshift.de/[Gmail].Trash")
-   (message-signature-file "~/.signature.lshift")
-   (message-sendmail-extra-arguments '("-a" "lshift.de"))
-   (mu4e-bookmarks '(("NOT flag:trashed AND maildir:/lshift.de/Inbox AND NOT list:" "Inbox: Non-List" 97)
-                     ("flag:unread AND maildir:/lshift.de/Inbox" "Inbox: Unread" 117)
-                     ("NOT flag:trashed AND maildir:/lshift.de/Inbox AND list:team.lshift.de" "Inbox: Team List" 116)))
-   (mu4e-get-mail-command "mbsync -q lshift.de")))
+  ((user-mail-address "alexander.kahl@oliverwyman.com")
+   (message-signature-file "~/.signature.ow")))
+
+(setq work-computers '("horkheimer.in.labshift.io" "adorno.labshift.io"))
 
 (contextual-set-initial-profile
- (if (member system-name '("nietzsche.in.lshift.de" "adorno.in.lshift.de")) "work" "private"))
+ (if (member system-name work-computers) "work" "private"))
 
 (contextual-global-mode)
 

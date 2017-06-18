@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2016  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org>
+;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -58,6 +58,16 @@
     (find-file (concat "/sudo:root@localhost:" file))
     (goto-line line)
     (move-to-column column)))
+
+(defun dired-open-file ()
+  "In dired, open the file named on this line."
+  (interactive)
+  (let* ((file (dired-get-filename nil t)))
+    (message "Opening %s..." file)
+    (call-process "xdg-open" nil 0 nil file)
+    (message "Opening %s done" file)))
+
+(define-key dired-mode-map (kbd "<C-return>") #'dired-open-file)
 
 (setq-default fill-column 80)
 

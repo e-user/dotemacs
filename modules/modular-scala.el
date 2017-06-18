@@ -2,7 +2,7 @@
 
 ;; Copyright © 2015-2016  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org>
+;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -26,11 +26,14 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-scala)
 
-(install 'scala-mode 'ensime)
+;;;###autoload
+(pin "melpa-stable" 'ensime 'scala-mode 'sbt-mode)
+
+(install 'scala-mode 'ensime 'sbt-mode)
 (require 'scala-mode)
 (require 'ensime)
 
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 (setq ensime-auto-generate-config t
       ensime-sbt-command "sbt")

@@ -2,7 +2,7 @@
 
 ;; Copyright © 2014-2015  Alexander Kahl
 
-;; Author: Alexander Kahl <e-user@fsfe.org>
+;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: emacs, auto-complete, ac, company
 
 ;;; Code:
@@ -17,7 +17,8 @@
 (global-company-mode)
 (global-set-key (kbd "C-.") 'company-complete)
 (setq company-tooltip-flip-when-above t
-      company-idle-delay nil)
+      company-idle-delay nil
+      company-tooltip-align-annotations t)
 
 (provide 'modular-company)
 ;;; modular-company.el ends here
