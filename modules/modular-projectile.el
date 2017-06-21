@@ -9,7 +9,10 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-projectile)
 
-(install 'projectile)
+;;;###autoload
+(pin "melpa-stable" 'projectile 'ag)
+
+(install 'projectile 'ag)
 (require 'projectile)
 
 (projectile-global-mode)
