@@ -71,5 +71,8 @@
 
 (setq-default fill-column 80)
 
+; Tramp
+(setq tramp-use-ssh-controlmaster-options t)
+
 (provide 'modular-emacs)
 ;;; modular-emacs.el ends here
