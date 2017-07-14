@@ -47,7 +47,8 @@
       cider-prompt-for-symbol nil
       cider-auto-test-mode 1
       cider-test-show-report-on-success t
-      cider-repl-display-help-banner nil)
+      cider-repl-display-help-banner nil
+      cider-lein-command "~/bin/lein")
 
 (define-key cider-mode-map (kbd "C-.") 'completion-at-point)
 (define-key cider-repl-mode-map (kbd "C-.") 'completion-at-point)
