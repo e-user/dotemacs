@@ -108,7 +108,8 @@
 (global-set-key (kbd "<C-prior>") 'multi-term-prev)
 (setq multi-term-buffer-name "term"
       multi-term-program "zsh"
-      multi-term-program-switches "--login")
+      multi-term-program-switches "--login"
+      multi-term-try-create nil)
 
 (provide 'modular-term)
 ;;; modular-term.el ends here
