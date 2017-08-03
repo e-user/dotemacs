@@ -51,10 +51,10 @@
   ((user-mail-address "alexander.kahl@oliverwyman.com")
    (message-signature-file "~/.signature.ow")))
 
-(setq work-computers '("horkheimer.in.labshift.io" "adorno.labshift.io"))
+(setq work-computers '("horkheimer.in.labshift.io" "adorno.in.labshift.io"))
 
 (contextual-set-initial-profile
- (if (member system-name work-computers) "work" "private"))
+ (if (member (system-name) work-computers) "work" "private"))
 
 (contextual-global-mode)
 
@@ -71,6 +71,11 @@
 
 (contextual-define-context-loader font-profile-loader
   font-profiles (kbd "f"))
+
+(contextual-activate-profile 'font-profiles
+  (cond
+   ((member (system-name) work-computers) "x-large")
+   (t "normal")))
 
 (provide 'modular-contextual)
 ;;; modular-contextual.el ends here
