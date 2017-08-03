@@ -59,16 +59,6 @@
     (goto-line line)
     (move-to-column column)))
 
-(defun dired-open-file ()
-  "In dired, open the file named on this line."
-  (interactive)
-  (let* ((file (dired-get-filename nil t)))
-    (message "Opening %s..." file)
-    (call-process "xdg-open" nil 0 nil file)
-    (message "Opening %s done" file)))
-
-(define-key dired-mode-map (kbd "<C-return>") #'dired-open-file)
-
 (setq-default fill-column 80)
 
 ; Tramp

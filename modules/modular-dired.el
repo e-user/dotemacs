@@ -14,8 +14,15 @@
 (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 (define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
 
-(when (file-accessible-directory-p "~/.emacs.d/dired-launch")
-  (load (expand-file-name "~/.emacs.d/dired-launch/dired-launch.el")))
+(defun dired-open-file ()
+  "In dired, open the file named on this line."
+  (interactive)
+  (let* ((file (dired-get-filename nil t)))
+    (message "Opening %s..." file)
+    (call-process "xdg-open" nil 0 nil file)
+    (message "Opening %s done" file)))
+
+(define-key dired-mode-map (kbd "<C-return>") #'dired-open-file)
 
 (require 'dired-extension nil t)
 
