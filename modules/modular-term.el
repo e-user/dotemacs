@@ -101,7 +101,8 @@
             (cons "M-p" 'term-send-raw-meta)
             (cons "M-y" 'term-send-raw-meta)
             (cons "C-y" 'term-send-raw)
-            (cons "<C-escape>" 'term-send-esc)))
+            (cons "<C-escape>" 'term-send-esc)
+            (cons "C-v" 'scroll-up-command)))
  
 (global-set-key (kbd "<f5>") 'multi-term+)
 (global-set-key (kbd "<C-next>") 'multi-term-next)
