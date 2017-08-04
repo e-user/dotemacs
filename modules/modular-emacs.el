@@ -36,9 +36,6 @@
 (tool-bar-mode 0)
 (column-number-mode)
 
-(set-frame-font "Inconsolata-9")
-(setq default-frame-alist '((font . "Inconsolata-9")))
-
 (calendar-set-date-style 'iso)
 (setq calendar-week-start-day 1)
 
