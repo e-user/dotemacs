@@ -26,9 +26,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-toml)
 
-;;;###autoload
-(pin "melpa-stable" 'toml-mode)
-
 (install 'toml-mode)
 (require 'toml-mode)
 
