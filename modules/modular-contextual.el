@@ -74,7 +74,8 @@
 
 (contextual-activate-profile 'font-profiles
   (cond
-   ((member (system-name) work-computers) "x-large")
+   ((string-equal (system-name) "adorno.in.labshift.io") "x-large")
+   ((string-equal (system-name) "horkheimer.in.labshift.io") "normal")
    (t "normal")))
 
 (provide 'modular-contextual)
