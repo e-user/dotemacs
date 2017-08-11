@@ -1,6 +1,6 @@
 ;;; modular-contextual.el --- Modular Contextual module  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016  Alexander Kahl
+;; Copyright (C) 2016-2017  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -73,10 +73,12 @@
   font-profiles (kbd "f"))
 
 (contextual-activate-profile 'font-profiles
-  (cond
-   ((string-equal (system-name) "adorno.in.labshift.io") "x-large")
-   ((string-equal (system-name) "horkheimer.in.labshift.io") "normal")
-   (t "normal")))
+  (let ((host (system-name)))
+    (cond
+     ((string-equal host "adorno.in.labshift.io") "x-large")
+     ((string-equal host "horkheimer.in.labshift.io") "normal")
+     ((string-equal host "pazuzu.in.sodosopa.io") "large")
+     (t "normal"))))
 
 (provide 'modular-contextual)
 ;;; modular-contextual.el ends here
