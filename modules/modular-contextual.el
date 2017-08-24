@@ -76,7 +76,7 @@
   (let ((host (system-name)))
     (cond
      ((string-equal host "adorno.in.labshift.io") "x-large")
-     ((string-equal host "yog-sothoth.in.sodosopa.io") "x-large")
+     ((string-equal host "yog-sothoth.in.labshift.io") "x-large")
      ((string-equal host "horkheimer.in.labshift.io") "normal")
      ((string-equal host "pazuzu.in.sodosopa.io") "large")
      (t "normal"))))
