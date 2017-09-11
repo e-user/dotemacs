@@ -47,12 +47,12 @@
 (defun open-as-root ()
   "Open the current buffer as root"
   (interactive)
-  (let ((file (buffer-file-name))
+  (let ((file (or (buffer-file-name) default-directory))
         (buffer (current-buffer))
         (line (count-lines 1 (point)))
         (column (current-column)))
-    (kill-buffer buffer)
     (find-file (concat "/sudo:root@localhost:" file))
+    (kill-buffer buffer)
     (goto-line line)
     (move-to-column column)))
 
