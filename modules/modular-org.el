@@ -37,6 +37,10 @@
 (define-key org-mode-map (kbd "<S-left>") nil)
 (define-key org-mode-map (kbd "<S-right>") nil)
 
+(define-key org-mode-map (kbd "M-}") 'org-forward-paragraph)
+(define-key org-mode-map (kbd "M-{") 'org-backward-paragraph)
+
+
 ;; (define-key org-mode-map "\C-\M-j" 'org-insert-todo-heading)
 ;; (define-key org-mode-map "\C-j" 'org-insert-heading)
 (setq org-agenda-files '("~/Documents/org/" "~/Documents/passwords.gpg" "~/Documents/nokia-secrets.gpg")
