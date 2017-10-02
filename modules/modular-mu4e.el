@@ -9,6 +9,8 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-mu4e)
 
+(defvar mu4e-base-folder nil)
+
 (when-let ((dir (first (file-expand-wildcards "/nix/store/*mu*/share/emacs/site-lisp/mu4e"))))
   (add-to-list 'load-path dir))
 
@@ -19,8 +21,6 @@
   (mu4e-alert-set-default-style 'notifications)
   (mu4e-alert-enable-notifications)
   (mu4e-alert-enable-mode-line-display)
-
-  (defvar mu4e-base-folder nil)
 
   (require 'mu4e-contrib)
   

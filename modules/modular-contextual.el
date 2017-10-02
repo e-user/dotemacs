@@ -30,6 +30,7 @@
 (pin "melpa-stable" 'contextual)
 (install 'contextual)
 (require 'contextual)
+(require 'modular-mu4e)
 
 (contextual-add-profile "private" ()
   ((user-mail-address "ak@sodosopa.io")
