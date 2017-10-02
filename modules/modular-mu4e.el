@@ -81,8 +81,8 @@
       (mu4e-mark-handle-when-leaving)
       (mu4e-headers-search (format "maildir:\"%s\" tag:%s" mu4e-base-folder tag))))
   
-  (define-key mu4e-headers-mode-map "x" 'mu4e~headers-jump-to-tag)
-  (define-key mu4e-main-mode-map "x" 'mu4e~headers-jump-to-tag)
+  (define-key mu4e-headers-mode-map "t" 'mu4e~headers-jump-to-tag)
+  (define-key mu4e-main-mode-map "t" 'mu4e~headers-jump-to-tag)
 
   (define-key mu4e-view-mode-map (kbd "^") #'mu4e-find-references)
   (add-hook 'mu4e-view-mode-hook #'(lambda ()
