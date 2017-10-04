@@ -58,7 +58,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-contextual" "modular-contextual.el"
-;;;;;;  (22942 45315 602666 475000))
+;;;;;;  (22994 17177 528388 798000))
 ;;; Generated autoloads from modular-contextual.el
 
 (add-to-list 'modular-features 'modular-contextual)
@@ -161,6 +161,16 @@
 
 ;;;***
 
+;;;### (autoloads nil "modular-floobits" "modular-floobits.el" (22996
+;;;;;;  60147 995094 558000))
+;;; Generated autoloads from modular-floobits.el
+
+(add-to-list 'modular-features 'modular-floobits)
+
+(pin "melpa-stable" 'floobits)
+
+;;;***
+
 ;;;### (autoloads nil "modular-flycheck" "modular-flycheck.el" (22941
 ;;;;;;  35938 47058 507000))
 ;;; Generated autoloads from modular-flycheck.el
@@ -249,8 +259,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (22941 35938
-;;;;;;  47058 507000))
+;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (22996 43403
+;;;;;;  67793 361000))
 ;;; Generated autoloads from modular-mu4e.el
 
 (add-to-list 'modular-features 'modular-mu4e)
@@ -275,8 +285,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-org" "modular-org.el" (22941 35938
-;;;;;;  47058 507000))
+;;;### (autoloads nil "modular-org" "modular-org.el" (22975 51885
+;;;;;;  911753 313000))
 ;;; Generated autoloads from modular-org.el
 
 (add-to-list 'modular-features 'modular-org)
@@ -301,8 +311,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-python" "modular-python.el" (22941
-;;;;;;  35938 48058 506000))
+;;;### (autoloads nil "modular-python" "modular-python.el" (22993
+;;;;;;  8351 8502 273000))
 ;;; Generated autoloads from modular-python.el
 
 (add-to-list 'modular-features 'modular-python)
