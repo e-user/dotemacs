@@ -15,7 +15,6 @@
   (add-to-list 'load-path dir))
 
 (when (require 'mu4e nil t)
-  (require 'modular-contextual)
   (install 'mu4e-alert)
   (require 'mu4e-alert)
   (mu4e-alert-set-default-style 'notifications)
