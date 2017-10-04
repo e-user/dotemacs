@@ -31,7 +31,7 @@
 
   (setq mu4e-mu-binary (executable-find "mu")
         mu4e-update-interval 600
-        mu4e-show-images t
+        mu4e-view-show-images t
         mu4e-use-fancy-chars t
         mu4e-confirm-quit nil
         mu4e-update-interval nil
