@@ -32,6 +32,16 @@
 (require 'contextual)
 (require 'modular-mu4e)
 
+(defun basic-bookmarks (maildir)
+  (map 'list #'(lambda (bookmark name key)
+                 (list (format bookmark maildir) name key))
+       '("maildir:/%s AND date:7d..now AND NOT flag:trashed"
+         "maildir:/%s AND (flag:unread OR flag:flagged) AND NOT flag:trashed"
+         "maildir:/%s AND date:today..now"
+         "maildir:/%s AND flag:flagged")
+       '("One week" "Unread messages" "Today's mail" "All flagged")
+       '(105 119 116 102)))
+
 (contextual-add-profile "private" ()
   ((user-mail-address "ak@sodosopa.io")
    (mu4e-base-folder "/sodosopa.io")
@@ -41,18 +51,23 @@
    (mu4e-refile-folder "/sodosopa.io/Archives")
    (message-signature-file "~/.signature.private")
    (message-sendmail-extra-arguments '("-a" "sodosopa.io"))
-   (mu4e-bookmarks '(("date:7d..now AND NOT flag:trashed AND maildir:/sodosopa.io" "Inbox: One week" 105)
-                     ("(flag:unread OR flag:flagged) AND NOT flag:trashed AND maildir:/sodosopa.io" "Inbox: New" 119)
-                     ("(flag:unread OR flag:flagged) AND NOT flag:trashed" "All: New" 101)
-                     ("date:today..now" "Today's mail" 116)
-                     ("flag:flagged" "All: Flagged" 102)))
+   (mu4e-bookmarks (basic-bookmarks "sodosopa.io"))
    (mu4e-get-mail-command "mbsync -q sodosopa.io")))
 
 (contextual-add-profile "work" ()
   ((user-mail-address "alexander.kahl@oliverwyman.com")
-   (message-signature-file "~/.signature.ow")))
+   (mu4e-base-folder "/oliverwyman.com")
+   (mu4e-sent-folder "/oliverwyman.com/Sent")
+   (mu4e-drafts-folder "/oliverwyman.com/Drafts")
+   (mu4e-trash-folder "/oliverwyman.com/Trash")
+   (mu4e-refile-folder "/oliverwyman.com/Archive")
+   (message-sendmail-extra-arguments '("-a" "oliverwyman.com"))
+   (message-signature-file "~/.signature.ow")
+   (mu4e-bookmarks (basic-bookmarks "oliverwyman.com"))
+  ;(mu4e-get-mail-command "mbsync -q oliverwyman.com") too expensive
+   (mu4e-get-mail-command "true")))
 
-(setq work-computers '("horkheimer.in.labshift.io" "adorno.in.labshift.io"))
+(setq work-computers '("yog-sothoth.in.labshift.io"))
 
 (contextual-set-initial-profile
  (if (member (system-name) work-computers) "work" "private"))
