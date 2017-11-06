@@ -197,6 +197,16 @@
 
 ;;;***
 
+;;;### (autoloads nil "modular-groovy" "modular-groovy.el" (23034
+;;;;;;  61156 934894 886000))
+;;; Generated autoloads from modular-groovy.el
+
+(add-to-list 'modular-features 'modular-groovy)
+
+(pin "melpa-stable" 'groovy-mode)
+
+;;;***
+
 ;;;### (autoloads nil "modular-guru" "modular-guru.el" (22941 35938
 ;;;;;;  47058 507000))
 ;;; Generated autoloads from modular-guru.el
