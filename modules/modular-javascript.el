@@ -26,6 +26,9 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-javascript)
 
+;;;###autoload
+(pin "melpa-stable" 'floobits)
+
 (install 'js2-mode)
 (require 'js2-mode)
 
@@ -37,7 +40,8 @@
               js2-cleanup-whitespace t
               js2-enter-indents-newline t
               js2-indent-on-enter-key nil
-              js2-mirror-mode t)
+              js2-mirror-mode t
+              js2-strict-missing-semi-warning nil)
 
 (provide 'modular-javascript)
 ;;; modular-javascript.el ends here
