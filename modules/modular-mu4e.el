@@ -9,6 +9,7 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-mu4e)
 
+;;;###autoload
 (defvar mu4e-base-folder nil)
 
 (when-let ((dir (first (file-expand-wildcards "/nix/store/*mu*/share/emacs/site-lisp/mu4e"))))

@@ -58,7 +58,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-contextual" "modular-contextual.el"
-;;;;;;  (22994 17177 528388 798000))
+;;;;;;  (23016 46364 572094 207000))
 ;;; Generated autoloads from modular-contextual.el
 
 (add-to-list 'modular-features 'modular-contextual)
@@ -269,11 +269,13 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (22996 43403
-;;;;;;  67793 361000))
+;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (23016 43692
+;;;;;;  214250 165000))
 ;;; Generated autoloads from modular-mu4e.el
 
 (add-to-list 'modular-features 'modular-mu4e)
+
+(defvar mu4e-base-folder nil)
 
 ;;;***
 

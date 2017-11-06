@@ -30,7 +30,6 @@
 (pin "melpa-stable" 'contextual)
 (install 'contextual)
 (require 'contextual)
-(require 'modular-mu4e)
 
 (defun basic-bookmarks (maildir)
   (map 'list #'(lambda (bookmark name key)
@@ -64,7 +63,6 @@
    (message-sendmail-extra-arguments '("-a" "oliverwyman.com"))
    (message-signature-file "~/.signature.ow")
    (mu4e-bookmarks (basic-bookmarks "oliverwyman.com"))
-  ;(mu4e-get-mail-command "mbsync -q oliverwyman.com") too expensive
    (mu4e-get-mail-command "true")))
 
 (setq work-computers '("yog-sothoth.in.labshift.io"))
