@@ -242,10 +242,12 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-javascript" "modular-javascript.el"
-;;;;;;  (22941 35938 47058 507000))
+;;;;;;  (23040 8903 555442 835000))
 ;;; Generated autoloads from modular-javascript.el
 
 (add-to-list 'modular-features 'modular-javascript)
+
+(pin "melpa-stable" 'floobits)
 
 ;;;***
 
@@ -297,8 +299,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-org" "modular-org.el" (22975 51885
-;;;;;;  911753 313000))
+;;;### (autoloads nil "modular-org" "modular-org.el" (23044 22705
+;;;;;;  750963 557000))
 ;;; Generated autoloads from modular-org.el
 
 (add-to-list 'modular-features 'modular-org)
@@ -394,6 +396,16 @@
 ;;; Generated autoloads from modular-term.el
 
 (add-to-list 'modular-features 'modular-term)
+
+;;;***
+
+;;;### (autoloads nil "modular-terraform" "modular-terraform.el"
+;;;;;;  (23084 10819 934481 107000))
+;;; Generated autoloads from modular-terraform.el
+
+(add-to-list 'modular-features 'modular-terraform)
+
+(pin "melpa-stable" 'terraform-mode 'company-terraform)
 
 ;;;***
 

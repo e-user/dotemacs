@@ -3,8 +3,11 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "modular" "modular.el" (22941 35938 46058 508000))
+;;;### (autoloads nil "modular" "modular.el" (23044 22056 842014
+;;;;;;  805000))
 ;;; Generated autoloads from modular.el
+
+(defvar modular-features nil)
 
 (autoload 'modular "modular" "\
 

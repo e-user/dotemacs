@@ -27,12 +27,15 @@
 (add-to-list 'modular-features 'modular-org)
 
 (require 'org)
+(require 'org-capture)
+(require 'org-agenda)
+(require 'org-clock)
 
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cb" 'org-iswitchb)
 (define-key global-map "\C-cg" 'org-clock-goto)
-(define-key global-map "\C-\M-r" 'org-capture)
+(define-key global-map "\C-cc" 'org-capture)
 
 (define-key org-mode-map (kbd "<S-left>") nil)
 (define-key org-mode-map (kbd "<S-right>") nil)
@@ -40,19 +43,21 @@
 (define-key org-mode-map (kbd "M-}") 'org-forward-paragraph)
 (define-key org-mode-map (kbd "M-{") 'org-backward-paragraph)
 
+(defvar org-gtd-file "~/ownCloud/Documents/gtd.org")
+(defvar org-notes-file "~/ownCloud/Documents/notes.org")
 
 ;; (define-key org-mode-map "\C-\M-j" 'org-insert-todo-heading)
 ;; (define-key org-mode-map "\C-j" 'org-insert-heading)
-(setq org-agenda-files '("~/Documents/org/" "~/Documents/passwords.gpg" "~/Documents/nokia-secrets.gpg")
-      org-log-done t
+(setq org-agenda-files `(,org-gtd-file)
+      org-log-done 'time
       org-hide-leading-stars t
       org-use-fast-todo-selection t
       org-treat-S-cursor-todo-selection-as-state-change nil
-      org-directory "~/Documents/org/"
-      org-default-notes-file (concat org-directory "/notes.org")
-      org-capture-templates '(("t" "Todo" entry (file+headline "~/Documents/org/gtd.org" "Tasks")
+      org-directory "~/Documents/"
+      org-default-notes-file org-notes-file
+      org-capture-templates `(("t" "Todo" entry (file+headline ,org-gtd-file "Tasks")
                                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-                              ("n" "Note" entry (file+headline "~/Documents/org/gtd.org" "Notes")
+                              ("n" "Note" entry (file+headline ,org-notes-file "Notes")
                                "* %? :NOTE:\n%U\n%a\n"))
       org-stuck-projects '("WORK/-DONE|PRIVATE/-DONE" ("TODO" "NEXT") nil "")
       org-todo-state-tags-triggers '(("CANCELLED" ("CANCELLED" . t))
@@ -82,7 +87,11 @@
                                      (org-agenda-todo-ignore-with-date t)
                                      (org-tags-match-list-sublevels t)
                                      (org-agenda-sorting-strategy
-                                      '(todo-state-down effort-up category-keep))))))
+                                      '(todo-state-down effort-up category-keep)))))
+      org-clock-persist t)
+
+(org-clock-persistence-insinuate)
+
 ;; #+SEQ_TODO: TODO(t) HOLD(h) NEXT(n) WAITING(w) DELEGATED(!) | DONE(d) CANCELLED(c)
 ;; #+TAGS: { PRIVATE(p) WORK(w) }
 
