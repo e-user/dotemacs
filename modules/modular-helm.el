@@ -57,6 +57,7 @@
 (define-key helm-map (kbd "C-.") 'helm-execute-persistent-action)
 (define-key helm-read-file-map (kbd "C-.") 'helm-execute-persistent-action)
 (define-key projectile-command-map (kbd "b") #'helm-projectile-switch-to-buffer)
+(define-key projectile-command-map (kbd "p") #'helm-projectile-switch-project)
 
 
 (eval-after-load 'projectile
