@@ -15,6 +15,7 @@
   "Standard modular features to load"
   :group 'modular)
 
+;;;###autoload
 (defvar modular-features nil)
 (defvar modular-dir (file-name-directory load-file-name))
 

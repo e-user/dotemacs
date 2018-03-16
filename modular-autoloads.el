@@ -7,6 +7,8 @@
 ;;;;;;  803000))
 ;;; Generated autoloads from modular.el
 
+(defvar modular-features nil)
+
 (autoload 'modular "modular" "\
 
 

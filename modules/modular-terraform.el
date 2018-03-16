@@ -1,6 +1,6 @@
 ;;; modular-terraform.el --- Modular Terraform module  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2018  Alexander Kahl
+;; Copyright (C) 2017  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
