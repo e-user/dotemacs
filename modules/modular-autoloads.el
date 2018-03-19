@@ -299,13 +299,8 @@
 
 ;;;***
 
-<<<<<<< HEAD
 ;;;### (autoloads nil "modular-org" "modular-org.el" (23210 22788
 ;;;;;;  495970 40000))
-=======
-;;;### (autoloads nil "modular-org" "modular-org.el" (23044 22705
-;;;;;;  750963 557000))
->>>>>>> df0e36feda69a8ecb30b73b974660162a8a9cdd7
 ;;; Generated autoloads from modular-org.el
 
 (add-to-list 'modular-features 'modular-org)
@@ -405,11 +400,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-terraform" "modular-terraform.el"
-<<<<<<< HEAD
 ;;;;;;  (23211 32668 482040 835000))
-=======
-;;;;;;  (23084 10819 934481 107000))
->>>>>>> df0e36feda69a8ecb30b73b974660162a8a9cdd7
 ;;; Generated autoloads from modular-terraform.el
 
 (add-to-list 'modular-features 'modular-terraform)
@@ -418,13 +409,8 @@
 
 ;;;***
 
-<<<<<<< HEAD
 ;;;### (autoloads nil "modular-theme" "modular-theme.el" (23059 54776
 ;;;;;;  407565 671000))
-=======
-;;;### (autoloads nil "modular-theme" "modular-theme.el" (22941 35938
-;;;;;;  48058 506000))
->>>>>>> df0e36feda69a8ecb30b73b974660162a8a9cdd7
 ;;; Generated autoloads from modular-theme.el
 
 (add-to-list 'modular-features 'modular-theme)
