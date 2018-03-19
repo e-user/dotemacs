@@ -54,7 +54,8 @@
         mml-secure-openpgp-encrypt-to-self t
         mml-secure-openpgp-sign-with-sender t
         shr-color-visible-luminance-min 80
-        mu4e-completing-read-function 'completing-read)
+        mu4e-completing-read-function 'completing-read
+        message-signature-file "~/.signature")
 
   (setenv "MU_GPG_PATH" (executable-find "gpg2"))
 

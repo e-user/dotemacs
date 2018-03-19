@@ -48,27 +48,21 @@
    (mu4e-drafts-folder "/sodosopa.io/Drafts")
    (mu4e-trash-folder "/sodosopa.io/Trash")
    (mu4e-refile-folder "/sodosopa.io/Archives")
-   (message-signature-file "~/.signature.private")
    (message-sendmail-extra-arguments '("-a" "sodosopa.io"))
    (mu4e-bookmarks (basic-bookmarks "sodosopa.io"))
    (mu4e-get-mail-command "mbsync -q sodosopa.io")))
 
-(contextual-add-profile "work" ()
-  ((user-mail-address "alexander.kahl@oliverwyman.com")
-   (mu4e-base-folder "/oliverwyman.com")
-   (mu4e-sent-folder "/oliverwyman.com/Sent")
-   (mu4e-drafts-folder "/oliverwyman.com/Drafts")
-   (mu4e-trash-folder "/oliverwyman.com/Trash")
-   (mu4e-refile-folder "/oliverwyman.com/Archive")
-   (message-sendmail-extra-arguments '("-a" "oliverwyman.com"))
-   (message-signature-file "~/.signature.ow")
-   (mu4e-bookmarks (basic-bookmarks "oliverwyman.com"))
+(contextual-add-profile "apeunit" ()
+  ((user-mail-address "alexander@apeunit.com")
+   (mu4e-base-folder "/apeunit.com")
+   (mu4e-sent-folder "/apeunit.com/Sent")
+   (mu4e-drafts-folder "/apeunit.com/Drafts")
+   (mu4e-trash-folder "/apeunit.com/Trash")
+   (message-sendmail-extra-arguments '("-a" "apeunit.com"))
+   (mu4e-bookmarks (basic-bookmarks "apeunit.com"))
    (mu4e-get-mail-command "true")))
 
-(setq work-computers '("yog-sothoth.in.labshift.io"))
-
-(contextual-set-initial-profile
- (if (member (system-name) work-computers) "work" "private"))
+(contextual-set-initial-profile "private")
 
 (contextual-global-mode)
 
@@ -86,13 +80,24 @@
 (contextual-define-context-loader font-profile-loader
   font-profiles (kbd "f"))
 
+(install 'uuidgen)
+(require 'uuidgen)
+
+;; (uuidgen nil)
+(defconst uuidgen-ns-xrandr "1f5e2260-7b55-49df-9d5b-0e180939d033")
+
+(defun run-xrandr ()
+  "Run `xrandr' and return its trimmed output."
+  (string-trim (shell-command-to-string "xrandr")))
+
+(defun xrandr-uuid ()
+  "Generate UUIDv5 for xrandr output."
+  (uuidgen-5 uuidgen-ns-xrandr (run-xrandr)))
+
 (contextual-activate-profile 'font-profiles
-  (let ((host (system-name)))
+  (let ((uuid (xrandr-uuid)))
     (cond
-     ((string-equal host "adorno.in.labshift.io") "x-large")
-     ((string-equal host "yog-sothoth.in.labshift.io") "x-large")
-     ((string-equal host "horkheimer.in.labshift.io") "normal")
-     ((string-equal host "pazuzu.in.sodosopa.io") "large")
+     ((string-equal uuid "63379ca1-0b7b-5d94-bdfa-b5d290e3ef4d") "normal")
      (t "normal"))))
 
 (provide 'modular-contextual)
