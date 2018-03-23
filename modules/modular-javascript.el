@@ -1,6 +1,6 @@
 ;;; modular-javascript.el --- Modular JavaScript module  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2015-2016  Alexander Kahl
+;; Copyright (C) 2015-2018  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -27,12 +27,19 @@
 (add-to-list 'modular-features 'modular-javascript)
 
 ;;;###autoload
-(pin "melpa-stable" 'floobits)
+(pin "melpa-stable" 'js2-mode 'mocha 'indium 'tern 'company-tern)
 
-(install 'js2-mode)
+(require 'modular-company)
+
+(install 'js2-mode 'mocha 'indium 'tern 'company-tern)
 (require 'js2-mode)
+(require 'indium)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-hook 'js2-mode-hook #'indium-interaction-mode)
+(add-hook 'js2-mode-hook #'(lambda () (tern-mode t)))
+(add-to-list 'company-backends 'company-tern)
+
 (setq-default js2-skip-preprocessor-directives t
               js2-auto-indent-p t
               js2-basic-offset 2
@@ -42,6 +49,8 @@
               js2-indent-on-enter-key nil
               js2-mirror-mode t
               js2-strict-missing-semi-warning nil)
+
+(setq mocha-command "node_modules/.bin/mocha")
 
 (provide 'modular-javascript)
 ;;; modular-javascript.el ends here
