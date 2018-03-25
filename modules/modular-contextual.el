@@ -93,11 +93,14 @@
 (defun xrandr-uuid ()
   "Generate UUIDv5 for xrandr output."
   (uuidgen-5 uuidgen-ns-xrandr (run-xrandr)))
+(xrandr-uuid)
+
 
 (contextual-activate-profile 'font-profiles
   (let ((uuid (xrandr-uuid)))
     (cond
      ((string-equal uuid "63379ca1-0b7b-5d94-bdfa-b5d290e3ef4d") "normal")
+     ((string-equal uuid "95eb2791-0d71-54d1-8d1f-ec282e798d60") "large")
      (t "normal"))))
 
 (provide 'modular-contextual)
