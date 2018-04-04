@@ -24,7 +24,7 @@
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-clojure)
+(add-to-list 'modular-features 'modular-salt)
 
 ;;;###autoload
 (pin "melpa-stable" 'salt-mode)
