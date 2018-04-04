@@ -66,41 +66,5 @@
 
 (contextual-global-mode)
 
-(defcontext font-profiles "normal")
-
-(contextual-add-profile "small" (font-profiles) ((default-frame-alist '((font . "Inconsolata-6"))))
-  (set-frame-font "Inconsolata-6"))
-(contextual-add-profile "normal" (font-profiles) ((default-frame-alist '((font . "Inconsolata-9"))))
-  (set-frame-font "Inconsolata-9"))
-(contextual-add-profile "large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-12"))))
-  (set-frame-font "Inconsolata-12"))
-(contextual-add-profile "x-large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-14"))))
-  (set-frame-font "Inconsolata-14"))
-
-(contextual-define-context-loader font-profile-loader
-  font-profiles (kbd "f"))
-
-(install 'uuidgen)
-(require 'uuidgen)
-
-;; (uuidgen nil)
-(defconst uuidgen-ns-xrandr "1f5e2260-7b55-49df-9d5b-0e180939d033")
-
-(defun run-xrandr ()
-  "Run `xrandr' and return its trimmed output."
-  (string-trim (shell-command-to-string "xrandr")))
-
-(defun xrandr-uuid ()
-  "Generate UUIDv5 for xrandr output."
-  (uuidgen-5 uuidgen-ns-xrandr (run-xrandr)))
-
-(contextual-activate-profile 'font-profiles
-  (let ((uuid (xrandr-uuid)))
-    (cond
-     ((string-equal uuid "63379ca1-0b7b-5d94-bdfa-b5d290e3ef4d") "normal")
-     ((string-equal uuid "95eb2791-0d71-54d1-8d1f-ec282e798d60") "large")
-     ((string-equal uuid "acdcdf67-fcb7-5756-8a10-af6e9f2ef3a1") "large")
-     (t "normal"))))
-
 (provide 'modular-contextual)
 ;;; modular-contextual.el ends here

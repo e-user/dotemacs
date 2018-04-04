@@ -27,13 +27,14 @@
 (add-to-list 'modular-features 'modular-javascript)
 
 ;;;###autoload
-(pin "melpa-stable" 'js2-mode 'mocha 'indium 'tern 'company-tern)
+(pin "melpa-stable" 'js2-mode 'mocha 'indium 'tern 'company-tern 'vue-mode)
 
 (require 'modular-company)
 
-(install 'js2-mode 'mocha 'indium 'tern 'company-tern)
+(install 'js2-mode 'mocha 'indium 'tern 'company-tern 'vue-mode)
 (require 'js2-mode)
 (require 'indium)
+(require 'vue-mode)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook #'indium-interaction-mode)

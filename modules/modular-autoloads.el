@@ -58,12 +58,20 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-contextual" "modular-contextual.el"
-;;;;;;  (23059 54776 401565 770000))
+;;;;;;  (23230 5883 27942 785000))
 ;;; Generated autoloads from modular-contextual.el
 
 (add-to-list 'modular-features 'modular-contextual)
 
 (pin "melpa-stable" 'contextual)
+
+;;;***
+
+;;;### (autoloads nil "modular-css" "modular-css.el" (23230 38303
+;;;;;;  227500 225000))
+;;; Generated autoloads from modular-css.el
+
+(pin "melpa-stable" 'scss-mode)
 
 ;;;***
 
@@ -223,8 +231,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-helm" "modular-helm.el" (23059 54776
-;;;;;;  404565 720000))
+;;;### (autoloads nil "modular-helm" "modular-helm.el" (23172 30236
+;;;;;;  61164 942000))
 ;;; Generated autoloads from modular-helm.el
 
 (add-to-list 'modular-features 'modular-helm)
@@ -242,12 +250,12 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-javascript" "modular-javascript.el"
-;;;;;;  (23059 54776 404565 720000))
+;;;;;;  (23230 28731 975027 297000))
 ;;; Generated autoloads from modular-javascript.el
 
 (add-to-list 'modular-features 'modular-javascript)
 
-(pin "melpa-stable" 'floobits)
+(pin "melpa-stable" 'js2-mode 'mocha 'indium 'tern 'company-tern 'vue-mode)
 
 ;;;***
 
@@ -271,8 +279,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (23059 54776
-;;;;;;  405565 704000))
+;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (23223 27199
+;;;;;;  892250 4000))
 ;;; Generated autoloads from modular-mu4e.el
 
 (add-to-list 'modular-features 'modular-mu4e)
@@ -448,6 +456,11 @@
 (add-to-list 'modular-features 'modular-yaml)
 
 (pin "melpa-stable" 'yaml-mode)
+
+;;;***
+
+;;;### (autoloads nil nil ("modular-fonts.el") (23230 6149 675451
+;;;;;;  401000))
 
 ;;;***
 
