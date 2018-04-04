@@ -4,15 +4,15 @@
 
 
 ;;;### (autoloads nil "modular-autoinsert" "modular-autoinsert.el"
-;;;;;;  (23059 54776 400565 786000))
+;;;;;;  (23236 41743 103229 879000))
 ;;; Generated autoloads from modular-autoinsert.el
 
 (add-to-list 'modular-features 'modular-autoinsert)
 
 ;;;***
 
-;;;### (autoloads nil "modular-bm" "modular-bm.el" (23059 54776 400565
-;;;;;;  786000))
+;;;### (autoloads nil "modular-bm" "modular-bm.el" (23236 41743 103229
+;;;;;;  879000))
 ;;; Generated autoloads from modular-bm.el
 
 (add-to-list 'modular-features 'modular-bm)
@@ -20,15 +20,15 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-bookmark+" "modular-bookmark+.el"
-;;;;;;  (23059 54776 400565 786000))
+;;;;;;  (23236 41743 103229 879000))
 ;;; Generated autoloads from modular-bookmark+.el
 
 (add-to-list 'modular-features 'modular-bookmark+)
 
 ;;;***
 
-;;;### (autoloads nil "modular-cider" "modular-cider.el" (23059 54776
-;;;;;;  400565 786000))
+;;;### (autoloads nil "modular-cider" "modular-cider.el" (23236 41743
+;;;;;;  103229 879000))
 ;;; Generated autoloads from modular-cider.el
 
 (add-to-list 'modular-features 'modular-cider)
@@ -37,8 +37,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-clojure" "modular-clojure.el" (23059
-;;;;;;  54776 400565 786000))
+;;;### (autoloads nil "modular-clojure" "modular-clojure.el" (23236
+;;;;;;  41743 103229 879000))
 ;;; Generated autoloads from modular-clojure.el
 
 (add-to-list 'modular-features 'modular-clojure)
@@ -47,8 +47,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-company" "modular-company.el" (23059
-;;;;;;  54776 401565 770000))
+;;;### (autoloads nil "modular-company" "modular-company.el" (23236
+;;;;;;  41743 104229 889000))
 ;;; Generated autoloads from modular-company.el
 
 (add-to-list 'modular-features 'modular-company)
@@ -58,7 +58,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-contextual" "modular-contextual.el"
-;;;;;;  (23230 5883 27942 785000))
+;;;;;;  (23236 41743 104229 889000))
 ;;; Generated autoloads from modular-contextual.el
 
 (add-to-list 'modular-features 'modular-contextual)
@@ -67,24 +67,24 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-css" "modular-css.el" (23230 38303
-;;;;;;  227500 225000))
+;;;### (autoloads nil "modular-css" "modular-css.el" (23236 41743
+;;;;;;  104229 889000))
 ;;; Generated autoloads from modular-css.el
 
 (pin "melpa-stable" 'scss-mode)
 
 ;;;***
 
-;;;### (autoloads nil "modular-dired" "modular-dired.el" (23059 54776
-;;;;;;  401565 770000))
+;;;### (autoloads nil "modular-dired" "modular-dired.el" (23236 41743
+;;;;;;  104229 889000))
 ;;; Generated autoloads from modular-dired.el
 
 (add-to-list 'modular-features 'modular-dired)
 
 ;;;***
 
-;;;### (autoloads nil "modular-docker" "modular-docker.el" (23059
-;;;;;;  54776 401565 770000))
+;;;### (autoloads nil "modular-docker" "modular-docker.el" (23236
+;;;;;;  41743 104229 889000))
 ;;; Generated autoloads from modular-docker.el
 
 (add-to-list 'modular-features 'modular-autoinsert)
@@ -93,8 +93,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-eclim" "modular-eclim.el" (23059 54776
-;;;;;;  401565 770000))
+;;;### (autoloads nil "modular-eclim" "modular-eclim.el" (23236 41743
+;;;;;;  105229 900000))
 ;;; Generated autoloads from modular-eclim.el
 
 (add-to-list 'modular-features 'modular-eclim)
@@ -102,7 +102,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-edit-server" "modular-edit-server.el"
-;;;;;;  (23059 54776 401565 770000))
+;;;;;;  (23236 41743 105229 900000))
 ;;; Generated autoloads from modular-edit-server.el
 
 (add-to-list 'modular-features 'modular-edit-server)
@@ -110,7 +110,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-editorconfig" "modular-editorconfig.el"
-;;;;;;  (23059 54776 402565 753000))
+;;;;;;  (23236 41743 105229 900000))
 ;;; Generated autoloads from modular-editorconfig.el
 
 (add-to-list 'modular-features 'modular-editorconfig)
@@ -119,48 +119,48 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-eldoc" "modular-eldoc.el" (23059 54776
-;;;;;;  402565 753000))
+;;;### (autoloads nil "modular-eldoc" "modular-eldoc.el" (23236 41743
+;;;;;;  105229 900000))
 ;;; Generated autoloads from modular-eldoc.el
 
 (add-to-list 'modular-features 'modular-eldoc)
 
 ;;;***
 
-;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (23059 54776
-;;;;;;  402565 753000))
+;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (23236 41743
+;;;;;;  105229 900000))
 ;;; Generated autoloads from modular-emacs.el
 
 (add-to-list 'modular-features 'modular-emacs)
 
 ;;;***
 
-;;;### (autoloads nil "modular-ensime" "modular-ensime.el" (23059
-;;;;;;  54776 402565 753000))
+;;;### (autoloads nil "modular-ensime" "modular-ensime.el" (23236
+;;;;;;  41743 105229 900000))
 ;;; Generated autoloads from modular-ensime.el
 
 (add-to-list 'modular-features 'modular-ensime)
 
 ;;;***
 
-;;;### (autoloads nil "modular-epa" "modular-epa.el" (23059 54776
-;;;;;;  402565 753000))
+;;;### (autoloads nil "modular-epa" "modular-epa.el" (23236 41743
+;;;;;;  106229 910000))
 ;;; Generated autoloads from modular-epa.el
 
 (add-to-list 'modular-features 'modular-epa)
 
 ;;;***
 
-;;;### (autoloads nil "modular-erc" "modular-erc.el" (23059 54776
-;;;;;;  402565 753000))
+;;;### (autoloads nil "modular-erc" "modular-erc.el" (23236 41743
+;;;;;;  106229 910000))
 ;;; Generated autoloads from modular-erc.el
 
 (add-to-list 'modular-features 'modular-erc)
 
 ;;;***
 
-;;;### (autoloads nil "modular-erlang" "modular-erlang.el" (23059
-;;;;;;  54776 402565 753000))
+;;;### (autoloads nil "modular-erlang" "modular-erlang.el" (23236
+;;;;;;  41743 106229 910000))
 ;;; Generated autoloads from modular-erlang.el
 
 (add-to-list 'modular-features 'modular-erlang)
@@ -169,8 +169,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-floobits" "modular-floobits.el" (23059
-;;;;;;  54776 403565 737000))
+;;;### (autoloads nil "modular-floobits" "modular-floobits.el" (23236
+;;;;;;  41743 106229 910000))
 ;;; Generated autoloads from modular-floobits.el
 
 (add-to-list 'modular-features 'modular-floobits)
@@ -179,8 +179,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-flycheck" "modular-flycheck.el" (23059
-;;;;;;  54776 403565 737000))
+;;;### (autoloads nil "modular-flycheck" "modular-flycheck.el" (23236
+;;;;;;  41743 106229 910000))
 ;;; Generated autoloads from modular-flycheck.el
 
 (add-to-list 'modular-features 'modular-flycheck)
@@ -189,8 +189,16 @@
 
 ;;;***
 
+;;;### (autoloads nil "modular-fonts" "modular-fonts.el" (23236 57896
+;;;;;;  196211 790000))
+;;; Generated autoloads from modular-fonts.el
+
+(add-to-list 'modular-features 'modular-fonts)
+
+;;;***
+
 ;;;### (autoloads nil "modular-fullscreen" "modular-fullscreen.el"
-;;;;;;  (23059 54776 403565 737000))
+;;;;;;  (23236 41743 107229 921000))
 ;;; Generated autoloads from modular-fullscreen.el
 
 (add-to-list 'modular-features 'modular-fullscreen)
@@ -198,15 +206,15 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-google-contacts" "modular-google-contacts.el"
-;;;;;;  (23059 54776 403565 737000))
+;;;;;;  (23236 41743 107229 921000))
 ;;; Generated autoloads from modular-google-contacts.el
 
 (add-to-list 'modular-features 'modular-google-contacts)
 
 ;;;***
 
-;;;### (autoloads nil "modular-groovy" "modular-groovy.el" (23059
-;;;;;;  54776 403565 737000))
+;;;### (autoloads nil "modular-groovy" "modular-groovy.el" (23236
+;;;;;;  41743 107229 921000))
 ;;; Generated autoloads from modular-groovy.el
 
 (add-to-list 'modular-features 'modular-groovy)
@@ -215,24 +223,24 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-guru" "modular-guru.el" (23059 54776
-;;;;;;  403565 737000))
+;;;### (autoloads nil "modular-guru" "modular-guru.el" (23236 41743
+;;;;;;  107229 921000))
 ;;; Generated autoloads from modular-guru.el
 
 (add-to-list 'modular-features 'modular-guru)
 
 ;;;***
 
-;;;### (autoloads nil "modular-haskell" "modular-haskell.el" (23059
-;;;;;;  54776 404565 720000))
+;;;### (autoloads nil "modular-haskell" "modular-haskell.el" (23236
+;;;;;;  41743 107229 921000))
 ;;; Generated autoloads from modular-haskell.el
 
 (add-to-list 'modular-features 'modular-haskell)
 
 ;;;***
 
-;;;### (autoloads nil "modular-helm" "modular-helm.el" (23172 30236
-;;;;;;  61164 942000))
+;;;### (autoloads nil "modular-helm" "modular-helm.el" (23236 41743
+;;;;;;  107229 921000))
 ;;; Generated autoloads from modular-helm.el
 
 (add-to-list 'modular-features 'modular-helm)
@@ -241,8 +249,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-irony" "modular-irony.el" (23059 54776
-;;;;;;  404565 720000))
+;;;### (autoloads nil "modular-irony" "modular-irony.el" (23236 41743
+;;;;;;  108229 932000))
 ;;; Generated autoloads from modular-irony.el
 
 (add-to-list 'modular-features 'modular-irony)
@@ -250,7 +258,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-javascript" "modular-javascript.el"
-;;;;;;  (23230 28731 975027 297000))
+;;;;;;  (23236 41743 108229 932000))
 ;;; Generated autoloads from modular-javascript.el
 
 (add-to-list 'modular-features 'modular-javascript)
@@ -259,8 +267,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-magit" "modular-magit.el" (23059 54776
-;;;;;;  404565 720000))
+;;;### (autoloads nil "modular-magit" "modular-magit.el" (23236 41743
+;;;;;;  108229 932000))
 ;;; Generated autoloads from modular-magit.el
 
 (add-to-list 'modular-features 'modular-magit)
@@ -269,8 +277,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-markdown" "modular-markdown.el" (23059
-;;;;;;  54776 404565 720000))
+;;;### (autoloads nil "modular-markdown" "modular-markdown.el" (23236
+;;;;;;  41743 108229 932000))
 ;;; Generated autoloads from modular-markdown.el
 
 (add-to-list 'modular-features 'modular-markdown)
@@ -279,8 +287,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (23223 27199
-;;;;;;  892250 4000))
+;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (23236 41743
+;;;;;;  108229 932000))
 ;;; Generated autoloads from modular-mu4e.el
 
 (add-to-list 'modular-features 'modular-mu4e)
@@ -289,8 +297,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-nix" "modular-nix.el" (23059 54776
-;;;;;;  405565 704000))
+;;;### (autoloads nil "modular-nix" "modular-nix.el" (23236 41743
+;;;;;;  108229 932000))
 ;;; Generated autoloads from modular-nix.el
 
 (add-to-list 'modular-features 'modular-nix)
@@ -299,16 +307,16 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-notmuch" "modular-notmuch.el" (23059
-;;;;;;  54776 405565 704000))
+;;;### (autoloads nil "modular-notmuch" "modular-notmuch.el" (23236
+;;;;;;  41743 108229 932000))
 ;;; Generated autoloads from modular-notmuch.el
 
 (add-to-list 'modular-features 'modular-notmuch)
 
 ;;;***
 
-;;;### (autoloads nil "modular-org" "modular-org.el" (23210 22788
-;;;;;;  495970 40000))
+;;;### (autoloads nil "modular-org" "modular-org.el" (23236 41743
+;;;;;;  109229 942000))
 ;;; Generated autoloads from modular-org.el
 
 (add-to-list 'modular-features 'modular-org)
@@ -316,7 +324,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-password-store" "modular-password-store.el"
-;;;;;;  (23059 54776 405565 704000))
+;;;;;;  (23236 41743 109229 942000))
 ;;; Generated autoloads from modular-password-store.el
 
 (add-to-list 'modular-features 'modular-password-store)
@@ -324,7 +332,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-projectile" "modular-projectile.el"
-;;;;;;  (23059 54776 405565 704000))
+;;;;;;  (23236 41743 109229 942000))
 ;;; Generated autoloads from modular-projectile.el
 
 (add-to-list 'modular-features 'modular-projectile)
@@ -333,8 +341,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-python" "modular-python.el" (23059
-;;;;;;  54776 405565 704000))
+;;;### (autoloads nil "modular-python" "modular-python.el" (23236
+;;;;;;  41743 109229 942000))
 ;;; Generated autoloads from modular-python.el
 
 (add-to-list 'modular-features 'modular-python)
@@ -343,24 +351,24 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-rainbow" "modular-rainbow.el" (23059
-;;;;;;  54776 406565 687000))
+;;;### (autoloads nil "modular-rainbow" "modular-rainbow.el" (23236
+;;;;;;  41743 109229 942000))
 ;;; Generated autoloads from modular-rainbow.el
 
 (add-to-list 'modular-features 'modular-rainbow)
 
 ;;;***
 
-;;;### (autoloads nil "modular-rotate" "modular-rotate.el" (23059
-;;;;;;  54776 406565 687000))
+;;;### (autoloads nil "modular-rotate" "modular-rotate.el" (23236
+;;;;;;  41743 109229 942000))
 ;;; Generated autoloads from modular-rotate.el
 
 (add-to-list 'modular-features 'modular-rotate)
 
 ;;;***
 
-;;;### (autoloads nil "modular-rust" "modular-rust.el" (23059 54776
-;;;;;;  406565 687000))
+;;;### (autoloads nil "modular-rust" "modular-rust.el" (23236 41743
+;;;;;;  110229 953000))
 ;;; Generated autoloads from modular-rust.el
 
 (add-to-list 'modular-features 'modular-rust)
@@ -369,8 +377,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-salt" "modular-salt.el" (23059 54776
-;;;;;;  406565 687000))
+;;;### (autoloads nil "modular-salt" "modular-salt.el" (23236 41743
+;;;;;;  110229 953000))
 ;;; Generated autoloads from modular-salt.el
 
 (add-to-list 'modular-features 'modular-clojure)
@@ -379,8 +387,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-scala" "modular-scala.el" (23059 54776
-;;;;;;  406565 687000))
+;;;### (autoloads nil "modular-scala" "modular-scala.el" (23236 41743
+;;;;;;  110229 953000))
 ;;; Generated autoloads from modular-scala.el
 
 (add-to-list 'modular-features 'modular-scala)
@@ -390,7 +398,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-smartparens" "modular-smartparens.el"
-;;;;;;  (23059 54776 406565 687000))
+;;;;;;  (23236 41743 110229 953000))
 ;;; Generated autoloads from modular-smartparens.el
 
 (add-to-list 'modular-features 'modular-smartparens)
@@ -399,8 +407,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-term" "modular-term.el" (23059 54776
-;;;;;;  406565 687000))
+;;;### (autoloads nil "modular-term" "modular-term.el" (23236 41743
+;;;;;;  110229 953000))
 ;;; Generated autoloads from modular-term.el
 
 (add-to-list 'modular-features 'modular-term)
@@ -408,7 +416,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-terraform" "modular-terraform.el"
-;;;;;;  (23211 32668 482040 835000))
+;;;;;;  (23236 41743 110229 953000))
 ;;; Generated autoloads from modular-terraform.el
 
 (add-to-list 'modular-features 'modular-terraform)
@@ -417,50 +425,45 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-theme" "modular-theme.el" (23059 54776
-;;;;;;  407565 671000))
+;;;### (autoloads nil "modular-theme" "modular-theme.el" (23236 41743
+;;;;;;  110229 953000))
 ;;; Generated autoloads from modular-theme.el
 
 (add-to-list 'modular-features 'modular-theme)
 
 ;;;***
 
-;;;### (autoloads nil "modular-toml" "modular-toml.el" (23059 54776
-;;;;;;  407565 671000))
+;;;### (autoloads nil "modular-toml" "modular-toml.el" (23236 41743
+;;;;;;  110229 953000))
 ;;; Generated autoloads from modular-toml.el
 
 (add-to-list 'modular-features 'modular-toml)
 
 ;;;***
 
-;;;### (autoloads nil "modular-w3m" "modular-w3m.el" (23059 54776
-;;;;;;  407565 671000))
+;;;### (autoloads nil "modular-w3m" "modular-w3m.el" (23236 41743
+;;;;;;  111229 964000))
 ;;; Generated autoloads from modular-w3m.el
 
 (add-to-list 'modular-features 'modular-w3m)
 
 ;;;***
 
-;;;### (autoloads nil "modular-windmove" "modular-windmove.el" (23059
-;;;;;;  54776 407565 671000))
+;;;### (autoloads nil "modular-windmove" "modular-windmove.el" (23236
+;;;;;;  41743 111229 964000))
 ;;; Generated autoloads from modular-windmove.el
 
 (add-to-list 'modular-features 'modular-windmove)
 
 ;;;***
 
-;;;### (autoloads nil "modular-yaml" "modular-yaml.el" (23059 54776
-;;;;;;  407565 671000))
+;;;### (autoloads nil "modular-yaml" "modular-yaml.el" (23236 41743
+;;;;;;  111229 964000))
 ;;; Generated autoloads from modular-yaml.el
 
 (add-to-list 'modular-features 'modular-yaml)
 
 (pin "melpa-stable" 'yaml-mode)
-
-;;;***
-
-;;;### (autoloads nil nil ("modular-fonts.el") (23230 6149 675451
-;;;;;;  401000))
 
 ;;;***
 

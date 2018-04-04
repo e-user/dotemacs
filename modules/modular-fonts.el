@@ -23,6 +23,8 @@
 ;; Load font support
 
 ;;; Code:
+;;;###autoload
+(add-to-list 'modular-features 'modular-fonts)
 
 (require 'modular-contextual)
 
