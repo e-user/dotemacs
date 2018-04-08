@@ -63,9 +63,10 @@
        ((string-equal uuid "63379ca1-0b7b-5d94-bdfa-b5d290e3ef4d") "normal")
        ((string-equal uuid "95eb2791-0d71-54d1-8d1f-ec282e798d60") "large")
        ((string-equal uuid "acdcdf67-fcb7-5756-8a10-af6e9f2ef3a1") "large")
+       ((string-equal uuid "fd9ad2d2-e7aa-58c0-b492-907ca780ab2d") "normal")
        (t "normal")))))
 
-(add-hook 'after-make-frame-functions #'activate-font-profile)
+(add-hook 'after-make-frame-functions #'(lambda (&rest frame) (activate-font-profile)) t)
 
 (provide 'modular-fonts)
 ;;; modular-fonts.el ends here
