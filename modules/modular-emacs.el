@@ -58,8 +58,11 @@
 
 (setq-default fill-column 80)
 
-; Tramp
+;; Tramp
 (setq tramp-use-ssh-controlmaster-options t)
+
+;; auth-sources
+(setq auth-sources '("~/.authinfo.gpg"))
 
 (provide 'modular-emacs)
 ;;; modular-emacs.el ends here
