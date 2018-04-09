@@ -28,7 +28,7 @@
 
 (require 'modular-contextual)
 
-(defcontext font-profiles "normal")
+(defcontext font-profiles)
 
 (contextual-add-profile "small" (font-profiles) ((default-frame-alist '((font . "Inconsolata-6"))))
   (set-frame-font "Inconsolata-6"))
