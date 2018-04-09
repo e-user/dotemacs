@@ -12,10 +12,15 @@
 ;;;###autoload
 (pin "melpa-stable" 'magit)
 
-(install 'magit)
+(install 'magit 'magithub)
 (require 'magit)
+(require 'magithub)
 
-(setq magit-last-seen-setup-instructions "1.4.0")
+(magithub-feature-autoinject t)
+
+(setq magit-last-seen-setup-instructions "1.4.0"
+      magithub-clone-default-directory "~/Projects")
+
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (provide 'modular-magit)
