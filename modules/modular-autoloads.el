@@ -127,8 +127,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (23236 41743
-;;;;;;  105229 900000))
+;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (23244 36643
+;;;;;;  294825 932000))
 ;;; Generated autoloads from modular-emacs.el
 
 (add-to-list 'modular-features 'modular-emacs)
@@ -189,8 +189,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-fonts" "modular-fonts.el" (23236 57896
-;;;;;;  196211 790000))
+;;;### (autoloads nil "modular-fonts" "modular-fonts.el" (23244 36643
+;;;;;;  294825 932000))
 ;;; Generated autoloads from modular-fonts.el
 
 (add-to-list 'modular-features 'modular-fonts)
@@ -267,8 +267,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-magit" "modular-magit.el" (23236 41743
-;;;;;;  108229 932000))
+;;;### (autoloads nil "modular-magit" "modular-magit.el" (23252 38319
+;;;;;;  237796 142000))
 ;;; Generated autoloads from modular-magit.el
 
 (add-to-list 'modular-features 'modular-magit)
@@ -324,7 +324,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-password-store" "modular-password-store.el"
-;;;;;;  (23236 41743 109229 942000))
+;;;;;;  (23244 36630 904701 854000))
 ;;; Generated autoloads from modular-password-store.el
 
 (add-to-list 'modular-features 'modular-password-store)
@@ -377,11 +377,11 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-salt" "modular-salt.el" (23236 41743
-;;;;;;  110229 953000))
+;;;### (autoloads nil "modular-salt" "modular-salt.el" (23236 58528
+;;;;;;  262140 151000))
 ;;; Generated autoloads from modular-salt.el
 
-(add-to-list 'modular-features 'modular-clojure)
+(add-to-list 'modular-features 'modular-salt)
 
 (pin "melpa-stable" 'salt-mode)
 
