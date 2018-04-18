@@ -1,6 +1,6 @@
 ;;; modular-docker.el --- Modular docker module      -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016  Alexander Kahl
+;; Copyright (C) 2016-2018  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -24,7 +24,7 @@
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-autoinsert)
+(add-to-list 'modular-features 'modular-docker)
 
 ;;;###autoload
 (pin "melpa-stable" 'docker 'dockerfile-mode)

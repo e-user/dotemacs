@@ -83,11 +83,11 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-docker" "modular-docker.el" (23236
-;;;;;;  41743 104229 889000))
+;;;### (autoloads nil "modular-docker" "modular-docker.el" (23254
+;;;;;;  62745 326717 101000))
 ;;; Generated autoloads from modular-docker.el
 
-(add-to-list 'modular-features 'modular-autoinsert)
+(add-to-list 'modular-features 'modular-docker)
 
 (pin "melpa-stable" 'docker 'dockerfile-mode)
 
