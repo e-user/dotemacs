@@ -60,7 +60,7 @@
    (mu4e-trash-folder "/apeunit.com/Trash")
    (message-sendmail-extra-arguments '("-a" "apeunit.com"))
    (mu4e-bookmarks (basic-bookmarks "apeunit.com"))
-   (mu4e-get-mail-command "true")))
+   (mu4e-get-mail-command "mbsync -q apeunit.com")))
 
 (contextual-set-initial-profile "private")
 
