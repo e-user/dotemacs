@@ -1,6 +1,6 @@
 ;;; modular-cider.el --- Modular Cider module  -*- lexical-binding: t; -*-
 
-;; Copyright © 2014-2016  Alexander Kahl
+;; Copyright © 2014-2018  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -48,7 +48,8 @@
       cider-auto-test-mode 1
       cider-test-show-report-on-success t
       cider-repl-display-help-banner nil
-      cider-lein-command "~/bin/lein")
+      cider-lein-command "~/bin/lein"
+      cider-repl-use-pretty-printing t)
 
 (define-key cider-mode-map (kbd "C-.") 'completion-at-point)
 (define-key cider-repl-mode-map (kbd "C-.") 'completion-at-point)
