@@ -33,6 +33,7 @@
 (require 'groovy-mode)
 
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
+(setq groovy-indent-offset 2)
 
 (provide 'modular-groovy)
 ;;; modular-groovy.el ends here
