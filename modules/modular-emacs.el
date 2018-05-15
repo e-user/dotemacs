@@ -41,6 +41,7 @@
 
 (setq revert-without-query '(".*"))
 (global-set-key "\C-cr" 'revert-buffer)
+(global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 
 (setq-default indent-tabs-mode nil)
 
