@@ -30,6 +30,7 @@
 (pin "melpa-stable" 'js2-mode 'mocha 'indium 'tern 'company-tern 'vue-mode)
 
 (require 'modular-company)
+(require 'modular-flycheck)
 
 (install 'js2-mode 'mocha 'indium 'tern 'company-tern 'vue-mode)
 (require 'js2-mode)
