@@ -3,8 +3,7 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "modular" "modular.el" (23236 41743 102229
-;;;;;;  868000))
+;;;### (autoloads nil "modular" "modular.el" (0 0 0 0))
 ;;; Generated autoloads from modular.el
 
 (defvar modular-features nil)
@@ -13,6 +12,8 @@
 
 
 \(fn)" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular" '(#("modular-" 0 8 (fontified nil face font-lock-function-name-face)) #("load-modular-features" 0 21 (face font-lock-variable-name-face fontified nil)))))
 
 ;;;***
 
@@ -27,8 +28,7 @@
 
 ;;;***
 
-;;;### (autoloads nil nil ("modular-defaults.el") (23236 41743 102229
-;;;;;;  868000))
+;;;### (autoloads nil nil ("modular-defaults.el") (0 0 0 0))
 
 ;;;***
 

@@ -27,8 +27,7 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-cider" "modular-cider.el" (23236 41743
-;;;;;;  103229 879000))
+;;;### (autoloads nil "modular-cider" "modular-cider.el" (0 0 0 0))
 ;;; Generated autoloads from modular-cider.el
 
 (add-to-list 'modular-features 'modular-cider)
@@ -58,12 +57,14 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-contextual" "modular-contextual.el"
-;;;;;;  (23236 41743 104229 889000))
+;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from modular-contextual.el
 
 (add-to-list 'modular-features 'modular-contextual)
 
 (pin "melpa-stable" 'contextual)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-contextual" '("basic-bookmarks")))
 
 ;;;***
 
@@ -127,11 +128,12 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (23244 36643
-;;;;;;  294825 932000))
+;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (0 0 0 0))
 ;;; Generated autoloads from modular-emacs.el
 
 (add-to-list 'modular-features 'modular-emacs)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-emacs" '(#("open-as-root" 0 12 (face font-lock-function-name-face fontified nil)))))
 
 ;;;***
 
@@ -213,8 +215,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-groovy" "modular-groovy.el" (23236
-;;;;;;  41743 107229 921000))
+;;;### (autoloads nil "modular-groovy" "modular-groovy.el" (0 0 0
+;;;;;;  0))
 ;;; Generated autoloads from modular-groovy.el
 
 (add-to-list 'modular-features 'modular-groovy)
@@ -258,7 +260,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-javascript" "modular-javascript.el"
-;;;;;;  (23236 41743 108229 932000))
+;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from modular-javascript.el
 
 (add-to-list 'modular-features 'modular-javascript)
