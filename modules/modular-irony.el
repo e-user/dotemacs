@@ -12,6 +12,9 @@
 (require 'modular-company)
 (install 'irony 'company-irony)
 
+(require 'irony)
+(require 'company-irony)
+
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
@@ -26,8 +29,7 @@
 (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
+(add-to-list 'company-backends 'company-irony)
 
 (provide 'modular-irony)
 ;;; modular-irony.el ends here

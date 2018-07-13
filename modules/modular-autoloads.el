@@ -19,14 +19,6 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-bookmark+" "modular-bookmark+.el"
-;;;;;;  (23236 41743 103229 879000))
-;;; Generated autoloads from modular-bookmark+.el
-
-(add-to-list 'modular-features 'modular-bookmark+)
-
-;;;***
-
 ;;;### (autoloads nil "modular-cider" "modular-cider.el" (0 0 0 0))
 ;;; Generated autoloads from modular-cider.el
 
@@ -94,8 +86,7 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-eclim" "modular-eclim.el" (23236 41743
-;;;;;;  105229 900000))
+;;;### (autoloads nil "modular-eclim" "modular-eclim.el" (0 0 0 0))
 ;;; Generated autoloads from modular-eclim.el
 
 (add-to-list 'modular-features 'modular-eclim)
@@ -233,8 +224,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-haskell" "modular-haskell.el" (23236
-;;;;;;  41743 107229 921000))
+;;;### (autoloads nil "modular-haskell" "modular-haskell.el" (0 0
+;;;;;;  0 0))
 ;;; Generated autoloads from modular-haskell.el
 
 (add-to-list 'modular-features 'modular-haskell)
@@ -251,11 +242,12 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-irony" "modular-irony.el" (23236 41743
-;;;;;;  108229 932000))
+;;;### (autoloads nil "modular-irony" "modular-irony.el" (0 0 0 0))
 ;;; Generated autoloads from modular-irony.el
 
 (add-to-list 'modular-features 'modular-irony)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-irony" '(#("my-irony-mode-hook" 0 18 (face font-lock-function-name-face fontified nil)))))
 
 ;;;***
 
@@ -279,8 +271,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-markdown" "modular-markdown.el" (23236
-;;;;;;  41743 108229 932000))
+;;;### (autoloads nil "modular-markdown" "modular-markdown.el" (0
+;;;;;;  0 0 0))
 ;;; Generated autoloads from modular-markdown.el
 
 (add-to-list 'modular-features 'modular-markdown)
@@ -400,12 +392,14 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-smartparens" "modular-smartparens.el"
-;;;;;;  (23236 41743 110229 953000))
+;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from modular-smartparens.el
 
 (add-to-list 'modular-features 'modular-smartparens)
 
 (pin "melpa-stable" 'smartparens)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-smartparens" '("wrap-with")))
 
 ;;;***
 

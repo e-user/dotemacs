@@ -55,9 +55,7 @@
   '(haskell-process-log t)
   '(haskell-process-type 'cabal-repl))
 
-
-(eval-after-load 'company
-  (add-to-list 'company-backends 'company-ghc))
+(add-to-list 'company-backends 'company-ghc)
 
 (let ((path (expand-file-name "~/.cabal/bin")))
   (setenv "PATH" (concat path ":" (getenv "PATH")))

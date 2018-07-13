@@ -11,13 +11,12 @@
 
 (require 'modular-company)
 
-(install 'emacs-eclim)
+(install 'eclim)
 (require 'eclimd)
 
 (setq eclimd-default-workspace (expand-file-name "~/Projects/eclipse"))
 (global-eclim-mode)
-(require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
+(require 'company-eclim)
 
 (provide 'modular-eclim)
 ;;; modular-eclim.el ends here

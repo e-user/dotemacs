@@ -30,7 +30,8 @@
               modular-features)))
     (dolist (f (sort fs #'(lambda (f1 f2) (string< (symbol-name f1) (symbol-name f2)))))
       (message "Loading feature %s..." f)
-      (ignore-errors (require f)))))
+      (condition-case e (require f)
+        (error (message "Error loading %s: %s" f e))))))
 
 (defun modular-update-autoloads ()
   (interactive)

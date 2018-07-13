@@ -29,7 +29,7 @@
 ;;;###autoload
 (pin "melpa-stable" 'markdown-mode 'markdown-mode+ 'markdown-preview-mode)
 
-(install 'markdown-mode 'markdown-mode+ 'markdown-preview-mode 'markdown-edit-indirect 'markdown-preview-mode)
+(install 'markdown-mode 'markdown-mode+ 'markdown-preview-mode 'markdown-preview-mode)
 
 (eval-after-load 'markdown-mode
   '(define-key markdown-mode-map (kbd "C-c '") 'markdown-edit-indirect))

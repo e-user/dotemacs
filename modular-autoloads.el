@@ -13,7 +13,7 @@
 
 \(fn)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular" '(#("modular-" 0 8 (fontified nil face font-lock-function-name-face)) #("load-modular-features" 0 21 (face font-lock-variable-name-face fontified nil)))))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular" '("modular-" "load-modular-features")))
 
 ;;;***
 
