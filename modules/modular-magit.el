@@ -19,8 +19,7 @@
 (magithub-feature-autoinject t)
 
 (setq magit-last-seen-setup-instructions "1.4.0"
-      magithub-clone-default-directory "~/Projects"
-      magit-commit-arguments '("--gpg-sign=33CBBEFEA62ADDE0"))
+      magithub-clone-default-directory "~/Projects")
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
