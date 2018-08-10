@@ -50,7 +50,22 @@
    (mu4e-refile-folder "/sodosopa.io/Archives")
    (message-sendmail-extra-arguments '("-a" "sodosopa.io"))
    (mu4e-bookmarks (basic-bookmarks "sodosopa.io"))
-   (mu4e-get-mail-command "mbsync -q sodosopa.io")))
+   (mu4e-get-mail-command "mbsync -q sodosopa.io")
+   (message-signature-file "~/.signature.private")
+   (mail-signature-file "~/.signature.private")))
+
+(contextual-add-profile "communicatio.systems" ()
+  ((user-mail-address "a.kahl@communicatio.systems")
+   (mu4e-base-folder "/communicatio.systems")
+   (mu4e-sent-folder "/communicatio.systems/Sent")
+   (mu4e-drafts-folder "/communicatio.systems/Drafts")
+   (mu4e-trash-folder "/communicatio.systems/Trash")
+   (mu4e-refile-folder "/communicatio.systems/Archive")
+   (message-sendmail-extra-arguments '("-a" "communicatio.systems"))
+   (mu4e-bookmarks (basic-bookmarks "communicatio.systems"))
+   (mu4e-get-mail-command "mbsync -q communicatio.systems")
+   (message-signature-file "~/.signature.cys")
+   (mail-signature-file "~/.signature.cys")))
 
 (contextual-add-profile "apeunit" ()
   ((user-mail-address "alexander@apeunit.com")
@@ -65,6 +80,34 @@
 (contextual-set-initial-profile "private")
 
 (contextual-global-mode)
+
+(defun contextual-cycle-profile (context x)
+  "Cycle through `X' profiles in `CONTEXT', wrapping over if necessary."
+  (let* ((profiles (mapcar #'car (get context 'profiles)))
+         (n (length profiles)))
+    (nth (mod (+ x (position (get 'contextual-default-context 'active-profile) profiles :test #'equal) n) n)
+         profiles)))
+
+(defun contextual-next-profile (context)
+  "The next profile defined for `CONTEXT', wrapping over if necessary."
+  (contextual-cycle-profile context 1))
+
+(defun contextual-previous-profile (context)
+  "The previous profile defined for `CONTEXT', wrapping over if necessary."
+  (contextual-cycle-profile context -1))
+
+(defun contextual-activate-next-profile (context)
+  "Activate the next profile defined for `CONTEXT'."
+  (interactive (list (if (boundp 'context) context 'contextual-default-context)))
+  (contextual-activate-profile context (contextual-next-profile context)))
+
+(defun contextual-activate-previous-profile (context)
+  "Activate the previous profile defined for `CONTEXT'."
+  (interactive (list (if (boundp 'context) context 'contextual-default-context)))
+  (contextual-activate-profile context (contextual-previous-profile context)))
+
+(global-set-key (kbd "<M-s-right>") #'contextual-activate-next-profile)
+(global-set-key (kbd "<M-s-left>") #'contextual-activate-previous-profile)
 
 (provide 'modular-contextual)
 ;;; modular-contextual.el ends here

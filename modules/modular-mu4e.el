@@ -12,6 +12,13 @@
 ;;;###autoload
 (defvar mu4e-base-folder nil)
 
+(require 'modular-contextual)
+
+(add-hook 'mu4e-compose-mode-hook #'(lambda ()
+                                      (when (string= (get 'contextual-default-context 'active-profile)
+                                                   "private")
+                                          (mml-secure-message-sign-pgpmime))))
+
 (when-let ((dir (first (file-expand-wildcards "/nix/store/*mu*/share/emacs/site-lisp/mu4e"))))
   (add-to-list 'load-path dir))
 
@@ -58,8 +65,6 @@
         message-signature-file "~/.signature")
 
   (setenv "MU_GPG_PATH" (executable-find "gpg2"))
-
-  (add-hook 'mu4e-compose-mode-hook 'mml-secure-message-sign-pgpmime)
 
   (defun mu4e-find-references ()
     (interactive)
