@@ -30,7 +30,12 @@
 
 (install 'scss-mode)
 
-(setq css-indent-offset 2)
+
+(require 'css-mode)
+(require 'scss-mode)
+
+(setq css-indent-offset 2
+      scss-compile-at-save nil)
 
 (provide 'modular-css)
 ;;; modular-css.el ends here
