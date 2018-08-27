@@ -1,6 +1,6 @@
 ;;; modular-magit.el --- Initialize magit
 
-;; Copyright © 2015  Alexander Kahl
+;; Copyright © 2015, 2018  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: emacs, magit
