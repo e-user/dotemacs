@@ -56,12 +56,11 @@
 
 (pin "melpa-stable" 'contextual)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-contextual" '("basic-bookmarks")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-contextual" '(#("contextual-" 0 11 (face font-lock-function-name-face fontified nil)) #("basic-bookmarks" 0 15 (face font-lock-function-name-face fontified nil)))))
 
 ;;;***
 
-;;;### (autoloads nil "modular-css" "modular-css.el" (23236 41743
-;;;;;;  104229 889000))
+;;;### (autoloads nil "modular-css" "modular-css.el" (0 0 0 0))
 ;;; Generated autoloads from modular-css.el
 
 (pin "melpa-stable" 'scss-mode)
@@ -261,8 +260,7 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-magit" "modular-magit.el" (23252 38319
-;;;;;;  237796 142000))
+;;;### (autoloads nil "modular-magit" "modular-magit.el" (0 0 0 0))
 ;;; Generated autoloads from modular-magit.el
 
 (add-to-list 'modular-features 'modular-magit)
@@ -281,8 +279,7 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (23236 41743
-;;;;;;  108229 932000))
+;;;### (autoloads nil "modular-mu4e" "modular-mu4e.el" (0 0 0 0))
 ;;; Generated autoloads from modular-mu4e.el
 
 (add-to-list 'modular-features 'modular-mu4e)
@@ -388,6 +385,13 @@
 (add-to-list 'modular-features 'modular-scala)
 
 (pin "melpa-stable" 'ensime 'scala-mode 'sbt-mode)
+
+;;;***
+
+;;;### (autoloads nil "modular-sh" "modular-sh.el" (0 0 0 0))
+;;; Generated autoloads from modular-sh.el
+
+(add-to-list 'modular-features 'modular-sh)
 
 ;;;***
 
