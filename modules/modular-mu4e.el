@@ -15,8 +15,8 @@
 (require 'modular-contextual)
 
 (add-hook 'mu4e-compose-mode-hook #'(lambda ()
-                                      (when (string= (get 'contextual-default-context 'active-profile)
-                                                   "private")
+                                      (when (member (get 'contextual-default-context 'active-profile)
+                                                    '("private" "communicatio.systems"))
                                           (mml-secure-message-sign-pgpmime))))
 
 (when-let ((dir (first (file-expand-wildcards "/nix/store/*mu*/share/emacs/site-lisp/mu4e"))))
