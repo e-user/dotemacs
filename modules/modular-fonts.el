@@ -50,21 +50,28 @@
 
 (defun run-xrandr ()
   "Run `xrandr' and return its trimmed output."
-  (string-trim (shell-command-to-string "xrandr")))
+  (string-trim (shell-command-to-string "xrandr --listactivemonitors")))
 
 (defun xrandr-uuid ()
   "Generate UUIDv5 for xrandr output."
   (uuidgen-5 uuidgen-ns-xrandr (run-xrandr)))
 
+(defvar screen-configurations
+  '(("8a140272-fac2-52bd-9b54-5d05c6f6b860" . zion+uhd)))
+
 (defun activate-font-profile ()
   (contextual-activate-profile 'font-profiles
-    (let ((uuid (xrandr-uuid)))
-      (cond
-       ((string-equal uuid "63379ca1-0b7b-5d94-bdfa-b5d290e3ef4d") "normal")
-       ((string-equal uuid "95eb2791-0d71-54d1-8d1f-ec282e798d60") "large")
-       ((string-equal uuid "acdcdf67-fcb7-5756-8a10-af6e9f2ef3a1") "large")
-       ((string-equal uuid "fd9ad2d2-e7aa-58c0-b492-907ca780ab2d") "normal")
-       (t "normal")))))
+    (case (alist-get (xrandr-uuid) screen-configurations nil nil #'string-equal)
+      (zion+uid "normal")
+      (t "normal"))))
+
+(defadvice server-create-window-system-frame
+  (after set-window-system-frame-colours ())
+  "Set custom frame colors when creating the first frame on a display"
+  (message "Running after frame-initialize")
+  (setup-window-system-frame-colours))
+
+(ad-activate 'server-create-window-system-frame)
 
 (add-hook 'after-make-frame-functions #'(lambda (&rest frame) (activate-font-profile)) t)
 
