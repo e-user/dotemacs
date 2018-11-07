@@ -39,7 +39,7 @@
 (add-hook 'racer-mode-hook #'company-mode)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
-(setq racer-rust-src-path "~/Projects/rust/src/")
+(setq racer-rust-src-path "~/.nix-profile")
 
 (provide 'modular-rust)
 ;;; modular-rust.el ends here
