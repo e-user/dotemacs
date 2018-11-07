@@ -65,14 +65,6 @@
       (zion+uid "normal")
       (t "normal"))))
 
-(defadvice server-create-window-system-frame
-  (after set-window-system-frame-colours ())
-  "Set custom frame colors when creating the first frame on a display"
-  (message "Running after frame-initialize")
-  (setup-window-system-frame-colours))
-
-(ad-activate 'server-create-window-system-frame)
-
 (add-hook 'after-make-frame-functions #'(lambda (&rest frame) (activate-font-profile)) t)
 
 (provide 'modular-fonts)
