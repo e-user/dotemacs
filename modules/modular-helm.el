@@ -1,6 +1,6 @@
 ;;; modular-helm.el --- Modular Helm module          -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016  Alexander Kahl
+;; Copyright (C) 2016, 2019  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -27,9 +27,12 @@
 (add-to-list 'modular-features 'modular-helm)
 
 ;;;###autoload
-(pin "melpa-stable" 'helm 'helm-core 'helm-projectile)
+(pin "melpa-stable" 'helm 'helm-core 'helm-projectile 'helm-company)
 
-(install 'helm 'helm-projectile)
+(install 'helm 'helm-projectile 'helm-company)
+
+(require 'modular-company)
+(require 'modular-projectile)
 
 (require 'helm-config)
 (require 'helm-projectile)
@@ -59,9 +62,10 @@
 (define-key projectile-command-map (kbd "b") #'helm-projectile-switch-to-buffer)
 (define-key projectile-command-map (kbd "p") #'helm-projectile-switch-project)
 
+(define-key projectile-command-map (kbd "s g") #'helm-projectile-grep)
 
-(eval-after-load 'projectile
-  '(define-key projectile-command-map (kbd "s g") #'helm-projectile-grep))
+(define-key company-mode-map (kbd "C-.") 'helm-company)
+(define-key company-active-map (kbd "C-.") 'helm-company)
 
 (provide 'modular-helm)
 ;;; modular-helm.el ends here

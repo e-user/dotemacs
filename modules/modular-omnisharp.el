@@ -1,6 +1,6 @@
-;;; modular-css.el --- Modular CSS module            -*- lexical-binding: t; -*-
+;;; modular-omnisharp.el --- Modular omnisharp module   -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2018  Alexander Kahl
+;; Copyright (C) 2019  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -16,26 +16,25 @@
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
-;; Load CSS support
+;; Load omnisharp
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-css)
+(add-to-list 'modular-features 'modular-omnisharp)
 
 ;;;###autoload
-(pin "melpa-stable" 'scss-mode)
+(pin "melpa-stable" 'omnisharp)
 
-(install 'scss-mode)
+(install 'omnisharp)
 
-(require 'css-mode)
-(require 'scss-mode)
+(require 'omnisharp)
+(require 'modular-company)
 
-(setq css-indent-offset 2
-      scss-compile-at-save nil)
+(add-to-list 'company-backends 'company-omnisharp)
 
-(provide 'modular-css)
-;;; modular-css.el ends here
+(provide 'modular-omnisharp)
+;;; modular-omnisharp.el ends here

@@ -1,6 +1,6 @@
-;;; modular-css.el --- Modular CSS module            -*- lexical-binding: t; -*-
+;;; modular-csharp.el --- Modular C# module          -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2018  Alexander Kahl
+;; Copyright (C) 2019  Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
 ;; Keywords: convenience
@@ -16,26 +16,28 @@
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
-;; Load CSS support
+;; Load C# support
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-css)
+(add-to-list 'modular-features 'modular-csharp)
 
 ;;;###autoload
-(pin "melpa-stable" 'scss-mode)
+(pin "melpa-stable" 'csharp-mode)
 
-(install 'scss-mode)
+(install 'csharp-mode)
 
-(require 'css-mode)
-(require 'scss-mode)
+(require 'modular-company)
+(require 'modular-flycheck)
+(require 'modular-omnisharp)
 
-(setq css-indent-offset 2
-      scss-compile-at-save nil)
+(add-hook 'csharp-mode-hook #'company-mode)
+(add-hook 'csharp-mode-hook #'flycheck-mode)
+(add-hook 'csharp-mode-hook #'omnisharp-mode)
 
-(provide 'modular-css)
-;;; modular-css.el ends here
+(provide 'modular-csharp)
+;;; modular-csharp.el ends here

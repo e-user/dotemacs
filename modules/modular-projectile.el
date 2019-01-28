@@ -18,5 +18,8 @@
 (projectile-global-mode)
 (setq projectile-enable-caching nil)
 
+(add-to-list 'load-path (expand-file-name "~/Projects/emacs/projectile-terminal"))
+(require 'projectile-terminal)
+
 (provide 'modular-projectile)
 ;;; modular-projectile.el ends here

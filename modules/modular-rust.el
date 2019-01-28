@@ -41,5 +41,7 @@
 
 (setq racer-rust-src-path "~/.nix-profile")
 
+(define-key racer-mode-map (kbd "C-c C-d") #'racer-describe)
+
 (provide 'modular-rust)
 ;;; modular-rust.el ends here

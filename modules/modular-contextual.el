@@ -77,6 +77,19 @@
    (mu4e-bookmarks (basic-bookmarks "apeunit.com"))
    (mu4e-get-mail-command "mbsync -q apeunit.com")))
 
+(contextual-add-profile "tpwd.de" ()
+  ((user-mail-address "ak@tpwd.de")
+   (mu4e-base-folder "/tpwd.de")
+   (mu4e-sent-folder "/tpwd.de/Sent")
+   (mu4e-drafts-folder "/tpwd.de/Drafts")
+   (mu4e-trash-folder "/tpwd.de/Trash")
+   (mu4e-refile-folder "/tpwd.de/Archive")
+   (message-sendmail-extra-arguments '("-a" "tpwd.de"))
+   (mu4e-bookmarks (basic-bookmarks "tpwd.de"))
+   (mu4e-get-mail-command "mbsync -q tpwd.de")
+   (message-signature-file "~/.signature.tpwd")
+   (mail-signature-file "~/.signature.tpwd")))
+
 (contextual-set-initial-profile "private")
 
 (contextual-global-mode)

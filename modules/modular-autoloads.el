@@ -60,8 +60,20 @@
 
 ;;;***
 
+;;;### (autoloads nil "modular-csharp" "modular-csharp.el" (0 0 0
+;;;;;;  0))
+;;; Generated autoloads from modular-csharp.el
+
+(add-to-list 'modular-features 'modular-csharp)
+
+(pin "melpa-stable" 'csharp-mode)
+
+;;;***
+
 ;;;### (autoloads nil "modular-css" "modular-css.el" (0 0 0 0))
 ;;; Generated autoloads from modular-css.el
+
+(add-to-list 'modular-features 'modular-css)
 
 (pin "melpa-stable" 'scss-mode)
 
@@ -181,11 +193,12 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-fonts" "modular-fonts.el" (23244 36643
-;;;;;;  294825 932000))
+;;;### (autoloads nil "modular-fonts" "modular-fonts.el" (0 0 0 0))
 ;;; Generated autoloads from modular-fonts.el
 
 (add-to-list 'modular-features 'modular-fonts)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-fonts" '("activate-font-profile" "screen-configurations" "xrandr-uuid" "run-xrandr" "uuidgen-ns-xrandr")))
 
 ;;;***
 
@@ -231,13 +244,12 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-helm" "modular-helm.el" (23236 41743
-;;;;;;  107229 921000))
+;;;### (autoloads nil "modular-helm" "modular-helm.el" (0 0 0 0))
 ;;; Generated autoloads from modular-helm.el
 
 (add-to-list 'modular-features 'modular-helm)
 
-(pin "melpa-stable" 'helm 'helm-core 'helm-projectile)
+(pin "melpa-stable" 'helm 'helm-core 'helm-projectile 'helm-company)
 
 ;;;***
 
@@ -246,7 +258,7 @@
 
 (add-to-list 'modular-features 'modular-irony)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-irony" '(#("my-irony-mode-hook" 0 18 (face font-lock-function-name-face fontified nil)))))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-irony" '("my-irony-mode-")))
 
 ;;;***
 
@@ -288,8 +300,7 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-nix" "modular-nix.el" (23236 41743
-;;;;;;  108229 932000))
+;;;### (autoloads nil "modular-nix" "modular-nix.el" (0 0 0 0))
 ;;; Generated autoloads from modular-nix.el
 
 (add-to-list 'modular-features 'modular-nix)
@@ -298,11 +309,21 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-notmuch" "modular-notmuch.el" (23236
-;;;;;;  41743 108229 932000))
+;;;### (autoloads nil "modular-notmuch" "modular-notmuch.el" (0 0
+;;;;;;  0 0))
 ;;; Generated autoloads from modular-notmuch.el
 
 (add-to-list 'modular-features 'modular-notmuch)
+
+;;;***
+
+;;;### (autoloads nil "modular-omnisharp" "modular-omnisharp.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from modular-omnisharp.el
+
+(add-to-list 'modular-features 'modular-omnisharp)
+
+(pin "melpa-stable" 'omnisharp)
 
 ;;;***
 
@@ -323,7 +344,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-projectile" "modular-projectile.el"
-;;;;;;  (23236 41743 109229 942000))
+;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from modular-projectile.el
 
 (add-to-list 'modular-features 'modular-projectile)
@@ -358,8 +379,7 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-rust" "modular-rust.el" (23236 41743
-;;;;;;  110229 953000))
+;;;### (autoloads nil "modular-rust" "modular-rust.el" (0 0 0 0))
 ;;; Generated autoloads from modular-rust.el
 
 (add-to-list 'modular-features 'modular-rust)
@@ -416,7 +436,7 @@
 ;;;***
 
 ;;;### (autoloads nil "modular-terraform" "modular-terraform.el"
-;;;;;;  (23236 41743 110229 953000))
+;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from modular-terraform.el
 
 (add-to-list 'modular-features 'modular-terraform)
