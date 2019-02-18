@@ -1,79 +1,46 @@
-;;; modular-erc.el --- Erc init
+;;; modular-docker.el --- Modular Erc module      -*- lexical-binding: t; -*-
 
-;; Copyright © 2014  Alexander Kahl
+;; Copyright © 2014, 2018 Alexander Kahl
 
 ;; Author: Alexander Kahl <ak@sodosopa.io>
-;; Keywords: erc
+;; Keywords: convenience
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Load Erc
 
 ;;; Code:
 ;;;###autoload
 (add-to-list 'modular-features 'modular-erc)
 
+(require 'tls)
 (require 'erc)
-(require 'notifications)
+(require 'erc-services)
+(require 'erc-desktop-notifications)
 
-;; Source: http://www.emacswiki.org/emacs/BitlBee#toc11
+(setq erc-autojoin-channels-alist
+      '(("freenode.net" "#nixos" "#nixos-dev")))
 
-;; Association list, pairing buffer names with notification IDs.
+(erc-services-mode 1)
+(erc-notifications-mode 1)
 
-(setq erc-notification-id-alist '())
-
-;; Function for use by erc-new-message-notify.
-
-(defun erc-notification-closed (id reason)
-  "Callback function, for removing notification entry if user closed notification manually."
-  (dolist (entry erc-notification-id-alist)
-    (if (equal id (cdr entry))
-        (setq erc-notification-id-alist
-              (delq
-               (assoc (car entry) erc-notification-id-alist)
-               erc-notification-id-alist)))))
-
-;; Create notification when ERC message received.
-
-(defun erc-new-message-notify (message)
-  "Notify user of new ERC message."
-  (let ((this-buffer (buffer-name (current-buffer))))
-    (if (not (string-match "^[#&]" this-buffer))
-        (if (not (assoc this-buffer erc-notification-id-alist))
-            (setq erc-notification-id-alist
-                  (cons
-                   `(,this-buffer ,@(notifications-notify :timeout 0 :app-icon "/usr/share/icons/hicolor/scalable/apps/im-irc.svg" :on-close 'erc-notification-closed :title "New message in chat" :body (buffer-name (current-buffer))))
-                   erc-notification-id-alist))))))
-
-; TODO reactivate when dbus fixed
-; (add-hook 'erc-insert-pre-hook 'erc-new-message-notify)
-
-;; Start of workaround https://lists.gnu.org/archive/html/bug-gnu-emacs/2013-12/msg00117.html
-(when (or (< emacs-major-version 24)
-          (and (= emacs-major-version 24)
-               (<= emacs-minor-version 3)))
-  (defun notifications-close-notification (id &optional bus)
-    "Close a notification with identifier ID.
-BUS can be a string denoting a D-Bus connection, the default is `:session'."
-    (dbus-call-method (or bus :session)
-                      notifications-service
-                      notifications-path
-                      notifications-interface
-                      notifications-close-notification-method
-                      :uint32 id))) ;; <- fix
-;; End of workaround
-
-;; On ERC buffer modification by user, clear notification message.
-
-(defun erc-close-notification ()
-  "Close ERC notification bubbles related to the current chat."
-  (let ((this-buffer (buffer-name (current-buffer))))
-    (if (assoc this-buffer erc-notification-id-alist)
-        (progn
-          (notifications-close-notification (cdr (assoc this-buffer erc-notification-id-alist)))
-          (setq erc-notification-id-alist
-                (delq
-                 (assoc this-buffer erc-notification-id-alist)
-                 erc-notification-id-alist))))))
-
-; TODO reactivate when dbus fixed
-; (add-hook 'erc-send-post-hook 'erc-close-notification)
+(defun start-erc ()
+  (interactive)
+  ;(erc :server "localhost" :port 6667 :nick "e-user" :full-name (user-full-name))
+  (erc-tls :server "irc.freenode.net" :port 6697 :nick "e-user" :full-name (user-full-name)))
 
 (provide 'modular-erc)
 ;;; modular-erc.el ends here
