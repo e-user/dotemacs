@@ -39,7 +39,8 @@
 (add-hook 'racer-mode-hook #'company-mode)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
-(setq racer-rust-src-path "~/.nix-profile")
+(setq racer-rust-src-path "~/.nix-profile"
+      rust-format-on-save t)
 
 (define-key racer-mode-map (kbd "C-c C-d") #'racer-describe)
 

@@ -31,8 +31,12 @@
 
 (install 'company-nixos-options 'helm-nixos-options 'nix-buffer 'nix-mode 'nixos-options)
 
-(setq exec-path (cons (expand-file-name "~/.nix-profile/bin") exec-path)
-      rust-format-on-save t)
+(setq exec-path (cons (expand-file-name "~/.nix-profile/bin") exec-path))
+
+(setenv "PATH" (reduce #'(lambda (acc path)
+                           (concat (expand-file-name path) ":" acc))
+                       (nreverse '("~/.nix-profile/bin" "/nix/var/nix/profiles/default"))
+                       :initial-value (getenv "PATH")))
 
 (provide 'modular-nix)
 ;;; modular-nix.el ends here
