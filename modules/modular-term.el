@@ -71,7 +71,7 @@
   (when (and term-ansi-at-host term-ansi-at-dir term-ansi-at-user)
     (setq buffer-file-name term-ansi-at-dir)
     (when (boundp 'terminal-name)
-      (rename-buffer (format "*%s: %s*" terminal-name term-ansi-at-dir)))
+      (rename-buffer (format "*%s: %s*" (replace-regexp-in-string "term" term-ansi-at-host terminal-name nil 'literal) term-ansi-at-dir)))
     ;; (setq default-directory (if (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
     ;;                             (concatenate 'string term-ansi-at-dir "/")
     ;;                           (format "/%s@%s:%s/" term-ansi-at-user term-ansi-at-host term-ansi-at-dir)))
