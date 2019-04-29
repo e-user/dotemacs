@@ -3,6 +3,16 @@
 ;;; Code:
 
 
+;;;### (autoloads nil "modular-activitywatch" "modular-activitywatch.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from modular-activitywatch.el
+
+(add-to-list 'modular-features 'modular-activitywatch)
+
+(pin "melpa-stable" 'activity-watch-mode)
+
+;;;***
+
 ;;;### (autoloads nil "modular-autoinsert" "modular-autoinsert.el"
 ;;;;;;  (23236 41743 103229 879000))
 ;;; Generated autoloads from modular-autoinsert.el
@@ -155,11 +165,12 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-erc" "modular-erc.el" (23236 41743
-;;;;;;  106229 910000))
+;;;### (autoloads nil "modular-erc" "modular-erc.el" (0 0 0 0))
 ;;; Generated autoloads from modular-erc.el
 
 (add-to-list 'modular-features 'modular-erc)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-erc" '("start-erc")))
 
 ;;;***
 
@@ -427,11 +438,12 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-term" "modular-term.el" (23236 41743
-;;;;;;  110229 953000))
+;;;### (autoloads nil "modular-term" "modular-term.el" (0 0 0 0))
 ;;; Generated autoloads from modular-term.el
 
 (add-to-list 'modular-features 'modular-term)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-term" '("term-" "multi-term+")))
 
 ;;;***
 
