@@ -382,6 +382,16 @@
 
 ;;;***
 
+;;;### (autoloads nil "modular-request" "modular-request.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from modular-request.el
+
+(add-to-list 'modular-features 'modular-request)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-request" '(#("request--make-temp-file" 0 23 (face font-lock-function-name-face fontified nil)))))
+
+;;;***
+
 ;;;### (autoloads nil "modular-rotate" "modular-rotate.el" (23236
 ;;;;;;  41743 109229 942000))
 ;;; Generated autoloads from modular-rotate.el
