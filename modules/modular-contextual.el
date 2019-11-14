@@ -42,7 +42,7 @@
        '(105 119 116 102)))
 
 (contextual-add-profile "private" ()
-  ((user-mail-address "ak@sodosopa.io")
+  ((user-mail-address "ad@sodosopa.io")
    (mu4e-base-folder "/sodosopa.io")
    (mu4e-sent-folder "/sodosopa.io/Sent")
    (mu4e-drafts-folder "/sodosopa.io/Drafts")
@@ -89,6 +89,19 @@
    (mu4e-get-mail-command "mbsync -q tpwd.de")
    (message-signature-file "~/.signature.tpwd")
    (mail-signature-file "~/.signature.tpwd")))
+
+(contextual-add-profile "planetary-networks.de" ()
+  ((user-mail-address "a.kahl@planetary-networks.de")
+   (mu4e-base-folder "/planetary-networks.de")
+   (mu4e-sent-folder "/planetary-networks.de/Sent")
+   (mu4e-drafts-folder "/planetary-networks.de/Drafts")
+   (mu4e-trash-folder "/planetary-networks.de/Trash")
+   (mu4e-refile-folder "/planetary-networks.de/Archive")
+   (message-sendmail-extra-arguments '("-a" "planetary-networks.de"))
+   (mu4e-bookmarks (basic-bookmarks "planetary-networks.de"))
+   (mu4e-get-mail-command "mbsync -q planetary-networks.de")
+   (message-signature-file "~/.signature.planetary")
+   (mail-signature-file "~/.signature.planetary")))
 
 (contextual-set-initial-profile "private")
 

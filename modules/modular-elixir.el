@@ -1,4 +1,4 @@
-;;; modular-activitywatch.el --- Modular activitywatch module  -*- lexical-binding: t; -*-
+;;; modular-elixir.el --- Modular Elixir module      -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2019  Alexander Kahl
 
@@ -20,26 +20,30 @@
 
 ;;; Commentary:
 
-;; Load activitywatch
+;; Load Elixir support
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-activitywatch)
+(add-to-list 'modular-features 'modular-elixir)
 
 ;;;###autoload
-(pin "melpa-stable" 'activity-watch-mode)
+(pin "melpa-stable" 'elixir-mode)
 
-(install 'activity-watch-mode)
+(require 'modular-lsp)
+(require 'modular-smartparens)
+(require 'modular-dap)
+(require 'dap-elixir)
 
-; (global-activity-watch-mode)
+(install 'elixir-mode)
 
-(defun activity-watch--send-heartbeat (heartbeat)
-  "Send HEARTBEAT to activity watch server."
-  (request (concat activity-watch-api-host "/api/0/buckets/" (activity-watch--bucket-id) "/heartbeat")
-           :type "POST"
-           :params `(("pulsetime" . ,activity-watch-pulse-time))
-           :data (json-encode heartbeat)
-           :headers '(("Content-Type" . "application/json"))))
+(require 'elixir-mode)
+(add-hook 'elixir-mode-hook #'smartparens-strict-mode)
+(add-hook 'elixir-mode-hook #'lsp)
 
-(provide 'modular-activitywatch)
-;;; modular-activitywatch.el ends here
+(add-hook 'elixir-mode-hook
+          #'(lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+
+(add-to-list 'exec-path (expand-file-name "~/Projects/elixir-ls/release"))
+
+(provide 'modular-elixir)
+;;; modular-elixir.el ends here

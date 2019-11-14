@@ -65,5 +65,9 @@
 ;; auth-sources
 (setq auth-sources '("~/.authinfo.gpg"))
 
+;; Window splitting
+(setq split-height-threshold nil
+      split-width-threshold 160)
+
 (provide 'modular-emacs)
 ;;; modular-emacs.el ends here

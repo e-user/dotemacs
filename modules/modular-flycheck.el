@@ -27,7 +27,7 @@
 (add-to-list 'modular-features 'modular-flycheck)
 
 ;;;###autoload
-(pin "melpa-stable" 'flycheck 'flycheck-package)
+(pin "melpa-stable" 'flycheck-package)
 
 (install 'flycheck 'flycheck-package)
 (require 'flycheck)

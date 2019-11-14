@@ -40,55 +40,80 @@
 (define-key org-mode-map (kbd "<S-left>") nil)
 (define-key org-mode-map (kbd "<S-right>") nil)
 
+(define-key org-agenda-mode-map (kbd "<S-left>") nil)
+(define-key org-agenda-mode-map (kbd "<S-right>") nil)
+(define-key org-agenda-mode-map (kbd "<return>") 'org-agenda-show)
+
 (define-key org-mode-map (kbd "M-}") 'org-forward-paragraph)
 (define-key org-mode-map (kbd "M-{") 'org-backward-paragraph)
 
-(defvar org-gtd-file "~/ownCloud/Documents/gtd.org")
-(defvar org-notes-file "~/ownCloud/Documents/notes.org")
+(defvar org-gtd-file "~/Nextcloud/alexander.dorn@cloud.communicatio.com/Documents/gtd")
+(defvar org-notes-file "~/Nextcloud/alexander.dorn@cloud.communicatio.com/Documents/notes.org")
 
 ;; (define-key org-mode-map "\C-\M-j" 'org-insert-todo-heading)
 ;; (define-key org-mode-map "\C-j" 'org-insert-heading)
-(setq org-agenda-files `(,org-gtd-file)
-      org-log-done 'time
-      org-hide-leading-stars t
-      org-use-fast-todo-selection t
-      org-treat-S-cursor-todo-selection-as-state-change nil
-      org-directory "~/Documents/"
-      org-default-notes-file org-notes-file
-      org-capture-templates `(("t" "Todo" entry (file+headline ,org-gtd-file "Tasks")
-                               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-                              ("n" "Note" entry (file+headline ,org-notes-file "Notes")
-                               "* %? :NOTE:\n%U\n%a\n"))
-      org-stuck-projects '("WORK/-DONE|PRIVATE/-DONE" ("TODO" "NEXT") nil "")
-      org-todo-state-tags-triggers '(("CANCELLED" ("CANCELLED" . t))
-                                     ("WAITING" ("WAITING" . t))
-                                     ("HOLD" ("WAITING" . t) ("HOLD" . t))
-                                     (done ("WAITING") ("HOLD"))
-                                     ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
-                                     ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
-                                     ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))
-      org-refile-use-outline-path 'file
-      org-refile-targets '((org-agenda-files . (:level . 1)))
-      org-outline-path-complete-in-steps nil
-      org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
-                          (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))
-      org-startup-indented t
-      org-agenda-custom-commands '(("N" "Notes" tags "NOTE"
-                                    ((org-agenda-overriding-header "Notes")
-                                     (org-tags-match-list-sublevels t)))
-                                   ("h" "Habits" tags-todo "STYLE=\"habit\""
-                                    ((org-agenda-overriding-header "Habits")
-                                     (org-agenda-sorting-strategy
-                                      '(todo-state-down effort-up category-keep))))
-                                   ("n" "Next Tasks" tags-todo "-WAITING-CANCELLED/!NEXT"
-                                    ((org-agenda-overriding-header "Next Tasks")
-                                     (org-agenda-todo-ignore-scheduled t)
-                                     (org-agenda-todo-ignore-deadlines t)
-                                     (org-agenda-todo-ignore-with-date t)
-                                     (org-tags-match-list-sublevels t)
-                                     (org-agenda-sorting-strategy
-                                      '(todo-state-down effort-up category-keep)))))
-      org-clock-persist t)
+(let ((review '((org-agenda-show-all-dates t)
+                (org-agenda-start-with-log-mode t)
+                (org-agenda-start-with-clockreport-mode t)
+                (org-agenda-archives-mode t))))
+  (setq org-agenda-files `(,org-gtd-file)
+        org-log-done 'time
+        org-hide-leading-stars t
+        org-use-fast-todo-selection t
+        org-treat-S-cursor-todo-selection-as-state-change nil
+        org-directory "~/Documents/"
+        org-default-notes-file org-notes-file
+        org-capture-templates `(("t" "Todo" entry (file+headline ,org-gtd-file "Tasks")
+                                 "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+                                ("n" "Note" entry (file+headline ,org-notes-file "Notes")
+                                 "* %? :NOTE:\n%U\n%a\n"))
+        org-stuck-projects '("WORK/-DONE|PRIVATE/-DONE" ("TODO" "NEXT") nil "")
+        org-todo-state-tags-triggers '(("CANCELLED" ("CANCELLED" . t))
+                                       ("WAITING" ("WAITING" . t))
+                                       ("HOLD" ("WAITING" . t) ("HOLD" . t))
+                                       (done ("WAITING") ("HOLD"))
+                                       ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
+                                       ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
+                                       ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))
+        org-refile-use-outline-path 'file
+        org-refile-targets '((org-agenda-files . (:level . 1)))
+        org-outline-path-complete-in-steps nil
+        org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
+                            (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))
+        org-startup-indented t
+        org-agenda-custom-commands `(("N" "Notes" tags "NOTE"
+                                      ((org-agenda-overriding-header "Notes")
+                                       (org-tags-match-list-sublevels t)))
+                                     ("h" "Habits" tags-todo "STYLE=\"habit\""
+                                      ((org-agenda-overriding-header "Habits")
+                                       (org-agenda-sorting-strategy
+                                        '(todo-state-down effort-up category-keep))))
+                                     ("n" "Next Tasks" tags-todo "-WAITING-CANCELLED/!NEXT"
+                                      ((org-agenda-overriding-header "Next Tasks")
+                                       (org-agenda-todo-ignore-scheduled t)
+                                       (org-agenda-todo-ignore-deadlines t)
+                                       (org-agenda-todo-ignore-with-date t)
+                                       (org-tags-match-list-sublevels t)
+                                       (org-agenda-sorting-strategy
+                                        '(todo-state-down effort-up category-keep))))
+                                     ("rd" "Review" agenda "day"
+                                      (,@review
+                                       (org-agenda-span 'day)
+                                       (org-agenda-overriding-header "Day in Review")))
+                                     ("rw" "Review" agenda "week"
+                                      (,@review
+                                       (org-agenda-span 'week)
+                                       (org-agenda-start-on-weekday 0)
+                                       (org-agenda-overriding-header "Week in Review")))
+                                     ("rm" "Review" agenda "month"
+                                      (,@review
+                                       (org-agenda-span 'month)
+                                       (org-agenda-start-day "01")
+                                       (org-read-date-prefer-future nil)
+                                       (org-agenda-overriding-header "Month in Review"))))
+        org-clock-persist 'history
+        org-log-into-drawer t
+        org-duration-format (quote h:mm)))
 
 (org-clock-persistence-insinuate)
 

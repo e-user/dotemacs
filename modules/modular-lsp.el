@@ -1,4 +1,4 @@
-;;; modular-activitywatch.el --- Modular activitywatch module  -*- lexical-binding: t; -*-
+;;; modular-lsp.el --- Modular Lsp module      -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2019  Alexander Kahl
 
@@ -20,26 +20,21 @@
 
 ;;; Commentary:
 
-;; Load activitywatch
+;; Load Lsp support
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-activitywatch)
+(add-to-list 'modular-features 'modular-lsp)
 
 ;;;###autoload
-(pin "melpa-stable" 'activity-watch-mode)
+(pin "melpa-stable" 'lsp-mode 'company-lsp 'helm-lsp 'lsp-ui)
 
-(install 'activity-watch-mode)
+(install 'lsp-mode 'company-lsp 'helm-lsp 'lsp-ui)
+(add-hook 'lsp-mode-hook 'lsp-ui-mode)
 
-; (global-activity-watch-mode)
+(require 'lsp-mode)
+(require 'company-lsp)
+(push 'company-lsp company-backends)
 
-(defun activity-watch--send-heartbeat (heartbeat)
-  "Send HEARTBEAT to activity watch server."
-  (request (concat activity-watch-api-host "/api/0/buckets/" (activity-watch--bucket-id) "/heartbeat")
-           :type "POST"
-           :params `(("pulsetime" . ,activity-watch-pulse-time))
-           :data (json-encode heartbeat)
-           :headers '(("Content-Type" . "application/json"))))
-
-(provide 'modular-activitywatch)
-;;; modular-activitywatch.el ends here
+(provide 'modular-lsp)
+;;; modular-lsp.el ends here

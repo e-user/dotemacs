@@ -27,9 +27,12 @@
 (add-to-list 'modular-features 'modular-rust)
 
 ;;;###autoload
-(pin "melpa-stable" 'rust-mode 'racer)
+(pin "melpa-stable" 'rust-mode 'racer 'flycheck-rust)
 
 (install 'rust-mode 'racer 'flycheck-rust)
+
+(require 'rust-mode)
+(require 'racer)
 
 (require 'modular-company)
 (require 'modular-flycheck)

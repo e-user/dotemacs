@@ -38,7 +38,8 @@
 (require 'helm-projectile)
 
 (setq helm-net-prefer-curl t
-      helm-split-window-in-side-p t
+      helm-split-window-inside-p t
+      helm-always-two-windows nil
       helm-buffers-fuzzy-matching t
       helm-move-to-line-cycle-in-source t
       ; workaround

@@ -28,5 +28,7 @@
 
 (define-key dired-mode-map "\M-o" nil)
 
+(setq dired-listing-switches "-alh")
+
 (provide 'modular-dired)
 ;;; modular-dired.el ends here

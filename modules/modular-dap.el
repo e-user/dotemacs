@@ -1,4 +1,4 @@
-;;; modular-activitywatch.el --- Modular activitywatch module  -*- lexical-binding: t; -*-
+;;; modular-dap.el --- Modular DAP module      -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2019  Alexander Kahl
 
@@ -20,26 +20,20 @@
 
 ;;; Commentary:
 
-;; Load activitywatch
+;; Load DAP support
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-activitywatch)
+(add-to-list 'modular-features 'modular-dap)
 
 ;;;###autoload
-(pin "melpa-stable" 'activity-watch-mode)
+(pin "melpa-stable" 'dap-mode)
 
-(install 'activity-watch-mode)
+(install 'dap-mode)
+(require 'dap-mode)
 
-; (global-activity-watch-mode)
+(dap-mode 1)
+(dap-ui-mode 1)
 
-(defun activity-watch--send-heartbeat (heartbeat)
-  "Send HEARTBEAT to activity watch server."
-  (request (concat activity-watch-api-host "/api/0/buckets/" (activity-watch--bucket-id) "/heartbeat")
-           :type "POST"
-           :params `(("pulsetime" . ,activity-watch-pulse-time))
-           :data (json-encode heartbeat)
-           :headers '(("Content-Type" . "application/json"))))
-
-(provide 'modular-activitywatch)
-;;; modular-activitywatch.el ends here
+(provide 'modular-dap)
+;;; modular-dap.el ends here
