@@ -36,7 +36,7 @@
 (tool-bar-mode 0)
 (column-number-mode)
 
-(calendar-set-date-style 'iso)
+; (calendar-set-date-style 'iso)
 (setq calendar-week-start-day 1)
 
 (setq revert-without-query '(".*"))
@@ -68,6 +68,8 @@
 ;; Window splitting
 (setq split-height-threshold nil
       split-width-threshold 160)
+
+(modular-extend-path "~/.local/bin")
 
 (provide 'modular-emacs)
 ;;; modular-emacs.el ends here

@@ -54,6 +54,19 @@
    (message-signature-file "~/.signature.private")
    (mail-signature-file "~/.signature.private")))
 
+(contextual-add-profile "solvemate.com" ()
+  ((user-mail-address "a.dorn@solvemate.com")
+   (mu4e-base-folder "/solvemate.com")
+   (mu4e-sent-folder "/solvemate.com/[Gmail]/Sent Mail")
+   (mu4e-drafts-folder "/solvemate.com/[Gmail]/Drafts")
+   (mu4e-trash-folder "/solvemate.com/[Gmail]/Trash")
+   (mu4e-refile-folder "/solvemate.com/[Gmail]/Archives")
+   (message-sendmail-extra-arguments '("-a" "solvemate.com"))
+   (mu4e-bookmarks (basic-bookmarks "solvemate.com"))
+   (mu4e-get-mail-command "mbsync -q solvemate.com")
+   (message-signature-file "~/.signature.solvemate")
+   (mail-signature-file "~/.signature.solvemate")))
+
 (contextual-add-profile "communicatio.systems" ()
   ((user-mail-address "a.kahl@communicatio.systems")
    (mu4e-base-folder "/communicatio.systems")
@@ -91,7 +104,7 @@
    (mail-signature-file "~/.signature.tpwd")))
 
 (contextual-add-profile "planetary-networks.de" ()
-  ((user-mail-address "a.kahl@planetary-networks.de")
+  ((user-mail-address "a.dorn@planetary-networks.de")
    (mu4e-base-folder "/planetary-networks.de")
    (mu4e-sent-folder "/planetary-networks.de/Sent")
    (mu4e-drafts-folder "/planetary-networks.de/Drafts")

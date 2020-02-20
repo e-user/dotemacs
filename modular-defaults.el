@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(setq load-prefer-newer t
+(setq load-prefer-newer nil
       gc-cons-threshold 50000000
       large-file-warning-threshold 100000000)
 

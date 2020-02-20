@@ -17,14 +17,15 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-elpa" "modular-elpa.el" (23236 41743
-;;;;;;  102229 868000))
+;;;### (autoloads nil "modular-elpa" "modular-elpa.el" (0 0 0 0))
 ;;; Generated autoloads from modular-elpa.el
 
 (autoload 'pin "modular-elpa" "\
 
 
 \(fn REPOSITORY &rest PACKAGES)" nil nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-elpa" '("install" "modular-elpa-late-init")))
 
 ;;;***
 

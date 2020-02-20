@@ -1,8 +1,8 @@
 ;;; modular-fonts.el --- Modular font module         -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2018  Alexander Kahl
+;; Copyright (C) 2018-2019  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -30,14 +30,14 @@
 
 (defcontext font-profiles)
 
-(contextual-add-profile "small" (font-profiles) ((default-frame-alist '((font . "Inconsolata-6"))))
-  (set-frame-font "Inconsolata-6"))
-(contextual-add-profile "normal" (font-profiles) ((default-frame-alist '((font . "Inconsolata-9"))))
-  (set-frame-font "Inconsolata-9"))
-(contextual-add-profile "large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-12"))))
-  (set-frame-font "Inconsolata-12"))
-(contextual-add-profile "x-large" (font-profiles) ((default-frame-alist '((font . "Inconsolata-14"))))
-  (set-frame-font "Inconsolata-14"))
+(contextual-add-profile "small" (font-profiles) ((default-frame-alist '((font . "Hack-6"))))
+  (set-frame-font "Hack-6"))
+(contextual-add-profile "normal" (font-profiles) ((default-frame-alist '((font . "Hack-9"))))
+  (set-frame-font "Hack-9"))
+(contextual-add-profile "large" (font-profiles) ((default-frame-alist '((font . "Hack-12"))))
+  (set-frame-font "Hack-12"))
+(contextual-add-profile "x-large" (font-profiles) ((default-frame-alist '((font . "Hack-14"))))
+  (set-frame-font "Hack-14"))
 
 (contextual-define-context-loader font-profile-loader
   font-profiles (kbd "f"))

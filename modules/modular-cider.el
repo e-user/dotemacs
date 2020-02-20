@@ -49,7 +49,11 @@
       cider-test-show-report-on-success t
       cider-repl-display-help-banner nil
       cider-lein-command "~/bin/lein"
-      cider-repl-use-pretty-printing t)
+      cider-repl-use-pretty-printing t
+      cider-clojure-cli-command "toolbox"
+      cider-clojure-cli-global-options "run --container jdk clojure"
+      cider-jack-in-default 'clojure-cli
+      cider-clojure-cli-parameters "-A:dev -m nrepl.cmdline --middleware '%s'")
 
 (define-key cider-mode-map (kbd "C-.") 'completion-at-point)
 (define-key cider-repl-mode-map (kbd "C-.") 'completion-at-point)

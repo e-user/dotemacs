@@ -41,6 +41,11 @@
 	      (update-directory-autoloads dir)))
 	'("" "modules")))
 
+(defun modular-extend-path (path)
+  (let ((path (expand-file-name path)))
+    (add-to-list 'exec-path path)
+    (setenv "PATH" (concat path ":" (getenv "PATH")))))
+
 ;;;###autoload
 (defun modular ()
   (interactive)

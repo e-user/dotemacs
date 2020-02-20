@@ -1,8 +1,8 @@
-;;; modular-python.el --- Modular Python module      -*- lexical-binding: t; -*-
+;;; modular-flatpak.el --- Modular Flatpak module    -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2017  Alexander Kahl
+;; Copyright (C) 2019  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -16,25 +16,17 @@
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
-;; Load Python
+;; Load Flatpak support
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-python)
+(add-to-list 'modular-features 'modular-flatpak)
 
-;;;###autoload
-(pin "melpa-stable" 'elpy)
+(setenv "PATH" (concat "/var/run/host/usr/bin" ":" (getenv "PATH")))
 
-(install 'elpy)
-
-(elpy-enable)
-
-(define-key elpy-mode-map (kbd "M-.") 'elpy-goto-definition)
-(define-key elpy-mode-map (kbd "C-x 4 M-.") 'elpy-goto-definition-other-window)
-
-(provide 'modular-python)
-;;; modular-python.el ends here
+(provide 'modular-flatpak)
+;;; modular-flatpak.el ends here

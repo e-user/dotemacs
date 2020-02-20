@@ -1,8 +1,8 @@
 ;;; modular-org.el --- Modular Org module            -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016  Alexander Kahl
+;; Copyright (C) 2016-2020  Alexander Dorn
 
-;; Author: Alexander Kahl <alex@lshift.de>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -47,8 +47,8 @@
 (define-key org-mode-map (kbd "M-}") 'org-forward-paragraph)
 (define-key org-mode-map (kbd "M-{") 'org-backward-paragraph)
 
-(defvar org-gtd-file "~/Nextcloud/alexander.dorn@cloud.communicatio.com/Documents/gtd")
-(defvar org-notes-file "~/Nextcloud/alexander.dorn@cloud.communicatio.com/Documents/notes.org")
+(defvar org-gtd-file "~/Nextcloud/cloud.sodosopa.io/Documents/gtd")
+(defvar org-notes-file "~/Nextcloud/cloud.sodosopa.io/Documents/notes.org")
 
 ;; (define-key org-mode-map "\C-\M-j" 'org-insert-todo-heading)
 ;; (define-key org-mode-map "\C-j" 'org-insert-heading)
@@ -56,7 +56,7 @@
                 (org-agenda-start-with-log-mode t)
                 (org-agenda-start-with-clockreport-mode t)
                 (org-agenda-archives-mode t))))
-  (setq org-agenda-files `(,org-gtd-file)
+  (setq org-agenda-files (list org-gtd-file)
         org-log-done 'time
         org-hide-leading-stars t
         org-use-fast-todo-selection t

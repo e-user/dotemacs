@@ -43,13 +43,11 @@
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
 (setq racer-rust-src-path "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-      racer-cmd "~/.cargo/bin/racer"
+      rust-cargo-bin (expand-file-name "~/bin/flatpak-cargo")
+      flycheck-rust-cargo-executable (expand-file-name "~/bin/flatpak-cargo")
       rust-format-on-save t)
 
-(setenv "PATH" (reduce #'(lambda (acc path)
-                           (concat (expand-file-name path) ":" acc))
-                       (nreverse '("~/.cargo/bin" "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin"))
-                       :initial-value (getenv "PATH")))
+(modular-extend-path "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin")
 
 (define-key racer-mode-map (kbd "C-c C-d") #'racer-describe)
 

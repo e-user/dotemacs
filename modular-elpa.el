@@ -16,13 +16,18 @@
       (eval-region (point) (point-max))
       (kill-buffer (current-buffer)))))
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"
+      package-check-signature nil)
+
 (package-initialize)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("gnu" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/"))
+             '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (defvar modular-elpa-late-init nil
   "Indicator whether package-refresh-contents has been executed")

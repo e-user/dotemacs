@@ -52,7 +52,12 @@
               js2-mirror-mode t
               js2-strict-missing-semi-warning nil)
 
-(setq mocha-command "node_modules/.bin/mocha")
+;; https://github.com/AdamNiederer/vue-mode/issues/74
+;; https://github.com/AdamNiederer/vue-mode/issues/100
+(setq mmm-js-mode-enter-hook #'(lambda () (setq syntax-ppss-table nil)))
+
+(setq tern-command `("toolbox" "run" "--container" "nodejs-12" ,(expand-file-name "~/node_modules/.bin/tern"))
+      mocha-command `("toolbox" "run" "--container" "nodejs-12" ,(expand-file-name "~/node_modules/.bin/mocha")))
 
 (provide 'modular-javascript)
 ;;; modular-javascript.el ends here

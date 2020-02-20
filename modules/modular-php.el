@@ -1,8 +1,8 @@
-;;; modular-python.el --- Modular Python module      -*- lexical-binding: t; -*-
+;;; modular-php.el --- Modular PHP module            -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2017  Alexander Kahl
+;; Copyright (C) 2019  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <a.kahl@planetary-networks.de>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -16,25 +16,24 @@
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
-;; Load Python
+;; Load modular support
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-python)
+(add-to-list 'modular-features 'modular-php)
 
 ;;;###autoload
-(pin "melpa-stable" 'elpy)
+(pin "melpa-stable" 'php-mode 'flymake-php 'company-php)
 
-(install 'elpy)
+(install 'php-mode 'flymake-php 'company-php)
 
-(elpy-enable)
+(require 'modular-company)
+(add-hook 'php-mode-hook
+          #'(lambda () (add-to-list 'company-backends 'company-ac-php-backend )))
 
-(define-key elpy-mode-map (kbd "M-.") 'elpy-goto-definition)
-(define-key elpy-mode-map (kbd "C-x 4 M-.") 'elpy-goto-definition-other-window)
-
-(provide 'modular-python)
-;;; modular-python.el ends here
+(provide 'modular-php)
+;;; modular-php.el ends here

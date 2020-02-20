@@ -11,6 +11,8 @@
 
 (pin "melpa-stable" 'activity-watch-mode)
 
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-activitywatch" '("activity-watch--send-heartbeat")))
+
 ;;;***
 
 ;;;### (autoloads nil "modular-autoinsert" "modular-autoinsert.el"
@@ -66,7 +68,7 @@
 
 (pin "melpa-stable" 'contextual)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-contextual" '(#("contextual-" 0 11 (face font-lock-function-name-face fontified nil)) #("basic-bookmarks" 0 15 (face font-lock-function-name-face fontified nil)))))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-contextual" '("contextual-" "basic-bookmarks")))
 
 ;;;***
 
@@ -89,11 +91,21 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-dired" "modular-dired.el" (23236 41743
-;;;;;;  104229 889000))
+;;;### (autoloads nil "modular-dap" "modular-dap.el" (0 0 0 0))
+;;; Generated autoloads from modular-dap.el
+
+(add-to-list 'modular-features 'modular-dap)
+
+(pin "melpa-stable" 'dap-mode)
+
+;;;***
+
+;;;### (autoloads nil "modular-dired" "modular-dired.el" (0 0 0 0))
 ;;; Generated autoloads from modular-dired.el
 
 (add-to-list 'modular-features 'modular-dired)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-dired" '("dired-open-file")))
 
 ;;;***
 
@@ -140,12 +152,22 @@
 
 ;;;***
 
+;;;### (autoloads nil "modular-elixir" "modular-elixir.el" (0 0 0
+;;;;;;  0))
+;;; Generated autoloads from modular-elixir.el
+
+(add-to-list 'modular-features 'modular-elixir)
+
+(pin "melpa-stable" 'elixir-mode)
+
+;;;***
+
 ;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (0 0 0 0))
 ;;; Generated autoloads from modular-emacs.el
 
 (add-to-list 'modular-features 'modular-emacs)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-emacs" '(#("open-as-root" 0 12 (face font-lock-function-name-face fontified nil)))))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-emacs" '("open-as-root")))
 
 ;;;***
 
@@ -184,6 +206,14 @@
 
 ;;;***
 
+;;;### (autoloads nil "modular-flatpak" "modular-flatpak.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from modular-flatpak.el
+
+(add-to-list 'modular-features 'modular-flatpak)
+
+;;;***
+
 ;;;### (autoloads nil "modular-floobits" "modular-floobits.el" (23236
 ;;;;;;  41743 106229 910000))
 ;;; Generated autoloads from modular-floobits.el
@@ -194,13 +224,13 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-flycheck" "modular-flycheck.el" (23236
-;;;;;;  41743 106229 910000))
+;;;### (autoloads nil "modular-flycheck" "modular-flycheck.el" (0
+;;;;;;  0 0 0))
 ;;; Generated autoloads from modular-flycheck.el
 
 (add-to-list 'modular-features 'modular-flycheck)
 
-(pin "melpa-stable" 'flycheck 'flycheck-package)
+(pin "melpa-stable" 'flycheck-package)
 
 ;;;***
 
@@ -239,8 +269,7 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-guru" "modular-guru.el" (23236 41743
-;;;;;;  107229 921000))
+;;;### (autoloads nil "modular-guru" "modular-guru.el" (0 0 0 0))
 ;;; Generated autoloads from modular-guru.el
 
 (add-to-list 'modular-features 'modular-guru)
@@ -280,6 +309,25 @@
 (add-to-list 'modular-features 'modular-javascript)
 
 (pin "melpa-stable" 'js2-mode 'mocha 'indium 'tern 'company-tern 'vue-mode)
+
+;;;***
+
+;;;### (autoloads nil "modular-ledger" "modular-ledger.el" (0 0 0
+;;;;;;  0))
+;;; Generated autoloads from modular-ledger.el
+
+(add-to-list 'modular-features 'modular-ledger)
+
+(pin "melpa-stable" 'ledger-mode 'flycheck-ledger)
+
+;;;***
+
+;;;### (autoloads nil "modular-lsp" "modular-lsp.el" (0 0 0 0))
+;;; Generated autoloads from modular-lsp.el
+
+(add-to-list 'modular-features 'modular-lsp)
+
+(pin "melpa-stable" 'lsp-mode 'company-lsp 'helm-lsp 'lsp-ui)
 
 ;;;***
 
@@ -338,11 +386,12 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-org" "modular-org.el" (23236 41743
-;;;;;;  109229 942000))
+;;;### (autoloads nil "modular-org" "modular-org.el" (0 0 0 0))
 ;;; Generated autoloads from modular-org.el
 
 (add-to-list 'modular-features 'modular-org)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-org" '(#("org-" 0 4 (fontified nil face font-lock-variable-name-face)))))
 
 ;;;***
 
@@ -351,6 +400,15 @@
 ;;; Generated autoloads from modular-password-store.el
 
 (add-to-list 'modular-features 'modular-password-store)
+
+;;;***
+
+;;;### (autoloads nil "modular-php" "modular-php.el" (0 0 0 0))
+;;; Generated autoloads from modular-php.el
+
+(add-to-list 'modular-features 'modular-php)
+
+(pin "melpa-stable" 'php-mode 'flymake-php 'company-php)
 
 ;;;***
 
@@ -364,8 +422,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-python" "modular-python.el" (23236
-;;;;;;  41743 109229 942000))
+;;;### (autoloads nil "modular-python" "modular-python.el" (0 0 0
+;;;;;;  0))
 ;;; Generated autoloads from modular-python.el
 
 (add-to-list 'modular-features 'modular-python)
@@ -405,7 +463,7 @@
 
 (add-to-list 'modular-features 'modular-rust)
 
-(pin "melpa-stable" 'rust-mode 'racer)
+(pin "melpa-stable" 'rust-mode 'racer 'flycheck-rust)
 
 ;;;***
 
@@ -480,6 +538,16 @@
 ;;; Generated autoloads from modular-toml.el
 
 (add-to-list 'modular-features 'modular-toml)
+
+;;;***
+
+;;;### (autoloads nil "modular-typescript" "modular-typescript.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from modular-typescript.el
+
+(add-to-list 'modular-features 'modular-typescript)
+
+(pin "melpa-stable" 'tide)
 
 ;;;***
 

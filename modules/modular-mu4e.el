@@ -19,9 +19,6 @@
                                                     '("private" "communicatio.systems"))
                                           (mml-secure-message-sign-pgpmime))))
 
-(when-let ((dir (first (file-expand-wildcards "/nix/store/*mu*/share/emacs/site-lisp/mu4e"))))
-  (add-to-list 'load-path dir))
-
 (when (require 'mu4e nil t)
   (install 'mu4e-alert)
   (require 'mu4e-alert)

@@ -31,11 +31,18 @@
 
 ; (add-hook 'term-mode-hook #'(lambda () (hl-line-mode)))
 
-(setq term-index 0)
+(defvar term-index 0)
 
 (defun multi-term+ ()
   (interactive)
-  (let ((term-buffer (multi-term)))
+  (let (term-buffer)
+    ;; Set buffer.
+    (setq term-buffer (multi-term-get-buffer current-prefix-arg))
+    (setq multi-term-buffer-list (nconc multi-term-buffer-list (list term-buffer)))
+    (set-buffer term-buffer)
+    ;; Internal handle for `multi-term' buffer.
+    (multi-term-internal)
+    (multi-term-switch-buffer term-buffer default-directory)
     (with-current-buffer term-buffer
       (setq-local terminal-name (format "term<%d>" (incf term-index)))
       (rename-buffer (format "*%s*" terminal-name)))

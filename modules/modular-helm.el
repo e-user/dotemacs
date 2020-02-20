@@ -43,7 +43,8 @@
       helm-buffers-fuzzy-matching t
       helm-move-to-line-cycle-in-source t
       ; workaround
-      helm-follow-mode nil)
+      helm-follow-mode nil
+      helm-apropos-fuzzy-match t)
 
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
@@ -58,7 +59,10 @@
 (global-set-key (kbd "C-h f") 'helm-apropos)
 (global-set-key (kbd "C-h r") 'helm-info-emacs)
 (global-set-key (kbd "C-h C-l") 'helm-locate-library)
+(global-set-key (kbd "C-c C-d") 'helm-apropos)
 (define-key helm-map (kbd "C-.") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "<left>") 'helm-previous-source)
+(define-key helm-map (kbd "<right>") 'helm-next-source)
 (define-key helm-read-file-map (kbd "C-.") 'helm-execute-persistent-action)
 (define-key projectile-command-map (kbd "b") #'helm-projectile-switch-to-buffer)
 (define-key projectile-command-map (kbd "p") #'helm-projectile-switch-project)
