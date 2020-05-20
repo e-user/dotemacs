@@ -27,17 +27,18 @@
 (add-to-list 'modular-features 'modular-fonts)
 
 (require 'modular-contextual)
+(require 'modular-fira)
 
 (defcontext font-profiles)
 
-(contextual-add-profile "small" (font-profiles) ((default-frame-alist '((font . "Hack-6"))))
-  (set-frame-font "Hack-6"))
-(contextual-add-profile "normal" (font-profiles) ((default-frame-alist '((font . "Hack-9"))))
-  (set-frame-font "Hack-9"))
-(contextual-add-profile "large" (font-profiles) ((default-frame-alist '((font . "Hack-12"))))
-  (set-frame-font "Hack-12"))
-(contextual-add-profile "x-large" (font-profiles) ((default-frame-alist '((font . "Hack-14"))))
-  (set-frame-font "Hack-14"))
+(contextual-add-profile "small" (font-profiles) ((default-frame-alist '((font . "Fira Code-6"))))
+  (set-frame-font "Fira Code-6"))
+(contextual-add-profile "normal" (font-profiles) ((default-frame-alist '((font . "Fira Code-9"))))
+  (set-frame-font "Fira Code-9"))
+(contextual-add-profile "large" (font-profiles) ((default-frame-alist '((font . "Fira Code-12"))))
+  (set-frame-font "Fira Code-12"))
+(contextual-add-profile "x-large" (font-profiles) ((default-frame-alist '((font . "Fira Code-14"))))
+  (set-frame-font "Fira Code-14"))
 
 (contextual-define-context-loader font-profile-loader
   font-profiles (kbd "f"))

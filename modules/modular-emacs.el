@@ -69,6 +69,9 @@
 (setq split-height-threshold nil
       split-width-threshold 160)
 
+;; Socket location
+(setq server-socket-dir (format "/run/user/%d/emacs" (user-uid)))
+
 (modular-extend-path "~/.local/bin")
 
 (provide 'modular-emacs)

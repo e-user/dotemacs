@@ -36,7 +36,9 @@
 
 (require 'modular-company)
 (require 'modular-flycheck)
+(require 'modular-fira)
 
+(add-hook 'rust-mode-hook #'fira-code-mode)
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
 (add-hook 'racer-mode-hook #'company-mode)

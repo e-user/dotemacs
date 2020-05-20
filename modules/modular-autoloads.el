@@ -40,8 +40,8 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-clojure" "modular-clojure.el" (23236
-;;;;;;  41743 103229 879000))
+;;;### (autoloads nil "modular-clojure" "modular-clojure.el" (0 0
+;;;;;;  0 0))
 ;;; Generated autoloads from modular-clojure.el
 
 (add-to-list 'modular-features 'modular-clojure)
@@ -152,6 +152,13 @@
 
 ;;;***
 
+;;;### (autoloads nil "modular-elisp" "modular-elisp.el" (0 0 0 0))
+;;; Generated autoloads from modular-elisp.el
+
+(add-to-list 'modular-features 'modular-elisp)
+
+;;;***
+
 ;;;### (autoloads nil "modular-elixir" "modular-elixir.el" (0 0 0
 ;;;;;;  0))
 ;;; Generated autoloads from modular-elixir.el
@@ -167,7 +174,7 @@
 
 (add-to-list 'modular-features 'modular-emacs)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-emacs" '("open-as-root")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-emacs" '(#("open-as-root" 0 12 (face font-lock-function-name-face fontified nil)))))
 
 ;;;***
 
@@ -203,6 +210,13 @@
 (add-to-list 'modular-features 'modular-erlang)
 
 (pin "melpa-stable" 'erlang)
+
+;;;***
+
+;;;### (autoloads nil "modular-fira" "modular-fira.el" (0 0 0 0))
+;;; Generated autoloads from modular-fira.el
+
+(add-to-list 'modular-features 'modular-fira)
 
 ;;;***
 
@@ -455,6 +469,13 @@
 ;;; Generated autoloads from modular-rotate.el
 
 (add-to-list 'modular-features 'modular-rotate)
+
+;;;***
+
+;;;### (autoloads nil "modular-rpm" "modular-rpm.el" (0 0 0 0))
+;;; Generated autoloads from modular-rpm.el
+
+(add-to-list 'modular-features 'modular-rpm)
 
 ;;;***
 

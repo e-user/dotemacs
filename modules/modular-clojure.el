@@ -29,11 +29,15 @@
 ;;;###autoload
 (pin "melpa-stable" 'clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking)
 
+
 (install 'clojure-mode 'clj-refactor 'clojure-mode-extra-font-locking 'flycheck-clojure)
 
 (require 'clojure-mode)
-
 (require 'clojure-mode-extra-font-locking)
+
+(require 'modular-fira)
+
+(add-hook 'clojure-mode-hook #'fira-code-mode)
 
 ; (require 'clj-refactor)
 ; (add-hook 'clojure-mode-hook 'clj-refactor-mode)

@@ -23,6 +23,7 @@
 (require 'projectile-terminal)
 
 (setq projectile-terminal-multi-term-register t)
+(add-to-list 'projectile-globally-ignored-directories "node_modules")
 
 (provide 'modular-projectile)
 ;;; modular-projectile.el ends here

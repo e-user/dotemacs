@@ -31,6 +31,7 @@
 
 (require 'modular-clojure)
 (require 'modular-company)
+(require 'modular-fira)
 
 (install 'cider 'ac-cider)
 
@@ -38,6 +39,8 @@
 
 (add-hook 'cider-interaction-mode-hook 'eldoc-mode)
 (add-hook 'cider-mode-hook 'eldoc-mode)
+(add-hook 'cider-repl-mode-hook #'fira-code-mode)
+(add-hook 'cider-interaction-mode-hook #'fira-code-mode)
 
 ;(define-key cider-mode-map (kbd "<C-j>") 'nrepl-newline-and-indent)
 ;(define-key cider-repl-mode-map (kbd "<C-j>") 'nrepl-newline-and-indent)
