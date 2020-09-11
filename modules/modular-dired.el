@@ -1,8 +1,8 @@
 ;;; modular-dired.el --- Dired init
 
-;; Copyright © 2014  Alexander Kahl
+;; Copyright © 2014  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: dired
 
 ;;; Code:

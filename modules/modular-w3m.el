@@ -1,8 +1,8 @@
 ;;; modular-w3m.el --- Initialize w3m
 
-;; Copyright © 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: w3m, www, browsing, web
 
 ;;; Code:

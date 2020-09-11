@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2016  Alexander Kahl
 
-;; Author: Alexander Kahl <alex@lshift.de>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify

@@ -1,8 +1,8 @@
 ;;; modular-google-contacts.el --- Google Contacts   -*- lexical-binding: t; -*-
 
-;; Copyright © 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: mail
 
 ;;; Code:

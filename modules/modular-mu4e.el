@@ -1,8 +1,8 @@
 ;;; modular-mu4e.el --- Initialize mu4e
 
-;; Copyright © 2015, 2016  Alexander Kahl
+;; Copyright © 2015, 2016  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: mu4e, mail
 
 ;;; Code:

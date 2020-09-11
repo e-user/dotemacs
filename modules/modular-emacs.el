@@ -1,8 +1,8 @@
 ;;; modular-guru.el --- Modular Emacs settings          -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016  Alexander Kahl
+;; Copyright (C) 2016  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify

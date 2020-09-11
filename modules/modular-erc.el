@@ -1,8 +1,8 @@
 ;;; modular-docker.el --- Modular Erc module      -*- lexical-binding: t; -*-
 
-;; Copyright © 2014, 2018 Alexander Kahl
+;; Copyright © 2014, 2018 Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify

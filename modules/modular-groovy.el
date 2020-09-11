@@ -1,8 +1,8 @@
 ;;; modular-groovy.el --- Modular groovy module      -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2017  Alexander Kahl
+;; Copyright (C) 2017  Alexander Dorn
 
-;; Author: Alexander Kahl <alexander.kahl@oliverwyman.com>
+;; Author: Alexander Dorn <alexander.kahl@oliverwyman.com>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify

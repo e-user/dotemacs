@@ -1,8 +1,8 @@
 ;;; modular-clojure.el --- Modular Clojure module	-*- lexical-binding: t; -*-
 
-;; Copyright © 2012-2016  Alexander Kahl
+;; Copyright © 2012-2016  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify

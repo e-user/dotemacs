@@ -1,8 +1,8 @@
 ;;; modular-eclim.el --- theme init
 
-;; Copyright © 2015  Alexander Kahl
+;; Copyright © 2015  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: emacs, java, eclipse, eclim
 
 ;;; Code:

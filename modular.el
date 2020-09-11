@@ -1,8 +1,8 @@
 ;;; modular.el --- Meta-snippet to load .emacs configuration snippets
 
-;; Copyright © 2012-2016  Alexander Kahl
+;; Copyright © 2012-2016  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;;; Code:
