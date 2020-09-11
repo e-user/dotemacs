@@ -73,6 +73,7 @@
 (setq server-socket-dir (format "/run/user/%d/emacs" (user-uid)))
 
 (modular-extend-path "~/.local/bin")
+(modular-extend-path "~/bin")
 
 (provide 'modular-emacs)
 ;;; modular-emacs.el ends here

@@ -19,7 +19,7 @@
 (setq projectile-enable-caching nil)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-(add-to-list 'load-path (expand-file-name "~/Projects/emacs/projectile-terminal"))
+(add-to-list 'load-path (expand-file-name "~/Projects/private/emacs/projectile-terminal"))
 (require 'projectile-terminal)
 
 (setq projectile-terminal-multi-term-register t)

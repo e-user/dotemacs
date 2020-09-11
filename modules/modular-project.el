@@ -1,8 +1,8 @@
-;;; modular-lsp.el --- Modular Lsp module      -*- lexical-binding: t; -*-
+;;; modular-project.el --- Modular project module    -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2019  Alexander Kahl
+;; Copyright (C) 2020  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -20,21 +20,17 @@
 
 ;;; Commentary:
 
-;; Load Lsp support
+;; Load project
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-lsp)
+(add-to-list 'modular-features 'modular-project)
 
 ;;;###autoload
-(pin "melpa-stable" 'lsp-mode 'company-lsp 'helm-lsp 'lsp-ui)
+(pin "gnu" 'project)
 
-(install 'lsp-mode 'company-lsp 'helm-lsp 'lsp-ui)
-(add-hook 'lsp-mode-hook 'lsp-ui-mode)
+(install 'project)
+(require 'project)
 
-(require 'lsp-mode)
-(require 'company-lsp)
-(push 'company-lsp company-backends)
-
-(provide 'modular-lsp)
-;;; modular-lsp.el ends here
+(provide 'modular-project)
+;;; modular-project.el ends here

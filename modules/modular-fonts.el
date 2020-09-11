@@ -66,6 +66,8 @@
       (zion+uid "normal")
       (t "normal"))))
 
+(activate-font-profile)
+
 (add-hook 'after-make-frame-functions #'(lambda (&rest frame) (activate-font-profile)) t)
 
 (provide 'modular-fonts)

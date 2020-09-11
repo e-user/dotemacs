@@ -31,7 +31,8 @@
 
 (install 'ledger-mode 'flycheck-ledger)
 
-(ledger-flymake-enable)
+(require 'ledger-mode)
+; (ledger-flymake-enable)
 
 (setq ledger-default-date-format ledger-iso-date-format
       ledger-post-account-alignment-column 2

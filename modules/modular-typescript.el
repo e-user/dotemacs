@@ -33,7 +33,10 @@
 
 (add-hook 'typescript-mode-hook #'tide-setup)
 
-(setq tide-node-executable (expand-file-name "~/bin/flatpak-node"))
+(setq tide-node-executable (expand-file-name "~/bin/toolbox-node")
+      tide-tscompiler-executable "node_modules/typescript/bin/tsc"
+      tide-tsserver-executable "node_modules/typescript/bin/tsserver"
+      typescript-indent-level 2)
 
 (provide 'modular-typescript)
 ;;; modular-typescript.el ends here

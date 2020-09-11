@@ -1,8 +1,8 @@
-;;; modular-epa.el --- Modular EPA module            -*- lexical-binding: t; -*-
+;;; modular-go.el --- Modular Go module              -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016  Alexander Kahl
+;; Copyright (C) 2020  Alexander Dorn
 
-;; Author: Alexander Kahl <ak@sodosopa.io>
+;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -16,17 +16,21 @@
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
-;; Load EPA
+;; Load Go support
 
 ;;; Code:
 ;;;###autoload
-(add-to-list 'modular-features 'modular-epa)
+(add-to-list 'modular-features 'modular-go)
 
-(epa-file-enable)
+;;;###autoload
+(pin "melpa-stable" 'go-mode)
 
-(provide 'modular-epa)
-;;; modular-epa.el ends here
+(install 'go-mode)
+(require 'go-mode)
+
+(provide 'modular-go)
+;;; modular-go.el ends here

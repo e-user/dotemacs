@@ -26,8 +26,6 @@
 ;;;###autoload
 (add-to-list 'modular-features 'modular-elisp)
 
-(add-hook 'emacs-lisp-mode-hook 'turn-on-elisp-mode)
-(add-hook 'lisp-interaction-mode-hook 'turn-on-elisp-mode)
 (add-hook 'emacs-lisp-mode-hook 'fira-code-mode)
 (add-hook 'lisp-interaction-mode-hook 'fira-code-mode)
 

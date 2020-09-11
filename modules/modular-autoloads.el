@@ -159,16 +159,6 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-elixir" "modular-elixir.el" (0 0 0
-;;;;;;  0))
-;;; Generated autoloads from modular-elixir.el
-
-(add-to-list 'modular-features 'modular-elixir)
-
-(pin "melpa-stable" 'elixir-mode)
-
-;;;***
-
 ;;;### (autoloads nil "modular-emacs" "modular-emacs.el" (0 0 0 0))
 ;;; Generated autoloads from modular-emacs.el
 
@@ -183,14 +173,6 @@
 ;;; Generated autoloads from modular-ensime.el
 
 (add-to-list 'modular-features 'modular-ensime)
-
-;;;***
-
-;;;### (autoloads nil "modular-epa" "modular-epa.el" (23236 41743
-;;;;;;  106229 910000))
-;;; Generated autoloads from modular-epa.el
-
-(add-to-list 'modular-features 'modular-epa)
 
 ;;;***
 
@@ -254,6 +236,18 @@
 (add-to-list 'modular-features 'modular-fonts)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-fonts" '("activate-font-profile" "screen-configurations" "xrandr-uuid" "run-xrandr" "uuidgen-ns-xrandr")))
+
+;;;***
+
+;;;### (autoloads nil "modular-fsharp" "modular-fsharp.el" (0 0 0
+;;;;;;  0))
+;;; Generated autoloads from modular-fsharp.el
+
+(add-to-list 'modular-features 'modular-fsharp)
+
+(pin "melpa-stable" 'fsharp-mode)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "modular-fsharp" '(#("fsharp-" 0 7 (fontified nil)))))
 
 ;;;***
 
@@ -336,15 +330,6 @@
 
 ;;;***
 
-;;;### (autoloads nil "modular-lsp" "modular-lsp.el" (0 0 0 0))
-;;; Generated autoloads from modular-lsp.el
-
-(add-to-list 'modular-features 'modular-lsp)
-
-(pin "melpa-stable" 'lsp-mode 'company-lsp 'helm-lsp 'lsp-ui)
-
-;;;***
-
 ;;;### (autoloads nil "modular-magit" "modular-magit.el" (0 0 0 0))
 ;;; Generated autoloads from modular-magit.el
 
@@ -423,6 +408,16 @@
 (add-to-list 'modular-features 'modular-php)
 
 (pin "melpa-stable" 'php-mode 'flymake-php 'company-php)
+
+;;;***
+
+;;;### (autoloads nil "modular-project" "modular-project.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from modular-project.el
+
+(add-to-list 'modular-features 'modular-project)
+
+(pin "gnu" 'project)
 
 ;;;***
 
