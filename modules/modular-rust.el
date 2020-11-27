@@ -29,10 +29,11 @@
 ;;;###autoload
 (pin "melpa-stable" 'rust-mode 'racer 'flycheck-rust)
 
-(install 'rust-mode 'racer 'flycheck-rust)
+(install 'rust-mode 'racer 'flycheck-rust 'ron-mode)
 
 (require 'rust-mode)
 (require 'racer)
+(require 'ron-mode)
 
 (require 'modular-company)
 (require 'modular-flycheck)
@@ -50,6 +51,7 @@
       rust-format-on-save t)
 
 (modular-extend-path "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin")
+(modular-extend-path "~/.cargo/bin")
 
 (define-key racer-mode-map (kbd "C-c C-d") #'racer-describe)
 

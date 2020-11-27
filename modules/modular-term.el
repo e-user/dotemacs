@@ -1,6 +1,6 @@
 ;;; modular-term.el --- Modular multi-term module  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2014-2016  Alexander Dorn
+;; Copyright (C) 2014-2020 Alexander Dorn
 
 ;; Author: Alexander Dorn <ad@sodosopa.io>
 ;; Keywords: convenience
@@ -49,42 +49,54 @@
     term-buffer))
 
 (defun term-handle-ansi-terminal-messages (message)
-  (while (string-match "\eAnSiT.+\n" message)
-    ;; Extract the command code and the argument.
-    (let* ((start (match-beginning 0))
-           (command-code (aref message (+ start 6)))
-           (argument
-            (save-match-data
-              (substring message
-                         (+ start 8)
-                         (string-match "\r?\n" message
-                                       (+ start 8))))))
-      ;; Delete this command from MESSAGE.
-      (setq message (replace-match "" t t message))
+  (let ((toolbox nil))
+    ; (print message)
+    ; (print (minibuffer-message (string-match "\e]777.+\e" message)))
+    ; (string-match "\e]777.+\e" "]777;container;push;fedora-toolbox-33;toolbox")
 
-      (cond ((= command-code ?c)
-             (setq term-ansi-at-dir argument))
-            ((= command-code ?h)
-             (setq term-ansi-at-host argument))
-            ((= command-code ?u)
-             (setq term-ansi-at-user argument))
-            ((= command-code ?e)
-             (save-excursion
-               (find-file-other-window argument)))
-            ((= command-code ?x)
-             (save-excursion
-               (find-file argument))))))
+    (while (string-match "\eAnSiT.+\n" message)
+      ;; Extract the command code and the argument.
+      (let* ((start (match-beginning 0))
+             (command-code (aref message (+ start 6)))
+             (argument
+              (save-match-data
+                (substring message
+                           (+ start 8)
+                           (string-match "\r?\n" message
+                                         (+ start 8))))))
+        ;; Delete this command from MESSAGE.
+        (setq message (replace-match "" t t message))
 
-  (when (and term-ansi-at-host term-ansi-at-dir term-ansi-at-user)
-    (setq buffer-file-name term-ansi-at-dir)
-    (when (boundp 'terminal-name)
-      (rename-buffer (format "*%s: %s*" (replace-regexp-in-string "term" term-ansi-at-host terminal-name nil 'literal) term-ansi-at-dir)))
-    ;; (setq default-directory (if (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
-    ;;                             (concatenate 'string term-ansi-at-dir "/")
-    ;;                           (format "/%s@%s:%s/" term-ansi-at-user term-ansi-at-host term-ansi-at-dir)))
-    (when (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
-      (setq default-directory (concatenate 'string term-ansi-at-dir "/"))))
-  message)
+        (cond ((= command-code ?c)
+               (setq term-ansi-at-dir argument))
+              ((= command-code ?h)
+               (setq term-ansi-at-host argument))
+              ((= command-code ?u)
+               (setq term-ansi-at-user argument))
+              ((= command-code ?t)
+               (setq toolbox argument))
+              ((= command-code ?e)
+               (save-excursion
+                 (find-file-other-window argument)))
+              ((= command-code ?x)
+               (save-excursion
+                 (find-file argument))))))
+
+    (when (and term-ansi-at-host term-ansi-at-dir term-ansi-at-user)
+      (setq buffer-file-name term-ansi-at-dir)
+      
+      (when-let ((name (or toolbox (and (boundp 'terminal-name) terminal-name))))
+        (rename-buffer (format "*%s: %s*" name term-ansi-at-dir)))
+      ;; (when (boundp 'terminal-name)
+      ;;   ; (rename-buffer (format "*%s: %s*" (replace-regexp-in-string "term" term-ansi-at-host terminal-name nil 'literal) term-ansi-at-dir))
+      ;;   (rename-buffer (format "*%s: %s*" terminal-name term-ansi-at-dir)))
+      ;; (setq default-directory (if (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
+      ;;                             (concatenate 'string term-ansi-at-dir "/")
+      ;;                           (format "/%s@%s:%s/" term-ansi-at-user term-ansi-at-host term-ansi-at-dir)))
+      ;; (when (string= term-ansi-at-host (car (split-string (system-name) "\\.")))
+      ;;   (setq default-directory (concatenate 'string term-ansi-at-dir "/")))
+      (setq default-directory (concatenate 'string term-ansi-at-dir "/")))
+    message))
 
 (defun term-clear-modified (buffer)
   (with-current-buffer buffer

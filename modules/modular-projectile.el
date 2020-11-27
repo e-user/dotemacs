@@ -10,9 +10,11 @@
 (add-to-list 'modular-features 'modular-projectile)
 
 ;;;###autoload
-(pin "melpa-stable" 'projectile 'ag)
+(pin "melpa-stable" 'projectile 'ag 'projectile-ripgrep)
 
-(install 'projectile 'ag)
+(require 'modular-ripgrep)
+
+(install 'projectile 'ag 'projectile-ripgrep)
 (require 'projectile)
 
 (projectile-global-mode)
